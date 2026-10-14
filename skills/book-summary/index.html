@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Book Summary Skill — open-source workflow для создания проверяемых саммари книг и аудиокниг с адаптерами для Hermes, Claude Code и Codex.">
+  <title>Book Summary Skill · Павел Насута</title>
+  <link rel="canonical" href="https://pavelnasuta.github.io/skills/book-summary/">
+  <link rel="stylesheet" href="../../assets/styles/skills-book-summary-index.css">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Book Summary Skill · Павел Насута">
+  <meta property="og:description" content="Open-source workflow для проверяемых саммари книг и аудиокниг.">
+  <meta property="og:url" content="https://pavelnasuta.github.io/skills/book-summary/">
+  <meta property="og:image" content="https://pavelnasuta.github.io/assets/images/og-pavel-nasuta.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div class="shell">
+    <nav class="nav"><a class="brand" href="../../index.html">Павел Насута</a><div class="nav-right"><a href="../../index.html#skills">Skills</a><a class="github" href="https://github.com/pavelnasuta/book-summary-skill" target="_blank" rel="noopener">GitHub ↗</a></div></nav>
+    <main>
+      <header class="hero">
+        <div class="meta">OPEN SOURCE SKILL · КНИГИ И АУДИОКНИГИ</div>
+        <h1>Book Summary<br><em>Skill</em></h1>
+        <p class="lede">Мультиагентный workflow, который превращает книгу или аудиокнигу в оригинальное, проверяемое саммари: текст, подготовленную озвучку и пакет материалов для чтения и слушания.</p>
+        <div class="hero-actions"><a class="button primary" href="https://github.com/pavelnasuta/book-summary-skill" target="_blank" rel="noopener">Открыть репозиторий ↗</a><a class="button secondary" href="#start">Как начать</a></div>
+      </header>
+
+      <section class="status"><b>Статус публичной версии</b><p>Сейчас в репозитории готовы общий контракт проекта, настройка языка и длительности, а также адаптеры для Hermes, Claude Code и Codex. Полный конвейер извлечения, синтеза, вёрстки и сборки аудио описан как следующий этап разработки.</p></section>
+
+      <section class="layout">
+        <aside class="toc"><div>НА СТРАНИЦЕ</div><a href="#purpose">Что делает</a><a href="#start">Быстрый старт</a><a href="#agents">Подключение к агенту</a><a href="#workflow">Полный маршрут</a><a href="#limits">Границы и права</a></aside>
+        <article class="content">
+          <section id="purpose"><h2>Не пересказ, а рабочее саммари</h2><p>Skill задуман для книг, электронных изданий и аудиокниг. Он помогает сохранить структуру аргументов, проверить факты, подготовить связный текст и при необходимости — версию для прослушивания.</p><div class="outcomes"><div><b>НА ВХОДЕ</b><span>Книга, документ или аудиокнига с надёжной расшифровкой.</span></div><div><b>НА ВЫХОДЕ</b><span>Саммари, редактируемый текст озвучки, PDF, FB2 и один MP3 — по мере готовности полного конвейера.</span></div><div><b>ПРИНЦИП</b><span>Модель не подменяет источник: итог проверяется по именам, числам, причинным связям и структуре книги.</span></div></div></section>
+
+          <section id="start"><h2>Быстрый старт</h2><p>Репозиторий запускается как обычный проект: он спрашивает язык саммари и целевую длительность аудио, а затем сохраняет выборы в отдельной конфигурации проекта.</p><pre><code>git clone https://github.com/pavelnasuta/book-summary-skill.git
+cd book-summary-skill
+python scripts/project_config.py ./projects/my-book</code></pre><p>В результате появится <code>project.json</code> с выбранным языком и длительностью. При возвращении к тому же проекту настройки не спрашиваются заново.</p></section>
+
+          <section id="agents"><h2>Подключение к AI-агенту</h2><p>В репозитории есть адаптеры под три среды. Они используют одну общую структуру проекта и не создают три разных конвейера.</p><div class="agent-grid"><div><h3>Hermes</h3><p>Установите адаптер из GitHub, затем работайте с клонированным репозиторием и его общими скриптами.</p><pre><code>hermes skills install pavelnasuta/book-summary-skill/agents/hermes</code></pre></div><div><h3>Claude Code</h3><p>Поместите адаптер в проект как <code>.claude/skills/book-summary/SKILL.md</code> и сохраните рядом общие <code>scripts/</code> и <code>specs/</code>.</p></div><div><h3>Codex</h3><p>Добавьте правила из <code>agents/codex/AGENTS.md</code> в рабочий <code>AGENTS.md</code> проекта.</p></div></div></section>
+
+          <section id="workflow"><h2>Полный маршрут</h2><ol><li>Создать проект и явно задать язык и длительность.</li><li>Извлечь текст книги или подготовить надёжную расшифровку аудиокниги.</li><li>Разбить источник на устойчивые фрагменты и сохранить покрытие.</li><li>Собрать саммари по главам и проверить ключевые утверждения.</li><li>Подготовить PDF, FB2, текст озвучки и единый MP3.</li><li>Проверить, что структура, факты и длительность соответствуют источнику и задаче.</li></ol><p>Этот маршрут намеренно разделяет черновик, проверку и публикацию: убедительный текст без проверки — не готовый результат.</p></section>
+
+          <section id="limits"><h2>Границы и права</h2><p>Skill создаёт оригинальное преобразование, а не замену книге. Источники, расшифровки и пользовательские результаты по умолчанию остаются приватными. Публикация или распространение требуют отдельной оценки прав на исходный материал.</p><p>Перед изменением общей логики репозитория запускаются офлайн-тесты:</p><pre><code>pytest tests/ -q</code></pre></section>
+
+          <aside class="repository"><div>ИСХОДНЫЙ КОД И АКТУАЛЬНАЯ ДОКУМЕНТАЦИЯ</div><a href="https://github.com/pavelnasuta/book-summary-skill" target="_blank" rel="noopener">github.com/pavelnasuta/book-summary-skill ↗</a></aside>
+        </article>
+      </section>
+    </main>
+    <footer class="footer"><span>© Павел Насута</span><span>Skills для AI-агентов</span></footer>
+  </div>
+</body>
+</html>
