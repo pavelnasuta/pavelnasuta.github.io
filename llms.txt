@@ -14,6 +14,7 @@
 
 - [Естественный интеллект — раньше искусственного](https://pavelnasuta.github.io/articles/how-to-choose-an-ai-task/): как выбрать задачу для AI, начав с проблемы, критерия результата и цены ошибки.
 - [Как проверять результат AI-автоматизации до запуска](https://pavelnasuta.github.io/articles/how-to-verify-ai-automation/): критерии качества, человеческий контроль и стоп-условия.
+- [Adaptive Support Dialogue Skill](https://pavelnasuta.github.io/skills/adaptive-support-dialogue/): open-source основа для поддерживающего диалога, ACT, КПТ и прозрачной работы с личным контекстом.
 
 ## Редакционный принцип
 

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Adaptive Support Dialogue Skill — open-source основа для AI-агентов, которым нужна безопасная поддержка, ACT, КПТ и прозрачная работа с личным контекстом.">
+  <title>Adaptive Support Dialogue Skill · Павел Насута</title>
+  <link rel="canonical" href="https://pavelnasuta.github.io/skills/adaptive-support-dialogue/">
+  <link rel="stylesheet" href="../../assets/styles/skills-book-summary-index.css">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Adaptive Support Dialogue Skill · Павел Насута">
+  <meta property="og:description" content="Open-source основа для AI-агентов: безопасный поддерживающий диалог, ACT, КПТ и прозрачная работа с контекстом.">
+  <meta property="og:url" content="https://pavelnasuta.github.io/skills/adaptive-support-dialogue/">
+  <meta property="og:image" content="https://pavelnasuta.github.io/assets/images/og-pavel-nasuta.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Adaptive Support Dialogue Skill">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Adaptive Support Dialogue Skill · Павел Насута">
+  <meta name="twitter:description" content="Безопасный поддерживающий диалог, ACT, КПТ и прозрачная работа с личным контекстом.">
+  <meta name="twitter:image" content="https://pavelnasuta.github.io/assets/images/og-pavel-nasuta.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","@id":"https://pavelnasuta.github.io/skills/adaptive-support-dialogue/#software","name":"Adaptive Support Dialogue Skill","description":"Open-source skill for safe support dialogue, consent-based continuity, CBT and ACT.","url":"https://pavelnasuta.github.io/skills/adaptive-support-dialogue/","codeRepository":"https://github.com/pavelnasuta/adaptive-support-dialogue-skill","isAccessibleForFree":true,"inLanguage":["ru","en"],"author":{"@type":"Person","@id":"https://pavelnasuta.github.io/#pavel-nasuta","name":"Павел Насута","url":"https://pavelnasuta.github.io/about/"},"isPartOf":{"@id":"https://pavelnasuta.github.io/#website"}}</script>
+</head>
+<body>
+  <div class="shell">
+    <nav class="nav"><a class="brand" href="../../index.html">Павел Насута</a><div class="nav-right"><a href="../../index.html#skills">Skills</a><a class="github" href="https://github.com/pavelnasuta/adaptive-support-dialogue-skill" target="_blank" rel="noopener">GitHub ↗</a></div></nav>
+    <main>
+      <header class="hero">
+        <div class="meta">OPEN SOURCE SKILL · SUPPORT DIALOGUE</div>
+        <h1>Adaptive Support<br><em>Dialogue</em></h1>
+        <p class="lede">Основа для AI-агента, который умеет быть рядом в сложном разговоре, но не изображает психотерапевта, не ставит диагнозы и не тихо собирает личную жизнь в скрытый профиль.</p>
+        <div class="hero-actions"><a class="button primary" href="https://github.com/pavelnasuta/adaptive-support-dialogue-skill" target="_blank" rel="noopener">Открыть репозиторий ↗</a><a class="button secondary" href="#start">Как установить</a></div>
+      </header>
+
+      <section class="status"><b>Статус публичной версии</b><p>В репозитории есть рабочее ядро навыка, модули ACT и КПТ, правила безопасности, протокол согласия, шаблоны для прогресса и проверочные сценарии. Хранилище и интеграцию с конкретным агентом владелец подключает сам.</p></section>
+
+      <section class="layout">
+        <aside class="toc"><div>НА СТРАНИЦЕ</div><a href="#purpose">Что делает</a><a href="#design">Как устроен</a><a href="#start">Установка</a><a href="#methods">ACT и КПТ</a><a href="#continuity">Контекст и логи</a><a href="#limits">Границы</a></aside>
+        <article class="content">
+          <section id="purpose"><h2>Не «психолог в коробке»</h2><p>Хороший поддерживающий диалог не начинается с универсального совета. Сначала нужно понять, что человек пережил, что он уже додумал за реальность, чего избегает и на что всё-таки хочет опереться.</p><p>Этот skill даёт агенту рамку для такого разговора. Он помогает различать факты, чувства, автоматические интерпретации, потребности и действия. Иногда нужно просто отразить важное. Иногда остановить круг самокритики. Иногда помочь сделать один небольшой шаг, а не написать человеку ещё одну лекцию о жизни.</p><div class="outcomes"><div><b>ДИАЛОГ</b><span>Взрослый, прямой, без сюсюканья, морализаторства и ложных обещаний.</span></div><div><b>КОНТЕКСТ</b><span>Пользователь сам определяет, что можно сохранять, исправлять и удалять.</span></div><div><b>ГРАНИЦЫ</b><span>Skill не заменяет врача, психотерапию, кризисную помощь и живых людей рядом.</span></div></div></section>
+
+          <section id="design"><h2>Ядро отдельно, личное отдельно</h2><p>Внутри нет базы данных и нет «скрытой памяти». Есть переносимое ядро <code>SKILL.md</code>, подробные модули и пустые шаблоны. Их можно подключить к любому агенту и к любому приватному хранилищу, если оно умеет выполнять простые вещи: читать только разрешённые данные, редактировать их, выгружать и действительно удалять.</p><p>Это важная деталь. Личный контекст полезен, пока у человека есть контроль над ним. Поэтому профиль, журнал прогресса и карта повторяющихся паттернов должны жить вне публичного репозитория и принадлежать пользователю, а не агенту.</p></section>
+
+          <section id="start"><h2>Как установить</h2><p>Это универсальный skill без привязки к одной платформе. Сначала заберите пакет, затем зарегистрируйте его способом, который понимает ваш агент.</p><pre><code>git clone https://github.com/pavelnasuta/adaptive-support-dialogue-skill.git</code></pre><ol><li>Скопируйте папку skill в каталог навыков нужного агента или подключите её через его штатный механизм.</li><li>Держите рядом <code>SKILL.md</code>, <code>references/</code> и <code>templates/</code>.</li><li>Создайте отдельную приватную папку для данных пользователя и скопируйте туда шаблоны.</li><li>До первой записи вместе с пользователем заполните настройки согласия.</li><li>Проверьте шесть сценариев из <code>references/evaluation.md</code>, прежде чем использовать skill в реальных разговорах.</li></ol><p>У нового пользователя хранение контекста выключено. Автоматические краткие записи можно включить только после явного согласия.</p></section>
+
+          <section id="methods"><h2>ACT и КПТ — не как набор красивых аббревиатур</h2><p>В module КПТ есть короткая карта: ситуация, мысль, эмоция, действие, факты, более точная формулировка и безопасный поведенческий эксперимент. Она нужна не для того, чтобы убедить человека «думать позитивно», а чтобы не выдавать прогноз за факт.</p><p>ACT подключается там, где мысль стала приказом, а неприятное чувство превратилось в стоп-сигнал. Агент помогает заметить мысль как мысль, вспомнить направление, которое человеку важно, и выбрать небольшой шаг. Не «сначала перестань бояться, потом живи». Скорее: «что можно сделать в сторону важного, пока страх всё ещё здесь?»</p></section>
+
+          <section id="continuity"><h2>Самообучение, которое не подменяет человека</h2><p>Skill умеет накапливать контекст, но не должен самовольно строить психологический портрет. Прямо подтверждённый факт остаётся фактом. Повторяющаяся связь может стать только предварительной гипотезой, когда есть несколько отдельных наблюдений. И она не становится «истиной о человеке», пока он сам её не подтвердит.</p><p>Периодический обзор нужен не для отчётности. Он позволяет спросить: что из сохранённого уже устарело, что действительно помогает, а что агент повторяет по инерции. Любую категорию можно исключить, исправить, выгрузить или удалить.</p></section>
+
+          <section id="limits"><h2>Границы, без которых это опасная игрушка</h2><p>Skill не ставит диагнозы и не разъясняет заочно мотивы партнёра, родителей или коллег. Он не толкает к расставанию, увольнению, признанию или другой необратимой развязке в пике эмоций.</p><p>Если есть признаки непосредственной опасности, самоповреждения, насилия или потери контроля, разговор перестаёт быть упражнением в рефлексии. В приоритете безопасность, близкий человек рядом и обращение за экстренной или профессиональной помощью. Кризисные детали не должны автоматически попадать в журнал.</p><aside class="repository"><div>ИСХОДНЫЙ КОД И АКТУАЛЬНАЯ ДОКУМЕНТАЦИЯ</div><a href="https://github.com/pavelnasuta/adaptive-support-dialogue-skill" target="_blank" rel="noopener">github.com/pavelnasuta/adaptive-support-dialogue-skill ↗</a></aside></section>
+        </article>
+      </section>
+    </main>
+    <footer class="footer"><span>© Павел Насута</span><span>Skills для AI-агентов</span></footer>
+  </div>
+</body>
+</html>
