@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Ассистент руководителя: переносимый набор инструкций для AI-агентов, который превращает рабочие входящие в действия, решения и риски.">
+  <title>Ассистент руководителя · Павел Насута</title>
+  <link rel="canonical" href="https://pavelnasuta.github.io/skills/management-assistant/">
+  <link rel="stylesheet" href="../../assets/styles/skills-management-assistant-index.css">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Ассистент руководителя · Павел Насута">
+  <meta property="og:description" content="Переносимый набор инструкций для AI-агентов: рабочие входящие, решения, риски и проверяемые следующие шаги.">
+  <meta property="og:url" content="https://pavelnasuta.github.io/skills/management-assistant/">
+  <meta property="og:image" content="https://pavelnasuta.github.io/assets/images/og-management-assistant.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ассистент руководителя: решения, действия и проверка">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ассистент руководителя · Павел Насута">
+  <meta name="twitter:description" content="Переносимый набор инструкций для AI-агентов и руководителей.">
+  <meta name="twitter:image" content="https://pavelnasuta.github.io/assets/images/og-management-assistant.jpg">
+  <meta name="twitter:image:alt" content="Ассистент руководителя: решения, действия и проверка">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","@id":"https://pavelnasuta.github.io/skills/management-assistant/#software","name":"Ассистент руководителя","description":"Переносимый набор инструкций для AI-агентов, который помогает руководителю работать с входящими, решениями и рисками.","url":"https://pavelnasuta.github.io/skills/management-assistant/","codeRepository":"https://github.com/pavelnasuta/management-assistant-kit","isAccessibleForFree":false,"inLanguage":"ru-RU","author":{"@type":"Person","@id":"https://pavelnasuta.github.io/#pavel-nasuta","name":"Павел Насута","url":"https://pavelnasuta.github.io/about/"},"isPartOf":{"@id":"https://pavelnasuta.github.io/#website"}}</script>
+</head>
+<body>
+  <div class="shell">
+    <nav class="nav"><a class="brand" href="../../index.html">Павел Насута</a><div class="nav-right"><a href="../../index.html#skills">Skills</a><a class="github" href="../../contact/index.html">Запросить доступ →</a></div></nav>
+    <main>
+      <header class="hero">
+        <div class="meta">PRIVATE PILOT · MANAGEMENT ASSISTANT</div>
+        <h1>Ассистент<br><em>руководителя</em></h1>
+        <p class="lede">Набор инструкций для AI-агентов, который помогает не тонуть в рабочих входящих: отделять факт от предположения, готовить решение, назначать следующий шаг и возвращаться к проверке.</p>
+        <div class="hero-actions"><a class="button primary" href="#start">Как начать</a><a class="button secondary" href="../../contact/index.html">Запросить доступ →</a></div>
+      </header>
+
+      <section class="status"><b>Статус</b><p>Закрытый пилот. Базовый комплект готов для ручной обкатки у руководителя; интеграции и автоматические действия намеренно не включены по умолчанию.</p></section>
+
+      <section class="layout">
+        <aside class="toc"><div>НА СТРАНИЦЕ</div><a href="#purpose">Что делает</a><a href="#start">Быстрый старт</a><a href="#agents">Подключение</a><a href="#workflow">Как устроена работа</a><a href="#limits">Границы</a></aside>
+        <article class="content">
+          <section id="purpose"><h2>Не ещё один список задач</h2><p>Задача помощника — провести управленческую цепочку: <b>факт → решение → владелец → следующий шаг → проверка</b>. Он превращает голосовое, сообщение, задачу, документ или тревогу руководителя в один понятный маршрут, а не в поток советов.</p><div class="outcomes"><div><b>НА ВХОДЕ</b><span>Сырые входящие, поручения, обсуждения с подрядчиками, риск или вопрос.</span></div><div><b>НА ВЫХОДЕ</b><span>Черновик задачи, решение, эскалация, вопрос на уточнение или карточка передачи.</span></div><div><b>ПРИНЦИП</b><span>Неизвестное остаётся неизвестным, пока не найден первичный факт или владелец ответа.</span></div></div></section>
+
+          <section id="start"><h2>Быстрый старт</h2><p>После установки руководитель пишет: <i>«Используй management-assistant. Пройди онбординг, внешних действий не совершай».</i> Агент собирает только минимальную карту: мандат, критичные процессы, источники фактов, риски и один ручной ритм. Профиль всегда показывается черновиком до сохранения.</p><pre><code>hermes skills install pavelnasuta/management-assistant-kit/skills/management-assistant</code></pre><p>Репозиторий закрытый: для установки нужен доступ по приглашению. Это сознательное ограничение пилота, а не публичный продукт.</p></section>
+
+          <section id="agents"><h2>Подключение к AI-агенту</h2><p>Внутри одна общая методика и тонкие адаптеры для разных сред. Логика не размножается между агентами.</p><div class="agent-grid"><div><h3>Hermes</h3><p>Устанавливает основной skill из репозитория, читает его шаблоны и проверочные кейсы.</p></div><div><h3>Claude Code</h3><p>Подключает общие правила проекта и skill как локальную инструкцию.</p></div><div><h3>Codex и OpenCode</h3><p>Используют тот же контракт через инструкции рабочего проекта.</p></div></div></section>
+
+          <section id="workflow"><h2>Как устроена работа</h2><ol><li>Сначала агент отмечает ожидаемый результат, источник, срок, владельца, зависимости и неизвестное.</li><li>Разделяет факт, предположение, риск и решение.</li><li>Выбирает один маршрут: уточнение, черновик задачи, эскалация, сообщение, обновление знания или регулярный контроль.</li><li>Для денег, договоров, доступов и других решений с высокой ценой ошибки применяет «СТОП»: статус знания, обратимость, опровержение, право и подтверждение.</li><li>Автоматизация появляется только после ручной обкатки устойчивого процесса.</li></ol></section>
+
+          <section id="limits"><h2>Границы важнее скорости</h2><p>Помощник не создаёт задачи, не пишет людям, не меняет доступы и не включает автоматизацию без точного черновика и явного подтверждения руководителя. После одобренного действия он обязан прочитать результат обратно.</p><p>Комплект не хранит пароли, токены, платёжные данные и чувствительную информацию о сотрудниках. Он работает с наблюдаемыми рабочими фактами, а не с психологическими ярлыками.</p></section>
+
+          <aside class="repository"><div>GITHUB ДЛЯ УЧАСТНИКОВ ПИЛОТА</div><a href="https://github.com/pavelnasuta/management-assistant-kit" target="_blank" rel="noopener">github.com/pavelnasuta/management-assistant-kit ↗</a><p>Репозиторий закрытый. Если доступа ещё нет, <a href="../../contact/index.html">запросите его через Telegram</a>.</p></aside>
+        </article>
+      </section>
+    </main>
+    <footer class="footer"><span>© Павел Насута</span><span>Skills для AI-агентов</span></footer>
+  </div>
+</body>
+</html>
