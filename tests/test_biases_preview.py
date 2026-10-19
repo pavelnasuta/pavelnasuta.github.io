@@ -11,13 +11,16 @@ COUNTER_ID = "27865374"
 class BiasesPreviewTests(unittest.TestCase):
     def test_catalog_is_a_filterable_list_without_reading_instructions(self):
         html = CATALOG.read_text(encoding="utf-8")
-        self.assertEqual(html.count('class="bias-row"'), 20)
+        self.assertEqual(html.count('class="bias-row"'), 2)
+        self.assertEqual(html.count('<a class="bias-row"'), 2)
         self.assertIn("Когнитивные искажения", html)
         self.assertIn("Предвзятость подтверждения", html)
         self.assertIn('id="bias-search"', html)
         self.assertEqual(html.count('data-filter='), 5)
         self.assertNotIn("Как читать каталог", html)
         self.assertNotIn("Первые 20", html)
+        self.assertNotIn("в сборке", html)
+        self.assertNotIn("черновая сборка", html)
 
     def test_catalog_is_not_added_to_primary_navigation(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -30,6 +33,15 @@ class BiasesPreviewTests(unittest.TestCase):
                 self.assertEqual(html.count("https://mc.yandex.ru/metrika/tag.js"), 1)
                 self.assertEqual(html.count(f"ym({COUNTER_ID}, 'init'"), 1)
                 self.assertEqual(html.count(f"https://mc.yandex.ru/watch/{COUNTER_ID}"), 1)
+
+    def test_detail_pages_do_not_expose_internal_draft_labels(self):
+        for page in (DETAIL, ROOT / "biases" / "anchoring" / "index.html"):
+            html = page.read_text(encoding="utf-8").lower()
+            with self.subTest(page=page):
+                self.assertNotIn("в разработке", html)
+                self.assertNotIn("демонстрационная карточка", html)
+                self.assertNotIn("черновая сборка", html)
+                self.assertNotIn("добавим вместе", html)
 
     def test_confirmation_card_links_readers_to_underlying_research(self):
         html = DETAIL.read_text(encoding="utf-8")
