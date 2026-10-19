@@ -92,6 +92,38 @@ class BiasesCatalogueTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Incomplete published entry"):
             validate_catalogue([item], expected_count=1)
 
+    def test_published_source_requires_non_empty_string_url_and_citation(self):
+        item = next(item for item in load_catalogue(CATALOGUE) if item["published"])
+
+        for field, invalid_value in (
+            ("url", ""),
+            ("url", 42),
+            ("citation", ""),
+            ("citation", 42),
+        ):
+            with self.subTest(field=field, invalid_value=invalid_value):
+                invalid_item = json.loads(json.dumps(item))
+                invalid_item["sources"][0][field] = invalid_value
+
+                with self.assertRaisesRegex(ValueError, "Published source is incomplete"):
+                    validate_catalogue([invalid_item], expected_count=1)
+
+    def test_published_seo_requires_non_empty_string_title_and_description(self):
+        item = next(item for item in load_catalogue(CATALOGUE) if item["published"])
+
+        for field, invalid_value in (
+            ("title", ""),
+            ("title", 42),
+            ("description", ""),
+            ("description", 42),
+        ):
+            with self.subTest(field=field, invalid_value=invalid_value):
+                invalid_item = json.loads(json.dumps(item))
+                invalid_item["seo"][field] = invalid_value
+
+                with self.assertRaisesRegex(ValueError, "Published entry requires SEO fields"):
+                    validate_catalogue([invalid_item], expected_count=1)
+
     def test_unpublished_identity_cannot_be_rendered_or_built(self):
         item = {
             "slug": "identity-only",

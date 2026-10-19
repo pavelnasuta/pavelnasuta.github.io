@@ -95,9 +95,21 @@ def validate_catalogue(
         if not isinstance(item["sources"], list) or not item["sources"]:
             raise ValueError(f"Published entry requires sources: {item['slug']}")
         for source in item["sources"]:
-            if not isinstance(source, dict) or not source.get("url"):
+            if (
+                not isinstance(source, dict)
+                or not isinstance(source.get("url"), str)
+                or not source["url"].strip()
+                or not isinstance(source.get("citation"), str)
+                or not source["citation"].strip()
+            ):
                 raise ValueError(f"Published source is incomplete: {item['slug']}")
-        if not isinstance(item["seo"], dict) or not item["seo"]:
+        if (
+            not isinstance(item["seo"], dict)
+            or not isinstance(item["seo"].get("title"), str)
+            or not item["seo"]["title"].strip()
+            or not isinstance(item["seo"].get("description"), str)
+            or not item["seo"]["description"].strip()
+        ):
             raise ValueError(f"Published entry requires SEO fields: {item['slug']}")
         if item["diagram"] is not None and not isinstance(item["diagram"], dict):
             raise ValueError(f"Diagram must be an object or null: {item['slug']}")
