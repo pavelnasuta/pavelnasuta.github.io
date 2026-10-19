@@ -1,0 +1,1922 @@
+{
+  "items": [
+    {
+      "slug": "availability-heuristic",
+      "russian_name": "Эвристика доступности",
+      "english_name": "Availability heuristic",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice things already primed in memory or repeated often",
+      "published": false
+    },
+    {
+      "slug": "attentional-bias",
+      "russian_name": "Смещение внимания",
+      "english_name": "Attentional bias",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice things already primed in memory or repeated often",
+      "published": false
+    },
+    {
+      "slug": "illusory-truth-effect",
+      "russian_name": "Эффект иллюзорной истины",
+      "english_name": "Illusory truth effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice things already primed in memory or repeated often",
+      "published": false
+    },
+    {
+      "slug": "mereexposure-effect",
+      "russian_name": "Эффект простого предъявления",
+      "english_name": "Mere–exposure effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice things already primed in memory or repeated often",
+      "published": false
+    },
+    {
+      "slug": "context-effect",
+      "russian_name": "Эффект контекста",
+      "english_name": "Context effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice things already primed in memory or repeated often",
+      "published": false
+    },
+    {
+      "slug": "cuedependent-forgetting",
+      "russian_name": "Забывание, зависящее от подсказки",
+      "english_name": "Cue–dependent forgetting",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice things already primed in memory or repeated often",
+      "published": false
+    },
+    {
+      "slug": "moodcongruent-memory-bias",
+      "russian_name": "Смещение памяти, согласованное с настроением",
+      "english_name": "Mood–congruent memory bias",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice things already primed in memory or repeated often",
+      "published": false
+    },
+    {
+      "slug": "frequency-illusion",
+      "russian_name": "Иллюзия частотности",
+      "english_name": "Frequency illusion",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice things already primed in memory or repeated often",
+      "published": false
+    },
+    {
+      "slug": "baadermeinhof-phenomenon",
+      "russian_name": "Феномен Баадера—Майнхоф",
+      "english_name": "Baader–Meinhof Phenomenon",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice things already primed in memory or repeated often",
+      "published": false
+    },
+    {
+      "slug": "empathy-gap",
+      "russian_name": "Разрыв эмпатии",
+      "english_name": "Empathy gap",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice things already primed in memory or repeated often",
+      "published": false
+    },
+    {
+      "slug": "omission-bias",
+      "russian_name": "Смещение в пользу бездействия",
+      "english_name": "Omission bias",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice things already primed in memory or repeated often",
+      "published": false
+    },
+    {
+      "slug": "base-rate-fallacy",
+      "russian_name": "Ошибка базовой частоты",
+      "english_name": "Base rate fallacy",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice things already primed in memory or repeated often",
+      "published": false
+    },
+    {
+      "slug": "bizarreness-effect",
+      "russian_name": "Эффект необычности",
+      "english_name": "Bizarreness effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "Bizarre/funny/visually-striking/anthropomorphic things stick out more than non-bizarre/unfunny things",
+      "published": false
+    },
+    {
+      "slug": "humor-effect",
+      "russian_name": "Эффект юмора",
+      "english_name": "Humor effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "Bizarre/funny/visually-striking/anthropomorphic things stick out more than non-bizarre/unfunny things",
+      "published": false
+    },
+    {
+      "slug": "von-restorff-effect",
+      "russian_name": "Эффект фон Ресторфф",
+      "english_name": "Von Restorff effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "Bizarre/funny/visually-striking/anthropomorphic things stick out more than non-bizarre/unfunny things",
+      "published": false
+    },
+    {
+      "slug": "picture-superiority-effect",
+      "russian_name": "Эффект превосходства изображения",
+      "english_name": "Picture superiority effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "Bizarre/funny/visually-striking/anthropomorphic things stick out more than non-bizarre/unfunny things",
+      "published": false
+    },
+    {
+      "slug": "selfrelevance-effect",
+      "russian_name": "Эффект личной значимости",
+      "english_name": "Self–relevance effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "Bizarre/funny/visually-striking/anthropomorphic things stick out more than non-bizarre/unfunny things",
+      "published": false
+    },
+    {
+      "slug": "negativity-bias",
+      "russian_name": "Негативное смещение",
+      "english_name": "Negativity bias",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "Bizarre/funny/visually-striking/anthropomorphic things stick out more than non-bizarre/unfunny things",
+      "published": false
+    },
+    {
+      "slug": "anchoring",
+      "russian_name": "Якорение",
+      "english_name": "Anchoring",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice when something has changed",
+      "published": true,
+      "lede": "Первая цифра, оценка или пример становятся точкой отсчёта и сдвигают последующее суждение сильнее, чем должны.",
+      "scenario": "В переговорах озвучили цену. Даже если она случайна или заведомо завышена, следующая оценка часто строится уже вокруг неё.",
+      "mechanism": "Первое доступное число становится опорой для быстрой оценки, а корректировка от него обычно оказывается недостаточной.",
+      "watch_for": "Якорем может быть цена, срок, первый вариант дизайна, план продаж или чужой прогноз — особенно когда собственной опоры ещё нет.",
+      "helps": "До обсуждения зафиксировать собственный диапазон и способ расчёта; в команде сначала собрать независимые оценки, а затем открывать цифры.",
+      "status_note": "Якорение описывает систематическое влияние начальной точки отсчёта на последующее числовое суждение в условиях неопределённости.",
+      "sources": [
+        {
+          "citation": "Tversky, A., & Kahneman, D. (1974). Judgment under uncertainty: Heuristics and biases.",
+          "url": "https://doi.org/10.1126/science.185.4157.1124"
+        }
+      ],
+      "seo": {
+        "title": "Якорение: как первая цифра влияет на выбор · Павел Насута",
+        "description": "Якорение: как первая цифра или оценка становится точкой отсчёта, сдвигает суждение и как снизить её влияние."
+      },
+      "diagram": null
+    },
+    {
+      "slug": "conservatism",
+      "russian_name": "Консерватизм",
+      "english_name": "Conservatism",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice when something has changed",
+      "published": false
+    },
+    {
+      "slug": "contrast-effect",
+      "russian_name": "Эффект контраста",
+      "english_name": "Contrast effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice when something has changed",
+      "published": false
+    },
+    {
+      "slug": "distinction-bias",
+      "russian_name": "Смещение различения",
+      "english_name": "Distinction bias",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice when something has changed",
+      "published": false
+    },
+    {
+      "slug": "focusing-effect",
+      "russian_name": "Эффект фокусировки",
+      "english_name": "Focusing effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice when something has changed",
+      "published": false
+    },
+    {
+      "slug": "framing-effect",
+      "russian_name": "Эффект фрейминга",
+      "english_name": "Framing effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice when something has changed",
+      "published": false
+    },
+    {
+      "slug": "money-illusion",
+      "russian_name": "Денежная иллюзия",
+      "english_name": "Money illusion",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice when something has changed",
+      "published": false
+    },
+    {
+      "slug": "weberfechner-law",
+      "russian_name": "Закон Вебера—Фехнера",
+      "english_name": "Weber–Fechner law",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice when something has changed",
+      "published": false
+    },
+    {
+      "slug": "confirmation-bias",
+      "russian_name": "Предвзятость подтверждения",
+      "english_name": "Confirmation bias",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We are drawn to details that confirm our own existing beliefs",
+      "published": true,
+      "lede": "Мы скорее ищем, замечаем и интерпретируем данные так, чтобы они поддержали уже выбранную версию.",
+      "scenario": "Команда уверена, что пользователям нужен новый экран. В интервью она особенно расспрашивает тех, кому идея понравилась, а сомнения объясняет тем, что человек «не разобрался».",
+      "mechanism": "После появления предположения легче собирать подтверждения, чем искать факты, которые могут разрушить удобную картину. Это влияет и на поиск информации, и на оценку её надёжности.",
+      "watch_for": "Особенно полезна пауза, когда решение уже эмоционально дорого, данные неоднозначны, а цена ошибки высока.",
+      "helps": "До поиска сформулировать, что заставит вас передумать, и специально найти факт или человека, который видит ситуацию иначе.",
+      "status_note": "Это распространённый механизм проверки гипотез, а не признак того, что человек недостаточно умён или компетентен.",
+      "sources": [
+        {
+          "citation": "Wason, P. C. (1960). On the failure to eliminate hypotheses in a conceptual task.",
+          "url": "https://doi.org/10.1080/17470216008416717"
+        },
+        {
+          "citation": "Nickerson, R. S. (1998). Confirmation bias: A ubiquitous phenomenon in many guises.",
+          "url": "https://doi.org/10.1037/1089-2680.2.2.175"
+        }
+      ],
+      "seo": {
+        "title": "Предвзятость подтверждения: как заметить ловушку · Павел Насута",
+        "description": "Предвзятость подтверждения: как возникает, в каких ситуациях проявляется и как проверить собственную гипотезу до решения."
+      },
+      "diagram": null
+    },
+    {
+      "slug": "congruence-bias",
+      "russian_name": "Смещение конгруэнтности",
+      "english_name": "Congruence bias",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We are drawn to details that confirm our own existing beliefs",
+      "published": false
+    },
+    {
+      "slug": "postpurchase-rationalization",
+      "russian_name": "Рационализация после покупки",
+      "english_name": "Post–purchase rationalization",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We are drawn to details that confirm our own existing beliefs",
+      "published": false
+    },
+    {
+      "slug": "choicesupportive-bias",
+      "russian_name": "Смещение в поддержку сделанного выбора",
+      "english_name": "Choice–supportive bias",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We are drawn to details that confirm our own existing beliefs",
+      "published": false
+    },
+    {
+      "slug": "selective-perception",
+      "russian_name": "Избирательное восприятие",
+      "english_name": "Selective perception",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We are drawn to details that confirm our own existing beliefs",
+      "published": false
+    },
+    {
+      "slug": "observerexpectancy-effect",
+      "russian_name": "Эффект ожиданий наблюдателя",
+      "english_name": "Observer–expectancy effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We are drawn to details that confirm our own existing beliefs",
+      "published": false
+    },
+    {
+      "slug": "experimenter-s-bias",
+      "russian_name": "Смещение экспериментатора",
+      "english_name": "Experimenter's bias",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We are drawn to details that confirm our own existing beliefs",
+      "published": false
+    },
+    {
+      "slug": "observer-effect",
+      "russian_name": "Эффект наблюдателя",
+      "english_name": "Observer effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We are drawn to details that confirm our own existing beliefs",
+      "published": false
+    },
+    {
+      "slug": "expectation-bias",
+      "russian_name": "Смещение ожиданий",
+      "english_name": "Expectation bias",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We are drawn to details that confirm our own existing beliefs",
+      "published": false
+    },
+    {
+      "slug": "ostrich-effect",
+      "russian_name": "Эффект страуса",
+      "english_name": "Ostrich effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We are drawn to details that confirm our own existing beliefs",
+      "published": false
+    },
+    {
+      "slug": "subjective-validation",
+      "russian_name": "Субъективная валидация",
+      "english_name": "Subjective validation",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We are drawn to details that confirm our own existing beliefs",
+      "published": false
+    },
+    {
+      "slug": "continued-influence-effect",
+      "russian_name": "Эффект продолжающегося влияния",
+      "english_name": "Continued influence effect",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We are drawn to details that confirm our own existing beliefs",
+      "published": false
+    },
+    {
+      "slug": "semmelweis-reflex",
+      "russian_name": "Рефлекс Земмельвейса",
+      "english_name": "Semmelweis reflex",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We are drawn to details that confirm our own existing beliefs",
+      "published": false
+    },
+    {
+      "slug": "bias-blind-spot",
+      "russian_name": "Слепое пятно предвзятости",
+      "english_name": "Bias blind spot",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice flaws in others more easily than flaws in ourselves",
+      "published": false
+    },
+    {
+      "slug": "naive-cynicism",
+      "russian_name": "Наивный цинизм",
+      "english_name": "Naïve cynicism",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice flaws in others more easily than flaws in ourselves",
+      "published": false
+    },
+    {
+      "slug": "naive-realism",
+      "russian_name": "Наивный реализм",
+      "english_name": "Naïve realism",
+      "catalogue_category": "Слишком много информации",
+      "detail_category": "Когда информации слишком много",
+      "problem": "Too Much Information",
+      "source_category": "We notice flaws in others more easily than flaws in ourselves",
+      "published": false
+    },
+    {
+      "slug": "confabulation",
+      "russian_name": "Конфабуляция",
+      "english_name": "Confabulation",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We find stories and patterns even in sparse data",
+      "published": false
+    },
+    {
+      "slug": "clustering-illusion",
+      "russian_name": "Иллюзия кластеризации",
+      "english_name": "Clustering illusion",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We find stories and patterns even in sparse data",
+      "published": false
+    },
+    {
+      "slug": "insensitivity-to-sample-size",
+      "russian_name": "Нечувствительность к размеру выборки",
+      "english_name": "Insensitivity to sample size",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We find stories and patterns even in sparse data",
+      "published": false
+    },
+    {
+      "slug": "neglect-of-probability",
+      "russian_name": "Пренебрежение вероятностью",
+      "english_name": "Neglect of probability",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We find stories and patterns even in sparse data",
+      "published": false
+    },
+    {
+      "slug": "anecdotal-fallacy",
+      "russian_name": "Анекдотическая ошибка",
+      "english_name": "Anecdotal fallacy",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We find stories and patterns even in sparse data",
+      "published": false
+    },
+    {
+      "slug": "illusion-of-validity",
+      "russian_name": "Иллюзия валидности",
+      "english_name": "Illusion of validity",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We find stories and patterns even in sparse data",
+      "published": false
+    },
+    {
+      "slug": "maskedman-fallacy",
+      "russian_name": "Ошибка «замаскированного человека»",
+      "english_name": "Masked–man fallacy",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We find stories and patterns even in sparse data",
+      "published": false
+    },
+    {
+      "slug": "recency-illusion",
+      "russian_name": "Иллюзия недавности",
+      "english_name": "Recency illusion",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We find stories and patterns even in sparse data",
+      "published": false
+    },
+    {
+      "slug": "gambler-s-fallacy",
+      "russian_name": "Ошибка игрока",
+      "english_name": "Gambler's fallacy",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We find stories and patterns even in sparse data",
+      "published": false
+    },
+    {
+      "slug": "hothand-fallacy",
+      "russian_name": "Ошибка «горячей руки»",
+      "english_name": "Hot–hand fallacy",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We find stories and patterns even in sparse data",
+      "published": false
+    },
+    {
+      "slug": "illusory-correlation",
+      "russian_name": "Иллюзорная корреляция",
+      "english_name": "Illusory correlation",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We find stories and patterns even in sparse data",
+      "published": false
+    },
+    {
+      "slug": "pareidolia",
+      "russian_name": "Парейдолия",
+      "english_name": "Pareidolia",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We find stories and patterns even in sparse data",
+      "published": false
+    },
+    {
+      "slug": "anthropomorphism",
+      "russian_name": "Антропоморфизм",
+      "english_name": "Anthropomorphism",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We find stories and patterns even in sparse data",
+      "published": false
+    },
+    {
+      "slug": "group-attribution-error",
+      "russian_name": "Ошибка групповой атрибуции",
+      "english_name": "Group attribution error",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We fill in characteristics from stereotypes, generalities, and prior histories",
+      "published": false
+    },
+    {
+      "slug": "ultimate-attribution-error",
+      "russian_name": "Конечная ошибка атрибуции",
+      "english_name": "Ultimate attribution error",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We fill in characteristics from stereotypes, generalities, and prior histories",
+      "published": false
+    },
+    {
+      "slug": "stereotyping",
+      "russian_name": "Стереотипизация",
+      "english_name": "Stereotyping",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We fill in characteristics from stereotypes, generalities, and prior histories",
+      "published": false
+    },
+    {
+      "slug": "essentialism",
+      "russian_name": "Эссенциализм",
+      "english_name": "Essentialism",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We fill in characteristics from stereotypes, generalities, and prior histories",
+      "published": false
+    },
+    {
+      "slug": "functional-fixedness",
+      "russian_name": "Функциональная фиксированность",
+      "english_name": "Functional fixedness",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We fill in characteristics from stereotypes, generalities, and prior histories",
+      "published": false
+    },
+    {
+      "slug": "moral-credential-effect",
+      "russian_name": "Эффект морального разрешения",
+      "english_name": "Moral credential effect",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We fill in characteristics from stereotypes, generalities, and prior histories",
+      "published": false
+    },
+    {
+      "slug": "justworld-hypothesis",
+      "russian_name": "Гипотеза справедливого мира",
+      "english_name": "Just–world hypothesis",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We fill in characteristics from stereotypes, generalities, and prior histories",
+      "published": false
+    },
+    {
+      "slug": "argument-from-fallacy",
+      "russian_name": "Аргумент от ошибки",
+      "english_name": "Argument from fallacy",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We fill in characteristics from stereotypes, generalities, and prior histories",
+      "published": false
+    },
+    {
+      "slug": "authority-bias",
+      "russian_name": "Смещение авторитетом",
+      "english_name": "Authority bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We fill in characteristics from stereotypes, generalities, and prior histories",
+      "published": false
+    },
+    {
+      "slug": "automation-bias",
+      "russian_name": "Смещение автоматизации",
+      "english_name": "Automation bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We fill in characteristics from stereotypes, generalities, and prior histories",
+      "published": false
+    },
+    {
+      "slug": "bandwagon-effect",
+      "russian_name": "Эффект присоединения к большинству",
+      "english_name": "Bandwagon effect",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We fill in characteristics from stereotypes, generalities, and prior histories",
+      "published": false
+    },
+    {
+      "slug": "placebo-effect",
+      "russian_name": "Эффект плацебо",
+      "english_name": "Placebo effect",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We fill in characteristics from stereotypes, generalities, and prior histories",
+      "published": false
+    },
+    {
+      "slug": "outgroup-homogeneity-bias",
+      "russian_name": "Смещение однородности чужой группы",
+      "english_name": "Out–group homogeneity bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We imagine things and people we're familiar with or fond of as better",
+      "published": false
+    },
+    {
+      "slug": "crossrace-effect",
+      "russian_name": "Эффект другой расы",
+      "english_name": "Cross–race effect",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We imagine things and people we're familiar with or fond of as better",
+      "published": false
+    },
+    {
+      "slug": "ingroup-favoritism",
+      "russian_name": "Фаворитизм к своей группе",
+      "english_name": "In–group favoritism",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We imagine things and people we're familiar with or fond of as better",
+      "published": false
+    },
+    {
+      "slug": "halo-effect",
+      "russian_name": "Эффект ореола",
+      "english_name": "Halo effect",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We imagine things and people we're familiar with or fond of as better",
+      "published": false
+    },
+    {
+      "slug": "cheerleader-effect",
+      "russian_name": "Эффект группы поддержки",
+      "english_name": "Cheerleader effect",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We imagine things and people we're familiar with or fond of as better",
+      "published": false
+    },
+    {
+      "slug": "positivity-effect",
+      "russian_name": "Эффект позитивности",
+      "english_name": "Positivity effect",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We imagine things and people we're familiar with or fond of as better",
+      "published": false
+    },
+    {
+      "slug": "not-invented-here",
+      "russian_name": "Синдром «изобретено не здесь»",
+      "english_name": "Not invented here",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We imagine things and people we're familiar with or fond of as better",
+      "published": false
+    },
+    {
+      "slug": "reactive-devaluation",
+      "russian_name": "Реактивное обесценивание",
+      "english_name": "Reactive devaluation",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We imagine things and people we're familiar with or fond of as better",
+      "published": false
+    },
+    {
+      "slug": "welltraveled-road-effect",
+      "russian_name": "Эффект знакомой дороги",
+      "english_name": "Well–traveled road effect",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We imagine things and people we're familiar with or fond of as better",
+      "published": false
+    },
+    {
+      "slug": "mental-accounting",
+      "russian_name": "Ментальный учёт",
+      "english_name": "Mental accounting",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We simplify probabilities and numbers to make them easier to think about",
+      "published": false
+    },
+    {
+      "slug": "appeal-to-probability-fallacy",
+      "russian_name": "Ошибка апелляции к вероятности",
+      "english_name": "Appeal to probability fallacy",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We simplify probabilities and numbers to make them easier to think about",
+      "published": false
+    },
+    {
+      "slug": "normalcy-bias",
+      "russian_name": "Смещение нормальности",
+      "english_name": "Normalcy bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We simplify probabilities and numbers to make them easier to think about",
+      "published": false
+    },
+    {
+      "slug": "murphy-s-law",
+      "russian_name": "Закон Мёрфи",
+      "english_name": "Murphy's Law",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We simplify probabilities and numbers to make them easier to think about",
+      "published": false
+    },
+    {
+      "slug": "zero-sum-bias",
+      "russian_name": "Смещение нулевой суммы",
+      "english_name": "Zero sum bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We simplify probabilities and numbers to make them easier to think about",
+      "published": false
+    },
+    {
+      "slug": "survivorship-bias",
+      "russian_name": "Ошибка выжившего",
+      "english_name": "Survivorship bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We simplify probabilities and numbers to make them easier to think about",
+      "published": false
+    },
+    {
+      "slug": "subadditivity-effect",
+      "russian_name": "Эффект субаддитивности",
+      "english_name": "Subadditivity effect",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We simplify probabilities and numbers to make them easier to think about",
+      "published": false
+    },
+    {
+      "slug": "denomination-effect",
+      "russian_name": "Эффект номинала",
+      "english_name": "Denomination effect",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We simplify probabilities and numbers to make them easier to think about",
+      "published": false
+    },
+    {
+      "slug": "the-magical-number-7-2",
+      "russian_name": "«Магическое число» 7 ± 2",
+      "english_name": "The magical number 7 ± 2",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We simplify probabilities and numbers to make them easier to think about",
+      "published": false
+    },
+    {
+      "slug": "illusion-of-transparency",
+      "russian_name": "Иллюзия прозрачности",
+      "english_name": "Illusion of transparency",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We think we know what other people are thinking",
+      "published": false
+    },
+    {
+      "slug": "curse-of-knowledge",
+      "russian_name": "Проклятие знания",
+      "english_name": "Curse of knowledge",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We think we know what other people are thinking",
+      "published": false
+    },
+    {
+      "slug": "spotlight-effect",
+      "russian_name": "Эффект прожектора",
+      "english_name": "Spotlight effect",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We think we know what other people are thinking",
+      "published": false
+    },
+    {
+      "slug": "extrinsic-incentive-error",
+      "russian_name": "Ошибка внешнего стимула",
+      "english_name": "Extrinsic incentive error",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We think we know what other people are thinking",
+      "published": false
+    },
+    {
+      "slug": "illusion-of-external-agency",
+      "russian_name": "Иллюзия внешней агентности",
+      "english_name": "Illusion of external agency",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We think we know what other people are thinking",
+      "published": false
+    },
+    {
+      "slug": "illusion-of-asymmetric-insight",
+      "russian_name": "Иллюзия асимметричного понимания",
+      "english_name": "Illusion of asymmetric insight",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We think we know what other people are thinking",
+      "published": false
+    },
+    {
+      "slug": "telescoping-effect",
+      "russian_name": "Эффект телескопирования",
+      "english_name": "Telescoping effect",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "rosy-retrospection",
+      "russian_name": "Радужная ретроспекция",
+      "english_name": "Rosy retrospection",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "hindsight-bias",
+      "russian_name": "Ошибка ретроспективного взгляда",
+      "english_name": "Hindsight bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "outcome-bias",
+      "russian_name": "Смещение результата",
+      "english_name": "Outcome bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "moral-luck",
+      "russian_name": "Моральная удача",
+      "english_name": "Moral luck",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "declinism",
+      "russian_name": "Деклинизм",
+      "english_name": "Declinism",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "impact-bias",
+      "russian_name": "Смещение влияния",
+      "english_name": "Impact bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "pessimism-bias",
+      "russian_name": "Пессимистическое смещение",
+      "english_name": "Pessimism bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "planning-fallacy",
+      "russian_name": "Ошибка планирования",
+      "english_name": "Planning fallacy",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "timesaving-bias",
+      "russian_name": "Смещение экономии времени",
+      "english_name": "Time–saving bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "proinnovation-bias",
+      "russian_name": "Смещение в пользу инноваций",
+      "english_name": "Pro–innovation bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "projection-bias",
+      "russian_name": "Смещение проекции",
+      "english_name": "Projection bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "restraint-bias",
+      "russian_name": "Смещение самоконтроля",
+      "english_name": "Restraint bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "selfconsistency-bias",
+      "russian_name": "Смещение самосогласованности",
+      "english_name": "Self–consistency bias",
+      "catalogue_category": "Не хватает смысла",
+      "detail_category": "Когда не хватает смысла",
+      "problem": "Not Enough Meaning",
+      "source_category": "We project our current mindset and assumptions onto the past and future",
+      "published": false
+    },
+    {
+      "slug": "overconfidence-effect",
+      "russian_name": "Эффект чрезмерной уверенности",
+      "english_name": "Overconfidence effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "social-desirability-bias",
+      "russian_name": "Смещение социальной желательности",
+      "english_name": "Social desirability bias",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "thirdperson-effect",
+      "russian_name": "Эффект третьего лица",
+      "english_name": "Third–person effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "false-consensus-effect",
+      "russian_name": "Эффект ложного консенсуса",
+      "english_name": "False consensus effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "hardeasy-effect",
+      "russian_name": "Эффект «трудно—легко»",
+      "english_name": "Hard–easy effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "lake-wobegone-effect",
+      "russian_name": "Эффект Лейк-Уобегон",
+      "english_name": "Lake Wobegone effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "dunningkruger-effect",
+      "russian_name": "Эффект Даннинга—Крюгера",
+      "english_name": "Dunning–Kruger effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "egocentric-bias",
+      "russian_name": "Эгоцентрическое смещение",
+      "english_name": "Egocentric bias",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "optimism-bias",
+      "russian_name": "Оптимистическое смещение",
+      "english_name": "Optimism bias",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "forer-effect",
+      "russian_name": "Эффект Форера",
+      "english_name": "Forer effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "barnum-effect",
+      "russian_name": "Эффект Барнума",
+      "english_name": "Barnum effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "selfserving-bias",
+      "russian_name": "Смещение в пользу себя",
+      "english_name": "Self–serving bias",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "actorobserver-bias",
+      "russian_name": "Смещение «актор—наблюдатель»",
+      "english_name": "Actor–observer bias",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "illusion-of-control",
+      "russian_name": "Иллюзия контроля",
+      "english_name": "Illusion of control",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "illusory-superiority",
+      "russian_name": "Иллюзорное превосходство",
+      "english_name": "Illusory superiority",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "fundamental-attribution-error",
+      "russian_name": "Фундаментальная ошибка атрибуции",
+      "english_name": "Fundamental attribution error",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "defensive-attribution-hypothesis",
+      "russian_name": "Гипотеза защитной атрибуции",
+      "english_name": "Defensive attribution hypothesis",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "trait-ascription-bias",
+      "russian_name": "Смещение приписывания черт",
+      "english_name": "Trait ascription bias",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "effort-justification",
+      "russian_name": "Оправдание усилий",
+      "english_name": "Effort justification",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "risk-compensation",
+      "russian_name": "Компенсация риска",
+      "english_name": "Risk compensation",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "peltzman-effect",
+      "russian_name": "Эффект Пельцмана",
+      "english_name": "Peltzman effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To act, we must be confident we can make an impact and feel what we do is important",
+      "published": false
+    },
+    {
+      "slug": "hyperbolic-discounting",
+      "russian_name": "Гиперболическое дисконтирование",
+      "english_name": "Hyperbolic discounting",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To stay focused, we favor the immediate, relatable thing in front of us",
+      "published": false
+    },
+    {
+      "slug": "appeal-to-novelty",
+      "russian_name": "Апелляция к новизне",
+      "english_name": "Appeal to novelty",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To stay focused, we favor the immediate, relatable thing in front of us",
+      "published": false
+    },
+    {
+      "slug": "identifiable-victim-effect",
+      "russian_name": "Эффект идентифицируемой жертвы",
+      "english_name": "Identifiable victim effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To stay focused, we favor the immediate, relatable thing in front of us",
+      "published": false
+    },
+    {
+      "slug": "sunk-cost-fallacy",
+      "russian_name": "Ошибка невозвратных затрат",
+      "english_name": "Sunk cost fallacy",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To get anything done, we tend to complete things we've invested time & energy in",
+      "published": false
+    },
+    {
+      "slug": "irrational-escalation",
+      "russian_name": "Иррациональная эскалация",
+      "english_name": "Irrational escalation",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To get anything done, we tend to complete things we've invested time & energy in",
+      "published": false
+    },
+    {
+      "slug": "escalation-of-commitment",
+      "russian_name": "Эскалация обязательств",
+      "english_name": "Escalation of commitment",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To get anything done, we tend to complete things we've invested time & energy in",
+      "published": false
+    },
+    {
+      "slug": "generation-effect",
+      "russian_name": "Эффект генерации",
+      "english_name": "Generation effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To get anything done, we tend to complete things we've invested time & energy in",
+      "published": false
+    },
+    {
+      "slug": "loss-aversion",
+      "russian_name": "Неприятие потерь",
+      "english_name": "Loss aversion",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To get anything done, we tend to complete things we've invested time & energy in",
+      "published": false
+    },
+    {
+      "slug": "ikea-effect",
+      "russian_name": "Эффект IKEA",
+      "english_name": "IKEA effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To get anything done, we tend to complete things we've invested time & energy in",
+      "published": false
+    },
+    {
+      "slug": "unit-bias",
+      "russian_name": "Смещение единицы",
+      "english_name": "Unit bias",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To get anything done, we tend to complete things we've invested time & energy in",
+      "published": false
+    },
+    {
+      "slug": "zerorisk-bias",
+      "russian_name": "Смещение к нулевому риску",
+      "english_name": "Zero–risk bias",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To get anything done, we tend to complete things we've invested time & energy in",
+      "published": false
+    },
+    {
+      "slug": "disposition-effect",
+      "russian_name": "Эффект диспозиции",
+      "english_name": "Disposition effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To get anything done, we tend to complete things we've invested time & energy in",
+      "published": false
+    },
+    {
+      "slug": "pseudocertainty-effect",
+      "russian_name": "Эффект псевдоуверенности",
+      "english_name": "Pseudocertainty effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To get anything done, we tend to complete things we've invested time & energy in",
+      "published": false
+    },
+    {
+      "slug": "processing-difficulty-effect",
+      "russian_name": "Эффект трудности обработки",
+      "english_name": "Processing difficulty effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To get anything done, we tend to complete things we've invested time & energy in",
+      "published": false
+    },
+    {
+      "slug": "endowment-effect",
+      "russian_name": "Эффект владения",
+      "english_name": "Endowment effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To get anything done, we tend to complete things we've invested time & energy in",
+      "published": false
+    },
+    {
+      "slug": "backfire-effect",
+      "russian_name": "Эффект обратного результата",
+      "english_name": "Backfire effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To get anything done, we tend to complete things we've invested time & energy in",
+      "published": false
+    },
+    {
+      "slug": "system-justification",
+      "russian_name": "Оправдание системы",
+      "english_name": "System justification",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To avoid mistakes, we tend to preserve our autonomy and group status, and avoid irreversible decisions",
+      "published": false
+    },
+    {
+      "slug": "reverse-psychology",
+      "russian_name": "Обратная психология",
+      "english_name": "Reverse psychology",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To avoid mistakes, we tend to preserve our autonomy and group status, and avoid irreversible decisions",
+      "published": false
+    },
+    {
+      "slug": "reactance",
+      "russian_name": "Реактивное сопротивление",
+      "english_name": "Reactance",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To avoid mistakes, we tend to preserve our autonomy and group status, and avoid irreversible decisions",
+      "published": false
+    },
+    {
+      "slug": "decoy-effect",
+      "russian_name": "Эффект приманки",
+      "english_name": "Decoy effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To avoid mistakes, we tend to preserve our autonomy and group status, and avoid irreversible decisions",
+      "published": false
+    },
+    {
+      "slug": "social-comparison-effect",
+      "russian_name": "Эффект социального сравнения",
+      "english_name": "Social comparison effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To avoid mistakes, we tend to preserve our autonomy and group status, and avoid irreversible decisions",
+      "published": false
+    },
+    {
+      "slug": "status-quo-bias",
+      "russian_name": "Смещение статус-кво",
+      "english_name": "Status quo bias",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "To avoid mistakes, we tend to preserve our autonomy and group status, and avoid irreversible decisions",
+      "published": false
+    },
+    {
+      "slug": "ambiguity-bias",
+      "russian_name": "Смещение неоднозначности",
+      "english_name": "Ambiguity bias",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "We favor options that appear simple or have more complete information over more complex, ambiguous options",
+      "published": false
+    },
+    {
+      "slug": "information-bias",
+      "russian_name": "Информационное смещение",
+      "english_name": "Information bias",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "We favor options that appear simple or have more complete information over more complex, ambiguous options",
+      "published": false
+    },
+    {
+      "slug": "belief-bias",
+      "russian_name": "Смещение убеждений",
+      "english_name": "Belief bias",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "We favor options that appear simple or have more complete information over more complex, ambiguous options",
+      "published": false
+    },
+    {
+      "slug": "rhymeasreason-effect",
+      "russian_name": "Эффект «рифма как причина»",
+      "english_name": "Rhyme–as–reason effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "We favor options that appear simple or have more complete information over more complex, ambiguous options",
+      "published": false
+    },
+    {
+      "slug": "bikeshedding-effect",
+      "russian_name": "Эффект «покраски сарая»",
+      "english_name": "Bike–shedding effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "We favor options that appear simple or have more complete information over more complex, ambiguous options",
+      "published": false
+    },
+    {
+      "slug": "law-of-triviality",
+      "russian_name": "Закон тривиальности",
+      "english_name": "Law of Triviality",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "We favor options that appear simple or have more complete information over more complex, ambiguous options",
+      "published": false
+    },
+    {
+      "slug": "conjunction-fallacy",
+      "russian_name": "Ошибка конъюнкции",
+      "english_name": "Conjunction fallacy",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "We favor options that appear simple or have more complete information over more complex, ambiguous options",
+      "published": false
+    },
+    {
+      "slug": "occam-s-razor",
+      "russian_name": "Бритва Оккама",
+      "english_name": "Occam's razor",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "We favor options that appear simple or have more complete information over more complex, ambiguous options",
+      "published": false
+    },
+    {
+      "slug": "lessisbetter-effect",
+      "russian_name": "Эффект «меньше — лучше»",
+      "english_name": "Less–is–better effect",
+      "catalogue_category": "Нужно действовать",
+      "detail_category": "Когда нужно действовать быстро",
+      "problem": "Need To Act Fast",
+      "source_category": "We favor options that appear simple or have more complete information over more complex, ambiguous options",
+      "published": false
+    },
+    {
+      "slug": "misattribution-of-memory",
+      "russian_name": "Ошибочная атрибуция памяти",
+      "english_name": "Misattribution of memory",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We edit and reinforce some memories after the fact",
+      "published": false
+    },
+    {
+      "slug": "source-confusion",
+      "russian_name": "Путаница источников",
+      "english_name": "Source confusion",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We edit and reinforce some memories after the fact",
+      "published": false
+    },
+    {
+      "slug": "cryptomnesia",
+      "russian_name": "Криптомнезия",
+      "english_name": "Cryptomnesia",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We edit and reinforce some memories after the fact",
+      "published": false
+    },
+    {
+      "slug": "false-memory",
+      "russian_name": "Ложная память",
+      "english_name": "False memory",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We edit and reinforce some memories after the fact",
+      "published": false
+    },
+    {
+      "slug": "suggestibility",
+      "russian_name": "Внушаемость",
+      "english_name": "Suggestibility",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We edit and reinforce some memories after the fact",
+      "published": false
+    },
+    {
+      "slug": "spacing-effect",
+      "russian_name": "Эффект распределённой практики",
+      "english_name": "Spacing effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We edit and reinforce some memories after the fact",
+      "published": false
+    },
+    {
+      "slug": "implicit-association",
+      "russian_name": "Неявная ассоциация",
+      "english_name": "Implicit association",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We discard specifics to form generalities",
+      "published": false
+    },
+    {
+      "slug": "implicit-stereotypes",
+      "russian_name": "Неявные стереотипы",
+      "english_name": "Implicit stereotypes",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We discard specifics to form generalities",
+      "published": false
+    },
+    {
+      "slug": "stereotypical-bias",
+      "russian_name": "Стереотипное смещение",
+      "english_name": "Stereotypical bias",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We discard specifics to form generalities",
+      "published": false
+    },
+    {
+      "slug": "prejudice",
+      "russian_name": "Предубеждение",
+      "english_name": "Prejudice",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We discard specifics to form generalities",
+      "published": false
+    },
+    {
+      "slug": "negativity-bias-memory",
+      "russian_name": "Негативное смещение",
+      "english_name": "Negativity bias",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We discard specifics to form generalities",
+      "published": false
+    },
+    {
+      "slug": "fading-affect-bias",
+      "russian_name": "Смещение угасания аффекта",
+      "english_name": "Fading affect bias",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We discard specifics to form generalities",
+      "published": false
+    },
+    {
+      "slug": "peakend-rule",
+      "russian_name": "Правило пика—конца",
+      "english_name": "Peak–end rule",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We reduce events and lists to their key elements",
+      "published": false
+    },
+    {
+      "slug": "leveling-and-sharpening",
+      "russian_name": "Сглаживание и заострение",
+      "english_name": "Leveling and sharpening",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We reduce events and lists to their key elements",
+      "published": false
+    },
+    {
+      "slug": "misinformation-effect",
+      "russian_name": "Эффект дезинформации",
+      "english_name": "Misinformation effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We reduce events and lists to their key elements",
+      "published": false
+    },
+    {
+      "slug": "serial-recall-effect",
+      "russian_name": "Эффект серийного воспроизведения",
+      "english_name": "Serial recall effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We reduce events and lists to their key elements",
+      "published": false
+    },
+    {
+      "slug": "listlength-effect",
+      "russian_name": "Эффект длины списка",
+      "english_name": "List–length effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We reduce events and lists to their key elements",
+      "published": false
+    },
+    {
+      "slug": "duration-neglect",
+      "russian_name": "Пренебрежение длительностью",
+      "english_name": "Duration neglect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We reduce events and lists to their key elements",
+      "published": false
+    },
+    {
+      "slug": "modality-effect",
+      "russian_name": "Эффект модальности",
+      "english_name": "Modality effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We reduce events and lists to their key elements",
+      "published": false
+    },
+    {
+      "slug": "memory-inhibition",
+      "russian_name": "Торможение памяти",
+      "english_name": "Memory inhibition",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We reduce events and lists to their key elements",
+      "published": false
+    },
+    {
+      "slug": "primacy-effect",
+      "russian_name": "Эффект первичности",
+      "english_name": "Primacy effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We reduce events and lists to their key elements",
+      "published": false
+    },
+    {
+      "slug": "recency-effect",
+      "russian_name": "Эффект недавности",
+      "english_name": "Recency effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We reduce events and lists to their key elements",
+      "published": false
+    },
+    {
+      "slug": "partset-cueing-effect",
+      "russian_name": "Эффект подсказки частью набора",
+      "english_name": "Part–set cueing effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We reduce events and lists to their key elements",
+      "published": false
+    },
+    {
+      "slug": "serialposition-effect",
+      "russian_name": "Эффект последовательной позиции",
+      "english_name": "Serial–position effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We reduce events and lists to their key elements",
+      "published": false
+    },
+    {
+      "slug": "suffix-effect",
+      "russian_name": "Эффект суффикса",
+      "english_name": "Suffix effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We reduce events and lists to their key elements",
+      "published": false
+    },
+    {
+      "slug": "levelsofprocessing-effect",
+      "russian_name": "Эффект уровней обработки",
+      "english_name": "Levels–of–processing effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We store memories differently based on how they were experienced",
+      "published": false
+    },
+    {
+      "slug": "absentmindedness",
+      "russian_name": "Рассеянность",
+      "english_name": "Absent–mindedness",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We store memories differently based on how they were experienced",
+      "published": false
+    },
+    {
+      "slug": "testing-effect",
+      "russian_name": "Эффект тестирования",
+      "english_name": "Testing effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We store memories differently based on how they were experienced",
+      "published": false
+    },
+    {
+      "slug": "nextinline-effect",
+      "russian_name": "Эффект следующего в очереди",
+      "english_name": "Next–in–line effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We store memories differently based on how they were experienced",
+      "published": false
+    },
+    {
+      "slug": "google-effect",
+      "russian_name": "Эффект Google",
+      "english_name": "Google effect",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We store memories differently based on how they were experienced",
+      "published": false
+    },
+    {
+      "slug": "tip-of-the-tongue-phenomenon",
+      "russian_name": "Феномен «на кончике языка»",
+      "english_name": "Tip of the tongue phenomenon",
+      "catalogue_category": "Что мы запоминаем",
+      "detail_category": "Когда мы решаем, что запомнить",
+      "problem": "What Should We Remember?",
+      "source_category": "We store memories differently based on how they were experienced",
+      "published": false
+    }
+  ]
+}

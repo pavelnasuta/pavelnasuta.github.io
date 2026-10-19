@@ -22,6 +22,24 @@ class BiasesPreviewTests(unittest.TestCase):
         self.assertNotIn("в сборке", html)
         self.assertNotIn("черновая сборка", html)
 
+    def test_catalog_contains_only_published_registry_cards(self):
+        import json
+
+        items = json.loads(
+            (ROOT / "content" / "biases" / "catalogue.json").read_text(encoding="utf-8")
+        )["items"]
+        published = [item for item in items if item["published"]]
+        html = CATALOG.read_text(encoding="utf-8")
+
+        self.assertEqual(html.count('<a class="bias-row"'), len(published))
+        for item in items:
+            with self.subTest(slug=item["slug"]):
+                href = f'href="{item["slug"]}/index.html"'
+                if item["published"]:
+                    self.assertIn(href, html)
+                else:
+                    self.assertNotIn(href, html)
+
     def test_catalog_is_not_added_to_primary_navigation(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertNotIn('href="biases/', home)
