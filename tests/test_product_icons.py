@@ -22,7 +22,7 @@ class ProductIconsTest(unittest.TestCase):
 
     def test_compact_icons_do_not_reflow_product_card_dimensions(self):
         self.assertIn('.product-title{display:flex;align-items:center;gap:10px}', STYLES)
-        self.assertIn('.product-title__icon{width:38px;height:38px;flex:0 0 38px;border-radius:11px', STYLES)
+        self.assertIn('.product-title__icon{width:19px;height:19px;flex:0 0 19px;border-radius:6px', STYLES)
 
 
 if __name__ == "__main__":
