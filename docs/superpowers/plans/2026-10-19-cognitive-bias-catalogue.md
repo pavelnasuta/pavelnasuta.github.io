@@ -31,20 +31,22 @@
 - Modify: `tests/test_biases_preview.py`
 
 **Interfaces:**
-- `content/biases/catalogue.json` is a JSON object with `items`, an array of 188 card objects.
+- `content/biases/catalogue.json` is a JSON object with `items`, an array of 188 identity objects; only entries with `published: true` must contain the complete editorial fields and may be rendered.
 - Every card has `slug`, `russian_name`, `english_name`, `catalogue_category`, `detail_category`, `problem`, `lede`, `scenario`, `mechanism`, `watch_for`, `helps`, `status_note`, `sources`, `seo`, and `diagram`.
 - `tools/build_biases.py` exposes `load_catalogue(path)`, `validate_catalogue(items)`, `render_detail(item, previous, next_item)`, and `build(root, catalogue)`.
 
 - [ ] **Step 1: Write the failing registry-contract tests**
 
 ```python
-def test_catalogue_has_exactly_188_unique_complete_items(self):
+def test_catalogue_has_exactly_188_unique_identities_and_complete_published_items(self):
     items = json.loads((ROOT / 'content/biases/catalogue.json').read_text())['items']
     self.assertEqual(len(items), 188)
     self.assertEqual(len({item['slug'] for item in items}), 188)
     for item in items:
-        self.assertTrue(item['sources'])
-        self.assertIn(item['detail_category'], DETAIL_CATEGORIES)
+        self.assertTrue(item['russian_name'])
+        if item['published']:
+            self.assertTrue(item['sources'])
+            self.assertIn(item['detail_category'], DETAIL_CATEGORIES)
 ```
 
 - [ ] **Step 2: Run the contract tests and verify the expected failure**
