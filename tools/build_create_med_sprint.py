@@ -232,15 +232,6 @@ def render_guide_with_materials() -> str:
 
 def main() -> None:
     rendered: list[str] = [render_guide_with_materials()]
-    rendered.append(
-        '<section class="material">'
-        '<details class="material-details pdf-source">'
-        f'<summary><span>Полнота материала</span><strong class="disclosure-title">Текстовая версия PDF-раздатки</strong>{DISCLOSURE_ICON}</summary>'
-        '<div class="material-body"><p>Этот блок сохраняет полный извлечённый текст оригинальной раздатки. Для чтения используйте инструкцию выше; для печати и передачи — скачайте PDF.</p>'
-        f'<pre class="pdf-text">{escape(PDF_TEXT.read_text(encoding="utf-8"))}</pre>'
-        '</div></details></section>'
-    )
-    rendered.append(contact_section())
 
     page = f"""<!doctype html>
 <html lang="ru">

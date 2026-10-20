@@ -41,16 +41,15 @@ class CreateMedSprintPageTests(unittest.TestCase):
             self.assertIn(contact_url, html)
 
         required_guide_sections = (
-            "Что вы реально получите",
-            "Три инструмента — три разные роли",
+            "Зачем нужен этот спринт",
+            "Инструменты: кто за что отвечает",
             "Правило трёх статусов",
-            "Сделайте быстрый, но честный ресёрч",
+            "Сделайте только нужный ресёрч",
             "Медицинские и этические границы",
-            "Финальная проверка",
-            "Приложение. Библиотека промптов",
+            "Финальный чек-лист",
             "Рабочая карта концепции",
-            "Как устроить работу в ChatGPT Project",
-            "Продуктовый тезаурус CREATE MED Sprint",
+            "Как работать в ChatGPT Project",
+            "Полный продуктовый тезаурус",
         )
         for section in required_guide_sections:
             self.assertIn(section, html)
@@ -81,17 +80,13 @@ class CreateMedSprintPageTests(unittest.TestCase):
         self.assertEqual(coach.count('class="coach-contact-icon"'), 3)
         self.assertGreaterEqual(coach.count("<svg"), 3)
 
-        contacts = html[html.index('class="contact-section"'):html.index("</section>", html.index('class="contact-section"'))]
-        for item in (
-            "НИИ «МОЗГИ»",
-            "Персональный тренер для вашего агента",
-            "Павел Насута — AI-powered product builder",
-            "https://t.me/niimozgii",
-            "https://t.me/pavelnasuta",
-            "https://www.linkedin.com/in/nasuta",
-            "mailto:pavelnasuta@gmail.com",
-        ):
-            self.assertIn(item, contacts)
+    def test_bottom_contact_source_and_pdf_text_blocks_are_removed(self):
+        html = PAGE.read_text(encoding="utf-8")
+        self.assertNotIn('<section class="contact-section"', html)
+        self.assertNotIn('>Контакты</h2>', html)
+        self.assertNotIn('>Sources</h2>', html)
+        self.assertNotIn('Текстовая версия PDF-раздатки', html)
+        self.assertIn('href="../assets/downloads/CREATE_MED_SPRINT_ГИД_ДЛЯ_СТУДЕНТОВ.pdf"', html)
 
     def test_working_materials_are_embedded_at_the_relevant_sprint_steps(self):
         html = PAGE.read_text(encoding="utf-8")
@@ -138,7 +133,7 @@ class CreateMedSprintPageTests(unittest.TestCase):
         self.assertEqual(len(contextual_details), len(materials))
         self.assertTrue(all(" open" not in details for details in contextual_details))
         self.assertEqual(html.count('class="copy"'), 25)
-        self.assertEqual(html.count('class="disclosure-icon"'), len(materials) + 1)
+        self.assertEqual(html.count('class="disclosure-icon"'), len(materials))
         css = CSS.read_text(encoding="utf-8")
         self.assertIn(".disclosure-icon", css)
         self.assertIn(".material-details[open] .disclosure-icon", css)
