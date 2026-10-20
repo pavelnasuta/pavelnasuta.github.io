@@ -11,8 +11,8 @@ COUNTER_ID = "27865374"
 class BiasesPreviewTests(unittest.TestCase):
     def test_catalog_is_a_filterable_list_without_reading_instructions(self):
         html = CATALOG.read_text(encoding="utf-8")
-        self.assertEqual(html.count('class="bias-row"'), 60)
-        self.assertEqual(html.count('<a class="bias-row"'), 60)
+        self.assertEqual(html.count('class="bias-row"'), 80)
+        self.assertEqual(html.count('<a class="bias-row"'), 80)
         self.assertIn("Когнитивные искажения", html)
         self.assertIn("Предвзятость подтверждения", html)
         self.assertIn('id="bias-search"', html)
