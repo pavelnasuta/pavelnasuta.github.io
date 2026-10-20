@@ -11,10 +11,10 @@ SITE = "https://nasuta.ru"
 
 
 class SkillHubQualityTests(unittest.TestCase):
-    def test_home_and_sitemap_link_to_the_hub_and_every_visible_skill(self):
+    def test_home_omits_hub_but_sitemap_lists_it_and_every_visible_skill(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
-        self.assertIn('href="skills/index.html"', home)
+        self.assertNotIn('href="skills/index.html"', home)
         self.assertIn(f"{SITE}/skills/", sitemap)
         for item in public_items(load_registry(ROOT / "data/skills.json")):
             route = item["page_url"].removesuffix("index.html")
