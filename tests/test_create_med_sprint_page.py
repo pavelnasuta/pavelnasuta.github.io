@@ -7,6 +7,7 @@ PAGE = ROOT / "create-med-sprint" / "index.html"
 PDF = ROOT / "assets" / "downloads" / "CREATE_MED_SPRINT_ГИД_ДЛЯ_СТУДЕНТОВ.pdf"
 CSS = ROOT / "assets" / "styles" / "create-med-sprint.css"
 SCRIPT = ROOT / "assets" / "scripts" / "create-med-sprint.js"
+OG_IMAGE = ROOT / "assets" / "images" / "og-create-med-sprint.jpg"
 COUNTER_ID = "27865374"
 
 
@@ -57,6 +58,38 @@ class CreateMedSprintPageTests(unittest.TestCase):
         self.assertNotIn("create-med-sprint", home)
         self.assertIn('href="../create-med-sprint/"', create)
         self.assertIn("https://nasuta.ru/create-med-sprint/", sitemap)
+
+    def test_contact_blocks_use_brand_icons_and_the_page_has_a_dedicated_og_image(self):
+        html = PAGE.read_text(encoding="utf-8")
+        self.assertTrue(OG_IMAGE.is_file())
+        self.assertIn("https://nasuta.ru/assets/images/og-create-med-sprint.jpg", html)
+        self.assertIn('<meta property="og:image:width" content="1200">', html)
+        self.assertIn('<meta property="og:image:height" content="630">', html)
+        self.assertIn('<meta property="og:image:alt" content="CREATE MED Sprint — практический гид для студентов">', html)
+
+        coach = html[html.index('class="coach-card"'):html.index('class="letters med-letters"')]
+        for label in (
+            "Telegram-канал НИИ «МОЗГИ»",
+            "Telegram Павла Насуты",
+            "LinkedIn Павла Насуты",
+            "Написать Павлу по email",
+        ):
+            self.assertIn(f'aria-label="{label}"', coach)
+        self.assertEqual(coach.count("coach-contact-icon"), 4)
+        self.assertGreaterEqual(coach.count("<svg"), 4)
+
+        contacts = html[html.index('id="contact"'):html.index("</section>", html.index('id="contact"'))]
+        for item in (
+            "НИИ «МОЗГИ»",
+            "Персональный тренер для вашего агента",
+            "Павел Насута — AI-powered product builder",
+            "https://t.me/niimozgii",
+            "https://t.me/pavelnasuta",
+            "https://www.linkedin.com/in/nasuta",
+            "mailto:pavelnasuta@gmail.com",
+        ):
+            self.assertIn(item, contacts)
+
 
     def test_prompts_are_embedded_in_the_sprint_flow_without_reference_markers(self):
         html = PAGE.read_text(encoding="utf-8")
