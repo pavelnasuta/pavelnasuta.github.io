@@ -232,6 +232,7 @@ def render_guide_with_materials() -> str:
 
 def main() -> None:
     rendered: list[str] = [render_guide_with_materials()]
+    rendered.append(contact_section())
 
     page = f"""<!doctype html>
 <html lang="ru">

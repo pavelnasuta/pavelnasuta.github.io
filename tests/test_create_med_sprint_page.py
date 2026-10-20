@@ -80,9 +80,11 @@ class CreateMedSprintPageTests(unittest.TestCase):
         self.assertEqual(coach.count('class="coach-contact-icon"'), 3)
         self.assertGreaterEqual(coach.count("<svg"), 3)
 
-    def test_bottom_contact_source_and_pdf_text_blocks_are_removed(self):
+    def test_bottom_personal_trainer_is_present_without_source_or_pdf_text_blocks(self):
         html = PAGE.read_text(encoding="utf-8")
-        self.assertNotIn('<section class="contact-section"', html)
+        bottom_contact = html[html.index('<section class="contact-section"'):]
+        self.assertIn('Персональный тренер для вашего агента', bottom_contact)
+        self.assertIn('https://t.me/niimozgii', bottom_contact)
         self.assertNotIn('>Контакты</h2>', html)
         self.assertNotIn('>Sources</h2>', html)
         self.assertNotIn('Текстовая версия PDF-раздатки', html)
