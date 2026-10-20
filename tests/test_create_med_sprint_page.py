@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 import unittest
 
 
@@ -91,6 +92,49 @@ class CreateMedSprintPageTests(unittest.TestCase):
             "mailto:pavelnasuta@gmail.com",
         ):
             self.assertIn(item, contacts)
+
+    def test_working_materials_are_embedded_at_the_relevant_sprint_steps(self):
+        html = PAGE.read_text(encoding="utf-8")
+
+        def position(text: str) -> int:
+            return html.index(text)
+
+        def material_position(title: str) -> int:
+            return html.index(
+                '<summary><span>Дополнительный материал</span>' + title + "</summary>"
+            )
+
+        step_1 = position("Шаг 1. Создайте Project и главный чат")
+        step_2 = position("Шаг 2. Не переходите к решению")
+        step_3 = position("Шаг 3. Сделайте только нужный ресёрч")
+        step_4 = position("Шаг 4. Сузьте первый сегмент")
+        step_5 = position("Шаг 5. Зафиксируйте Карточку концепции")
+        step_6 = position("Шаг 6. Сделайте простой прототип")
+        step_7 = position("Шаг 7. Подготовьте защиту")
+
+        materials = (
+            ("Системный промпт для ChatGPT Project", step_1, step_2),
+            ("Как работать в ChatGPT Project", step_1, step_2),
+            ("Промпты для Perplexity", step_3, step_4),
+            ("Полный продуктовый тезаурус", step_4, step_5),
+            ("Рабочая карта концепции", step_5, step_6),
+            ("Лендинг и кликабельный прототип", step_6, step_7),
+            ("Визуальная философия", step_6, step_7),
+            ("Питч и защита", step_7, position("5. Медицинские и этические границы")),
+        )
+        for title, before, after in materials:
+            self.assertEqual(html.count('<summary><span>Дополнительный материал</span>' + title + "</summary>"), 1)
+            self.assertLess(before, material_position(title))
+            self.assertLess(material_position(title), after)
+
+        contextual_details = re.findall(
+            r'<section class="material contextual-material"[^>]*>\s*(<details[^>]*>)', html
+        )
+        self.assertEqual(len(contextual_details), len(materials))
+        self.assertTrue(all(" open" not in details for details in contextual_details))
+        self.assertEqual(html.count('class="copy"'), 25)
+        self.assertEqual(html.count('id="materials"'), 1)
+        self.assertIn("</section>\n<hr>\n<h3>5. Медицинские и этические границы", html)
 
 
 if __name__ == "__main__":

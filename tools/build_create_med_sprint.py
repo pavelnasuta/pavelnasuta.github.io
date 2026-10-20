@@ -12,17 +12,42 @@ SOURCE_DIR = ROOT / "content" / "create-med-sprint"
 OUTPUT = ROOT / "create-med-sprint" / "index.html"
 PDF_TEXT = SOURCE_DIR / "CREATE_MED_SPRINT_ГИД_ДЛЯ_СТУДЕНТОВ.txt"
 
-DOCUMENTS = (
-    ("08_ГИД_ДЛЯ_СТУДЕНТОВ.md", "Практический гид для студентов", True),
-    ("01_СИСТЕМНЫЙ_ПРОМПТ_CHATGPT.md", "Системный промпт для ChatGPT Project", False),
-    ("02_ПРОМПТЫ_PERPLEXITY.md", "Промпты для Perplexity", False),
-    ("04_ПРОМПТ_ЛЕНДИНГ_И_ПРОТОТИП.md", "Лендинг и кликабельный прототип", False),
-    ("05_ПИТЧ_И_ЗАЩИТА.md", "Питч и защита", False),
-    ("06_РАБОЧАЯ_КАРТА_КОНЦЕПЦИИ.md", "Рабочая карта концепции", False),
-    ("07_КАК_РАБОТАТЬ_В_CHATGPT_PROJECT.md", "Как работать в ChatGPT Project", False),
-    ("10_ВИЗУАЛЬНАЯ_ФИЛОСОФИЯ.md", "Визуальная философия", False),
-    ("11_ПРОДУКТОВЫЙ_ТЕЗАУРУС.md", "Полный продуктовый тезаурус", False),
-)
+CORE_GUIDE = "08_ГИД_ДЛЯ_СТУДЕНТОВ.md"
+
+MATERIALS = {
+    "01_СИСТЕМНЫЙ_ПРОМПТ_CHATGPT.md": "Системный промпт для ChatGPT Project",
+    "02_ПРОМПТЫ_PERPLEXITY.md": "Промпты для Perplexity",
+    "04_ПРОМПТ_ЛЕНДИНГ_И_ПРОТОТИП.md": "Лендинг и кликабельный прототип",
+    "05_ПИТЧ_И_ЗАЩИТА.md": "Питч и защита",
+    "06_РАБОЧАЯ_КАРТА_КОНЦЕПЦИИ.md": "Рабочая карта концепции",
+    "07_КАК_РАБОТАТЬ_В_CHATGPT_PROJECT.md": "Как работать в ChatGPT Project",
+    "10_ВИЗУАЛЬНАЯ_ФИЛОСОФИЯ.md": "Визуальная философия",
+    "11_ПРОДУКТОВЫЙ_ТЕЗАУРУС.md": "Полный продуктовый тезаурус",
+}
+
+# Place each complete working material immediately after the step that uses it.
+STEP_MATERIALS = {
+    "### Шаг 1. Создайте Project и главный чат": (
+        "01_СИСТЕМНЫЙ_ПРОМПТ_CHATGPT.md",
+        "07_КАК_РАБОТАТЬ_В_CHATGPT_PROJECT.md",
+    ),
+    "### Шаг 3. Сделайте только нужный ресёрч в Perplexity": (
+        "02_ПРОМПТЫ_PERPLEXITY.md",
+    ),
+    "### Шаг 4. Сузьте первый сегмент и сформулируйте оффер": (
+        "11_ПРОДУКТОВЫЙ_ТЕЗАУРУС.md",
+    ),
+    "### Шаг 5. Зафиксируйте Карточку концепции v1": (
+        "06_РАБОЧАЯ_КАРТА_КОНЦЕПЦИИ.md",
+    ),
+    "### Шаг 6. Сделайте простой прототип": (
+        "04_ПРОМПТ_ЛЕНДИНГ_И_ПРОТОТИП.md",
+        "10_ВИЗУАЛЬНАЯ_ФИЛОСОФИЯ.md",
+    ),
+    "### Шаг 7. Подготовьте защиту": (
+        "05_ПИТЧ_И_ЗАЩИТА.md",
+    ),
+}
 
 
 def inline(text: str) -> str:
@@ -169,20 +194,43 @@ ym(27865374, 'init', {clickmap:true, referrer: document.referrer, url: location.
 <!-- /Yandex.Metrika counter -->"""
 
 
+def material_block(filename: str, *, material_id: str = "") -> str:
+    label = MATERIALS[filename]
+    content = render_markdown((SOURCE_DIR / filename).read_text(encoding="utf-8"))
+    identifier = f' id="{material_id}"' if material_id else ""
+    return (
+        f'<section class="material contextual-material"{identifier}>'
+        '<details class="material-details">'
+        f'<summary><span>Дополнительный материал</span>{escape(label)}</summary>'
+        f'<div class="material-body">{content}</div></details></section>'
+    )
+
+
+def render_guide_with_materials() -> str:
+    source = (SOURCE_DIR / CORE_GUIDE).read_text(encoding="utf-8")
+    sections = re.split(r"(?=^### Шаг \d+\. )", source, flags=re.MULTILINE)
+    rendered = [render_markdown(sections[0])]
+    first_material = True
+    for section in sections[1:]:
+        heading = section.split("\n", 1)[0]
+        post_step = ""
+        if heading.startswith("### Шаг 7."):
+            parts = re.split(r"\n---\n(?=\n## 5\. )", section, maxsplit=1)
+            section = parts[0]
+            if len(parts) == 2:
+                post_step = "\n---\n" + parts[1]
+        rendered.append(render_markdown(section))
+        for filename in STEP_MATERIALS.get(heading, ()):
+            material_id = "materials" if first_material else ""
+            rendered.append(material_block(filename, material_id=material_id))
+            first_material = False
+        if post_step:
+            rendered.append(render_markdown(post_step))
+    return '<section class="guide-copy" id="guide"><div class="kicker">Полная инструкция</div>' + "\n".join(rendered) + "</section>"
+
+
 def main() -> None:
-    rendered: list[str] = []
-    for document_index, (filename, label, is_core) in enumerate(DOCUMENTS):
-        content = render_markdown((SOURCE_DIR / filename).read_text(encoding="utf-8"))
-        if is_core:
-            rendered.append(f'<section class="guide-copy" id="guide"><div class="kicker">Полная инструкция</div>{content}</section>')
-        else:
-            material_id = ' id="materials"' if document_index == 1 else ""
-            rendered.append(
-                f'<section class="material"{material_id}>'
-                '<details class="material-details">'
-                f'<summary><span>Дополнительный материал</span>{escape(label)}</summary>'
-                f'<div class="material-body">{content}</div></details></section>'
-            )
+    rendered: list[str] = [render_guide_with_materials()]
     rendered.append(
         '<section class="material">'
         '<details class="material-details pdf-source">'
