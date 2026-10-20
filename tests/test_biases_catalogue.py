@@ -239,6 +239,14 @@ class BiasesCatalogueTests(unittest.TestCase):
                 "primacy-effect",
                 "recency-effect",
                 "partset-cueing-effect",
+                "serialposition-effect",
+                "suffix-effect",
+                "levelsofprocessing-effect",
+                "absentmindedness",
+                "testing-effect",
+                "nextinline-effect",
+                "google-effect",
+                "tip-of-the-tongue-phenomenon",
             },
         )
         for item in published_items:
