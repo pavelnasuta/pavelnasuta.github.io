@@ -12,17 +12,30 @@ SOURCE_DIR = ROOT / "content" / "create-med-sprint"
 OUTPUT = ROOT / "create-med-sprint" / "index.html"
 PDF_TEXT = SOURCE_DIR / "CREATE_MED_SPRINT_ГИД_ДЛЯ_СТУДЕНТОВ.txt"
 
-DOCUMENTS = (
-    ("08_ГИД_ДЛЯ_СТУДЕНТОВ.md", "Практический гид для студентов", True),
-    ("01_СИСТЕМНЫЙ_ПРОМПТ_CHATGPT.md", "Системный промпт для ChatGPT Project", False),
-    ("02_ПРОМПТЫ_PERPLEXITY.md", "Промпты для Perplexity", False),
-    ("04_ПРОМПТ_ЛЕНДИНГ_И_ПРОТОТИП.md", "Лендинг и кликабельный прототип", False),
-    ("05_ПИТЧ_И_ЗАЩИТА.md", "Питч и защита", False),
-    ("06_РАБОЧАЯ_КАРТА_КОНЦЕПЦИИ.md", "Рабочая карта концепции", False),
-    ("07_КАК_РАБОТАТЬ_В_CHATGPT_PROJECT.md", "Как работать в ChatGPT Project", False),
-    ("10_ВИЗУАЛЬНАЯ_ФИЛОСОФИЯ.md", "Визуальная философия", False),
-    ("11_ПРОДУКТОВЫЙ_ТЕЗАУРУС.md", "Полный продуктовый тезаурус", False),
-)
+CORE_GUIDE = "08_ГИД_ДЛЯ_СТУДЕНТОВ.md"
+
+# Full materials appear immediately after the sprint step where they are used.
+STEP_MATERIALS = {
+    "### Шаг 1. Создайте Project и главный чат": (
+        "01_СИСТЕМНЫЙ_ПРОМПТ_CHATGPT.md",
+        "07_КАК_РАБОТАТЬ_В_CHATGPT_PROJECT.md",
+    ),
+    "### Шаг 3. Сделайте только нужный ресёрч в Perplexity": (
+        "02_ПРОМПТЫ_PERPLEXITY.md",
+    ),
+    "### Шаг 5. Зафиксируйте Карточку концепции v1": (
+        "06_РАБОЧАЯ_КАРТА_КОНЦЕПЦИИ.md",
+    ),
+    "### Шаг 6. Сделайте простой прототип": (
+        "04_ПРОМПТ_ЛЕНДИНГ_И_ПРОТОТИП.md",
+        "10_ВИЗУАЛЬНАЯ_ФИЛОСОФИЯ.md",
+    ),
+    "### Шаг 7. Подготовьте защиту": (
+        "05_ПИТЧ_И_ЗАЩИТА.md",
+    ),
+}
+
+FINAL_MATERIALS = ("11_ПРОДУКТОВЫЙ_ТЕЗАУРУС.md",)
 
 
 def inline(text: str) -> str:
@@ -52,6 +65,7 @@ def render_table(lines: list[str]) -> str:
 
 
 def render_markdown(source: str) -> str:
+    source = re.sub(r"\[\d+\]", "", source)
     lines = source.replace("\r\n", "\n").split("\n")
     result: list[str] = []
     i = 0
@@ -132,26 +146,38 @@ ym(27865374, 'init', {clickmap:true, referrer: document.referrer, url: location.
 <!-- /Yandex.Metrika counter -->"""
 
 
+def contextual_material(filename: str) -> str:
+    content = render_markdown((SOURCE_DIR / filename).read_text(encoding="utf-8"))
+    return (
+        '<section class="material contextual-material">'
+        '<div class="kicker">Рабочий материал для этого шага</div>'
+        f'<div class="material-body">{content}</div>'
+        '</section>'
+    )
+
+
+def render_guide_with_materials() -> str:
+    source = (SOURCE_DIR / CORE_GUIDE).read_text(encoding="utf-8")
+    sections = re.split(r"(?=^### Шаг \d+\. )", source, flags=re.MULTILINE)
+    rendered = [render_markdown(sections[0])]
+    for section in sections[1:]:
+        rendered.append(render_markdown(section))
+        heading = section.split("\n", 1)[0]
+        for filename in STEP_MATERIALS.get(heading, ()):
+            rendered.append(contextual_material(filename))
+    rendered.extend(contextual_material(filename) for filename in FINAL_MATERIALS)
+    return '<section class="guide-copy" id="guide"><div class="kicker">Полная инструкция</div>' + "\n".join(rendered) + "</section>"
+
+
 def main() -> None:
-    rendered: list[str] = []
-    for document_index, (filename, label, is_core) in enumerate(DOCUMENTS):
-        content = render_markdown((SOURCE_DIR / filename).read_text(encoding="utf-8"))
-        if is_core:
-            rendered.append(f'<section class="guide-copy" id="guide"><div class="kicker">Полная инструкция</div>{content}</section>')
-        else:
-            material_id = ' id="materials"' if document_index == 1 else ""
-            rendered.append(
-                f'<section class="material"{material_id}>'
-                '<details class="material-details">'
-                f'<summary><span>Дополнительный материал</span>{escape(label)}</summary>'
-                f'<div class="material-body">{content}</div></details></section>'
-            )
+    rendered = [render_guide_with_materials()]
+    pdf_text = re.sub(r"\[\d+\]", "", PDF_TEXT.read_text(encoding="utf-8"))
     rendered.append(
         '<section class="material">'
         '<details class="material-details pdf-source">'
         '<summary><span>Полнота материала</span>Текстовая версия PDF-раздатки</summary>'
         '<div class="material-body"><p>Этот блок сохраняет полный извлечённый текст оригинальной раздатки. Для чтения используйте инструкцию выше; для печати и передачи — скачайте PDF.</p>'
-        f'<pre class="pdf-text">{escape(PDF_TEXT.read_text(encoding="utf-8"))}</pre>'
+        f'<pre class="pdf-text">{escape(pdf_text)}</pre>'
         '</div></details></section>'
     )
 
@@ -191,7 +217,6 @@ def main() -> None:
       </div>
       <div class="letters med-letters"><div class="letter"><b>C</b><span>CONTEXT<br>ситуация</span></div><div class="letter"><b>R</b><span>RESEARCH<br>факты</span></div><div class="letter"><b>E</b><span>ELABORATION<br>Offer / MVP</span></div><div class="letter"><b>A</b><span>ASSEMBLE<br>демо</span></div><div class="letter"><b>T</b><span>TEST<br>проверка</span></div></div>
     </header>
-    <section class="how quick-links"><div class="kicker">На странице</div><div><h2>Работайте по порядку. Все промпты копируются одним нажатием.</h2><div class="how-steps"><a class="how-step" href="#guide"><b>ИНСТРУКЦИЯ</b><p>Полный маршрут, правила и чек-листы.</p></a><a class="how-step" href="#materials"><b>МАТЕРИАЛЫ</b><p>Рабочая карта, тезаурус и подробные инструкции.</p></a><a class="how-step" href="../assets/downloads/CREATE_MED_SPRINT_ГИД_ДЛЯ_СТУДЕНТОВ.pdf" download><b>PDF</b><p>Версия раздатки для скачивания и печати.</p></a></div></div></section>
     <aside class="bias-note"><div class="kicker">Проверка мышления</div><div><h2>Не выдавайте первую правдоподобную версию за факт.</h2><p>Когда отделяете факт от гипотезы и проверяете источник, помогает <a href="../biases/index.html">справочник когнитивных искажений</a>: он даёт язык для ловушек мышления, которые мешают исследованию и продуктовым решениям.</p></div></aside>
     {''.join(rendered)}
   </main>
