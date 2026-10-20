@@ -46,23 +46,22 @@ class BiasesTemplateTests(unittest.TestCase):
             built = build(root, self.items)
             catalogue = (root / "biases" / "index.html").read_text(encoding="utf-8")
 
-            self.assertEqual(
-                {path.relative_to(root).as_posix() for path in built},
-                {"biases/index.html", "biases/anchoring/index.html", "biases/confirmation-bias/index.html"},
-            )
-            self.assertEqual(catalogue.count('<a class="bias-row"'), 2)
+            self.assertEqual(len(built), 21)
+            self.assertEqual(catalogue.count('<a class="bias-row"'), 20)
+            self.assertIn('href="availability-heuristic/index.html"', catalogue)
             self.assertIn('href="confirmation-bias/index.html"', catalogue)
             self.assertIn('href="anchoring/index.html"', catalogue)
             self.assertIn("Слишком много информации", catalogue)
             self.assertNotIn("Когда информации слишком много", catalogue)
-            self.assertNotIn("availability-heuristic/index.html", catalogue)
+            self.assertIn("availability-heuristic/index.html", catalogue)
 
     def test_detail_styles_provide_separate_vertical_rhythm_and_responsive_cta(self) -> None:
         css = (ROOT / "assets" / "styles" / "biases.css").read_text(encoding="utf-8")
 
         self.assertIn(".article-head .eyebrow", css)
         self.assertIn(".article h1", css)
-        self.assertIn(".article-dek", css)
+        self.assertIn(".article .article-dek{margin:31px 0 0}", css)
+        self.assertIn(".article .article-dek{margin-top:25px}", css)
         self.assertIn(".bias-cta", css)
         self.assertIn(".bias-cta__social", css)
         self.assertIn("@media(max-width:800px)", css)

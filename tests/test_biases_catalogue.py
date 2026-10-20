@@ -58,7 +58,28 @@ class BiasesCatalogueTests(unittest.TestCase):
         published_items = [item for item in items if item["published"]]
         self.assertEqual(
             {item["slug"] for item in published_items},
-            {"confirmation-bias", "anchoring"},
+            {
+                "availability-heuristic",
+                "attentional-bias",
+                "illusory-truth-effect",
+                "mereexposure-effect",
+                "context-effect",
+                "cuedependent-forgetting",
+                "moodcongruent-memory-bias",
+                "frequency-illusion",
+                "baadermeinhof-phenomenon",
+                "empathy-gap",
+                "omission-bias",
+                "base-rate-fallacy",
+                "bizarreness-effect",
+                "humor-effect",
+                "von-restorff-effect",
+                "picture-superiority-effect",
+                "selfrelevance-effect",
+                "negativity-bias",
+                "confirmation-bias",
+                "anchoring",
+            },
         )
         for item in published_items:
             with self.subTest(slug=item["slug"]):
