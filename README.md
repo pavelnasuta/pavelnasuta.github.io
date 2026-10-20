@@ -17,6 +17,8 @@ python3 -m http.server 8080
 - `create/` — C.R.E.A.T.E.;
 - `articles/` — архив и статьи;
 - `biases/` — каталог когнитивных искажений и карточки материалов;
+- `skills/` — Skill Hub: публичный каталог, карточки навыков и генерация из реестра;
+- `data/skills.json` — источник данных Skill Hub; после изменения запускать `python tools/build_skills.py --root . --registry data/skills.json`;
 - `about/` — об авторе;
 - `contact/` — Telegram как публичный канал связи;
 - `assets/` — изображения, стили и JavaScript.
