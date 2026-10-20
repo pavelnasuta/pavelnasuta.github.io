@@ -53,14 +53,13 @@ def render_table(lines: list[str]) -> str:
     if not rows:
         return ""
     head, *body = rows
-    result = ["<div class=\"table-wrap\"><table><thead><tr>"]
-    result.extend(f"<th>{inline(cell)}</th>" for cell in head)
-    result.append("</tr></thead><tbody>")
+    result = ['<dl class="fact-grid">']
     for row in body:
-        result.append("<tr>")
-        result.extend(f"<td>{inline(cell)}</td>" for cell in row)
-        result.append("</tr>")
-    result.append("</tbody></table></div>")
+        result.append('<div class="fact-card">')
+        for label, cell in zip(head, row):
+            result.append(f"<dt>{inline(label)}</dt><dd>{inline(cell)}</dd>")
+        result.append("</div>")
+    result.append("</dl>")
     return "".join(result)
 
 
@@ -82,9 +81,11 @@ def render_markdown(source: str, heading_offset: int = 0) -> str:
             copy_number += 1
             language = escape(fence or "text")
             result.append(
-                "<div class=\"prompt-block\">"
+                "<details class=\"prompt-details\">"
+                "<summary>Промпт для работы</summary>"
+                "<div class=\"prompt-content\">"
                 f"<button type=\"button\" class=\"copy\" data-copy-prompt aria-label=\"Скопировать промпт {copy_number}\">Скопировать</button>"
-                f"<pre><code class=\"language-{language}\">{escape(chr(10).join(code))}</code></pre></div>"
+                f"<pre><code class=\"language-{language}\">{escape(chr(10).join(code))}</code></pre></div></details>"
             )
         elif re.match(r"^#{1,4}\s+", line):
             level = len(line) - len(line.lstrip("#"))
@@ -192,15 +193,56 @@ def contextual_material(filename: str) -> str:
     )
 
 
+STEP_TOC = (
+    ("Шаг 0", "Выберите проблему"),
+    ("Шаг 1", "Создайте Project"),
+    ("Шаг 2", "Утвердите проблему"),
+    ("Шаг 3", "Проведите ресёрч"),
+    ("Шаг 4", "Сузьте сегмент и оффер"),
+    ("Шаг 5", "Зафиксируйте карточку"),
+    ("Шаг 6", "Сделайте прототип"),
+    ("Шаг 7", "Подготовьте защиту"),
+)
+
+
+def table_of_contents() -> str:
+    items = "".join(
+        f'<a href="#step-{number}"><span>{label}</span>{title}</a>'
+        for number, (label, title) in enumerate(STEP_TOC)
+    )
+    return (
+        '<nav class="toc" aria-label="Оглавление CREATE MED Sprint">'
+        '<div><p class="kicker">Маршрут спринта</p><h2>Пройдите по порядку</h2>'
+        '<p>Каждый шаг оставляет артефакт для следующего. Промпты раскрываются там, где нужны.</p></div>'
+        f'<div class="toc-links">{items}</div></nav>'
+    )
+
+
 def render_guide_with_materials() -> str:
     source = (SOURCE_DIR / CORE_GUIDE).read_text(encoding="utf-8")
     sections = re.split(r"(?=^### Шаг \d+\. )", source, flags=re.MULTILINE)
-    rendered = [render_markdown(sections[0])]
+    rendered = [table_of_contents(), '<div class="guide-intro">' + render_markdown(sections[0]) + '</div>']
+    post_step_content = ""
     for section in sections[1:]:
-        rendered.append(render_markdown(section))
         heading = section.split("\n", 1)[0]
+        match = re.match(r"### Шаг (\d+)\. ", heading)
+        step_number = match.group(1) if match else ""
+        if step_number == "7":
+            step_and_reference = re.split(r"\n---\n(?=\n## )", section, maxsplit=1)
+            section = step_and_reference[0]
+            if len(step_and_reference) == 2:
+                post_step_content = step_and_reference[1]
+        body = [render_markdown(section)]
         for filename in STEP_MATERIALS.get(heading, ()):
-            rendered.append(contextual_material(filename))
+            body.append(contextual_material(filename))
+        rendered.append(
+            f'<section class="sprint-step" id="step-{step_number}">'
+            f'<div class="step-marker">Шаг {step_number}</div>'
+            + "\n".join(body)
+            + '</section>'
+        )
+    if post_step_content:
+        rendered.append('<section class="guide-reference">' + render_markdown(post_step_content) + '</section>')
     rendered.extend(contextual_material(filename) for filename in FINAL_MATERIALS)
     return '<section class="guide-copy" id="guide"><div class="kicker">Полная инструкция</div>' + "\n".join(rendered) + "</section>"
 

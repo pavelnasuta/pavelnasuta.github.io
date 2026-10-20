@@ -92,6 +92,28 @@ class CreateMedSprintPageTests(unittest.TestCase):
             self.assertIn(item, contacts)
 
 
+    def test_guide_is_scannable_with_toc_collapsed_prompts_and_no_data_tables(self):
+        html = PAGE.read_text(encoding="utf-8")
+
+        self.assertIn('<nav class="toc" aria-label="Оглавление CREATE MED Sprint">', html)
+        for step in range(8):
+            self.assertIn(f'href="#step-{step}"', html)
+            self.assertIn(f'id="step-{step}"', html)
+        self.assertNotIn("<table", html)
+        self.assertGreaterEqual(html.count('class="fact-grid"'), 3)
+        self.assertEqual(html.count('class="prompt-details"'), html.count("data-copy-prompt"))
+        self.assertNotIn('class="prompt-block"><button', html)
+
+        first_prompt = html.index('class="prompt-details"')
+        first_prompt_end = html.index("</details>", first_prompt)
+        self.assertNotIn("Открыть", html[first_prompt:first_prompt_end])
+        self.assertNotIn("Свернуть", html[first_prompt:first_prompt_end])
+
+        step_7 = html.index('id="step-7"')
+        step_7_end = html.index("</section>", step_7)
+        medical_boundaries = html.index("5. Медицинские и этические границы")
+        self.assertGreater(medical_boundaries, step_7_end)
+
     def test_prompts_are_embedded_in_the_sprint_flow_without_reference_markers(self):
         html = PAGE.read_text(encoding="utf-8")
 
