@@ -6,6 +6,7 @@ import argparse
 import html
 import json
 from pathlib import Path
+import re
 from typing import Any, Iterable
 
 
@@ -48,6 +49,7 @@ CATEGORY_FILTERS = {
     "Что мы запоминаем": "memory",
 }
 COUNTER_ID = "27865374"
+SAFE_SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 
 
 def load_catalogue(path: str | Path) -> list[dict[str, Any]]:
@@ -78,6 +80,8 @@ def validate_catalogue(
             )
         if not isinstance(item["slug"], str) or not item["slug"].strip():
             raise ValueError("Every identity requires a non-empty slug")
+        if not SAFE_SLUG.fullmatch(item["slug"]):
+            raise ValueError(f"Invalid slug: {item['slug']}")
         if item["slug"] in slugs:
             raise ValueError(f"Duplicate slug: {item['slug']}")
         slugs.add(item["slug"])
@@ -182,7 +186,7 @@ def render_detail(
         },
         ensure_ascii=False,
         separators=(",", ":"),
-    ).replace("</", "<\\/")
+    ).replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
     source_rows = "\n".join(
         f'          <li><a href="{_text(source["url"])}" target="_blank" rel="noopener">{_text(source["citation"])}</a></li>'
         for source in item["sources"]
@@ -196,7 +200,14 @@ def render_detail(
     route_links.append(
         f'<a class="route-link route-link--random" href="../{_text(random_target["slug"])}/index.html" id="random-bias"><span>Выбрать иначе</span>Случайное</a>'
     )
-    random_routes = [f"../{candidate['slug']}/index.html" for candidate in (previous, item, next_item) if candidate]
+    random_routes = []
+    for candidate in (previous, next_item):
+        if candidate and candidate["slug"] != item["slug"]:
+            route = f"../{candidate['slug']}/index.html"
+            if route not in random_routes:
+                random_routes.append(route)
+    if not random_routes:
+        random_routes.append(f"../{item['slug']}/index.html")
 
     return f'''<!doctype html>
 <html lang="ru">
@@ -280,17 +291,26 @@ def render_catalogue(items: Iterable[dict[str, Any]]) -> str:
 </html>'''
 
 
+def _remove_stale_generated_routes(root: Path, published_slugs: set[str]) -> None:
+    """Remove obsolete generated detail documents without deleting unrelated files."""
+    biases_root = root / "biases"
+    if not biases_root.exists():
+        return
+    for page in biases_root.glob("*/index.html"):
+        if page.parent.name not in published_slugs:
+            page.unlink()
+
+
 def build(
     root: str | Path, catalogue: Iterable[dict[str, Any]], *, expected_count: int = 188
 ) -> list[Path]:
-    """Generate public pages for published entries and their linked catalogue."""
+    """Generate the catalogue and complete detail routes for published entries."""
     items = list(catalogue)
     validate_catalogue(items, expected_count=expected_count)
     root_path = Path(root)
     published = [item for item in items if item["published"]]
+    _remove_stale_generated_routes(root_path, {item["slug"] for item in published})
     built: list[Path] = []
-    if not published:
-        return []
     for index, item in enumerate(published):
         page = root_path / "biases" / item["slug"] / "index.html"
         page.parent.mkdir(parents=True, exist_ok=True)
