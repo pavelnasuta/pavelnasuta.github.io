@@ -163,7 +163,8 @@ def _route_link(label: str, name: str, href: str) -> str:
 
 
 def render_detail(
-    item: dict[str, Any], previous: dict[str, Any] | None, next_item: dict[str, Any] | None
+    item: dict[str, Any], previous: dict[str, Any] | None, next_item: dict[str, Any] | None,
+    *, number: int = 1,
 ) -> str:
     """Render one complete published card from the validated registry."""
     if not item.get("published"):
@@ -230,7 +231,7 @@ def render_detail(
     <nav class="quiet-nav" aria-label="Навигация раздела"><a class="brand" href="../../index.html">Павел Насута</a><a class="back-link" href="../index.html">К каталогу <span aria-hidden="true">↗</span></a></nav>
     <main class="article">
       <header class="article-head">
-        <p class="eyebrow">{_text(item['detail_category'])}</p>
+        <div class="article-kicker"><p class="eyebrow">{_text(item['detail_category'])}</p><p class="article-number" aria-label="Номер карточки в каталоге">№ {number:02}</p></div>
         <h1>{name}</h1>
         <p class="article-dek">{_text(item['lede'])}</p>
         <p class="article-meta">{_text(item['english_name'])}</p>
@@ -347,6 +348,7 @@ def build(
                 item,
                 published[index - 1] if len(published) > 1 else None,
                 published[(index + 1) % len(published)] if len(published) > 1 else None,
+                number=index + 1,
             ),
             encoding="utf-8",
         )
