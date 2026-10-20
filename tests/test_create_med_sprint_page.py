@@ -66,6 +66,7 @@ class CreateMedSprintPageTests(unittest.TestCase):
         self.assertIn('<meta property="og:image:width" content="1200">', html)
         self.assertIn('<meta property="og:image:height" content="630">', html)
         self.assertIn('<meta property="og:image:alt" content="CREATE MED Sprint — практический гид для студентов">', html)
+        self.assertIn('<meta name="twitter:image:alt" content="CREATE MED Sprint — практический гид для студентов">', html)
 
         coach = html[html.index('class="coach-card"'):html.index('class="letters med-letters"')]
         for label in (

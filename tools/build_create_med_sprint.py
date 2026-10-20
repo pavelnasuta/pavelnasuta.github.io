@@ -242,6 +242,7 @@ def main() -> None:
   <meta name="twitter:title" content="CREATE MED Sprint — практический гид для студентов">
   <meta name="twitter:description" content="Полный маршрут от наблюдаемой проблемы до фактов, прототипа и первого разговора с пользователем.">
   <meta name="twitter:image" content="https://nasuta.ru/assets/images/og-create-med-sprint.jpg">
+  <meta name="twitter:image:alt" content="CREATE MED Sprint — практический гид для студентов">
   <script type="application/ld+json">{{"@context":"https://schema.org","@type":"Course","name":"CREATE MED Sprint","description":"Практический гид для студентов: от наблюдаемой проблемы к понятной демонстрации, фактам и первому разговору с пользователем.","inLanguage":"ru-RU","url":"https://nasuta.ru/create-med-sprint/","provider":{{"@type":"Person","name":"Павел Насута","url":"https://nasuta.ru/about/"}},"isAccessibleForFree":true}}</script>
   {metrika()}
 </head>
