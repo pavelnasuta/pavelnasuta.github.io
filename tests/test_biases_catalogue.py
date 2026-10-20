@@ -38,11 +38,11 @@ EDITORIAL_FIELDS = {
 
 
 class BiasesCatalogueTests(unittest.TestCase):
-    def test_catalogue_has_exactly_188_unique_identities(self):
+    def test_catalogue_has_expected_unique_identities(self):
         items = json.loads(CATALOGUE.read_text(encoding="utf-8"))["items"]
 
-        self.assertEqual(len(items), 188)
-        self.assertEqual(len({item["slug"] for item in items}), 188)
+        self.assertEqual(len(items), 189)
+        self.assertEqual(len({item["slug"] for item in items}), 189)
         for item in items:
             with self.subTest(slug=item["slug"]):
                 self.assertTrue(IDENTITY_FIELDS <= item.keys())
@@ -247,6 +247,7 @@ class BiasesCatalogueTests(unittest.TestCase):
                 "nextinline-effect",
                 "google-effect",
                 "tip-of-the-tongue-phenomenon",
+                "texas-sharpshooter-fallacy",
             },
         )
         for item in published_items:

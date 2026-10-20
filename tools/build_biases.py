@@ -65,7 +65,7 @@ def load_catalogue(path: str | Path) -> list[dict[str, Any]]:
 
 
 def validate_catalogue(
-    items: Iterable[dict[str, Any]], *, expected_count: int = 188
+    items: Iterable[dict[str, Any]], *, expected_count: int = 189
 ) -> None:
     """Reject malformed identities and incomplete entries marked for publication."""
     entries = list(items)
@@ -262,7 +262,7 @@ def render_catalogue(items: Iterable[dict[str, Any]]) -> str:
         group = CATEGORY_FILTERS.get(category)
         if group is None:
             raise ValueError(f"Unknown catalogue category: {category}")
-        search = " ".join((item["russian_name"], item["english_name"], item["lede"])).lower()
+        search = " ".join((item["russian_name"], item["english_name"], item["lede"], *item.get("search_aliases", []))).lower()
         rows.append(
             f'''          <li><a class="bias-row" href="{_text(item['slug'])}/index.html" data-group="{group}" data-search="{_text(search)}"><span class="bias-row__number">{number:02}</span><span class="bias-row__body"><span class="bias-row__title">{_text(item['russian_name'])}</span><span class="bias-row__summary">{_text(item['lede'])}</span></span><span class="bias-row__category bias-row__category--{group}">{_text(category)}</span><span class="bias-row__arrow" aria-hidden="true">→</span></a></li>'''
         )
@@ -331,7 +331,7 @@ def refresh_sitemap(root: Path, published: Iterable[dict[str, Any]]) -> None:
 
 
 def build(
-    root: str | Path, catalogue: Iterable[dict[str, Any]], *, expected_count: int = 188
+    root: str | Path, catalogue: Iterable[dict[str, Any]], *, expected_count: int = 189
 ) -> list[Path]:
     """Generate the catalogue and complete detail routes for published entries."""
     items = list(catalogue)
@@ -364,7 +364,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Render published cognitive-bias pages.")
     parser.add_argument("--root", type=Path, default=Path("."))
     parser.add_argument("--catalogue", type=Path, default=Path("content/biases/catalogue.json"))
-    parser.add_argument("--published-count", type=int, default=188)
+    parser.add_argument("--published-count", type=int, default=189)
     args = parser.parse_args()
     items = load_catalogue(args.catalogue)
     published_count = sum(item["published"] for item in items)
