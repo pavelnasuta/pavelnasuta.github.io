@@ -64,7 +64,7 @@ def render_table(lines: list[str]) -> str:
     return "".join(result)
 
 
-def render_markdown(source: str) -> str:
+def render_markdown(source: str, heading_offset: int = 0) -> str:
     source = re.sub(r"\[\d+\]", "", source)
     lines = source.replace("\r\n", "\n").split("\n")
     result: list[str] = []
@@ -89,7 +89,7 @@ def render_markdown(source: str) -> str:
         elif re.match(r"^#{1,4}\s+", line):
             level = len(line) - len(line.lstrip("#"))
             text = line[level:].strip()
-            level = min(level + 1, 5)
+            level = min(level + 1 + heading_offset, 6)
             result.append(f"<h{level}>{inline(text)}</h{level}>")
         elif line.strip() == "---":
             result.append("<hr>")
@@ -147,7 +147,9 @@ ym(27865374, 'init', {clickmap:true, referrer: document.referrer, url: location.
 
 
 def contextual_material(filename: str) -> str:
-    content = render_markdown((SOURCE_DIR / filename).read_text(encoding="utf-8"))
+    content = render_markdown(
+        (SOURCE_DIR / filename).read_text(encoding="utf-8"), heading_offset=3
+    )
     return (
         '<section class="material contextual-material">'
         '<div class="kicker">Рабочий материал для этого шага</div>'

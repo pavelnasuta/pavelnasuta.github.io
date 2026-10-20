@@ -73,13 +73,13 @@ class CreateMedSprintPageTests(unittest.TestCase):
         step_6 = html.index("Шаг 6. Сделайте простой прототип")
         step_7 = html.index("Шаг 7. Подготовьте защиту")
 
-        system_prompt = html.index("<h2>Системный промпт для Project в ChatGPT</h2>")
-        project_workflow = html.index("<h2>Как устроить работу в ChatGPT Project</h2>")
-        research_prompts = html.index("<h2>Rapid Research в Perplexity</h2>")
-        concept_map = html.index("<h2>Рабочая карта концепции</h2>")
-        prototype_prompts = html.index("<h2>Промпт: лендинг и кликабельный прототип</h2>")
-        visual_philosophy = html.index("<h2>Визуальная философия PDF")
-        pitch_prompts = html.index("<h2>Питч и защита</h2>")
+        system_prompt = html.index("<h5>Системный промпт для Project в ChatGPT</h5>")
+        project_workflow = html.index("<h5>Как устроить работу в ChatGPT Project</h5>")
+        research_prompts = html.index("<h5>Rapid Research в Perplexity</h5>")
+        concept_map = html.index("<h5>Рабочая карта концепции</h5>")
+        prototype_prompts = html.index("<h5>Промпт: лендинг и кликабельный прототип</h5>")
+        visual_philosophy = html.index("<h5>Визуальная философия PDF")
+        pitch_prompts = html.index("<h5>Питч и защита</h5>")
 
         self.assertLess(step_1, system_prompt)
         self.assertLess(project_workflow, step_2)
@@ -90,6 +90,18 @@ class CreateMedSprintPageTests(unittest.TestCase):
         self.assertLess(step_6, prototype_prompts)
         self.assertLess(visual_philosophy, step_7)
         self.assertLess(step_7, pitch_prompts)
+
+    def test_contextual_materials_keep_the_sprint_heading_hierarchy(self):
+        html = PAGE.read_text(encoding="utf-8")
+        for title in (
+            "Системный промпт для Project в ChatGPT",
+            "Rapid Research в Perplexity",
+            "Рабочая карта концепции",
+            "Промпт: лендинг и кликабельный прототип",
+            "Питч и защита",
+        ):
+            self.assertIn(f"<h5>{title}</h5>", html)
+            self.assertNotIn(f"<h2>{title}</h2>", html)
 
 
 if __name__ == "__main__":
