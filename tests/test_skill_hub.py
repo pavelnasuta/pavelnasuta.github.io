@@ -5,6 +5,12 @@ from tools.build_skills import build
 
 
 ROOT = Path(__file__).resolve().parents[1]
+PAGES = {
+    "book-summary": "OPEN SOURCE",
+    "adaptive-support-dialogue": "OPEN SOURCE",
+    "management-assistant": "PRIVATE PILOT",
+}
+REQUIRED_SECTIONS = ("purpose", "scenarios", "start", "workflow", "agents", "limits", "release")
 
 
 class SkillHubTests(unittest.TestCase):
@@ -26,6 +32,16 @@ class SkillHubTests(unittest.TestCase):
         self.assertIn('href="book-summary/index.html"', self.html)
         self.assertIn('href="management-assistant/index.html"', self.html)
         self.assertIn('assets/styles/skills-index.css', self.html)
+
+    def test_each_current_skill_page_has_hub_sections_and_return_route(self):
+        for slug, status in PAGES.items():
+            html = (ROOT / "skills" / slug / "index.html").read_text(encoding="utf-8")
+            with self.subTest(slug=slug):
+                for section in REQUIRED_SECTIONS:
+                    self.assertIn(f'id="{section}"', html)
+                self.assertIn('href="../index.html"', html)
+                self.assertIn(status, html)
+                self.assertIn("Последнее существенное обновление", html)
 
 
 if __name__ == "__main__":

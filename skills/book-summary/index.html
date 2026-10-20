@@ -41,7 +41,7 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter (noscript) -->
   <div class="shell">
-    <nav class="nav"><a class="brand" href="../../index.html">Павел Насута</a><div class="nav-right"><a href="../../index.html#skills">Skills</a><a class="github" href="https://github.com/pavelnasuta/book-summary-skill" target="_blank" rel="noopener">GitHub ↗</a></div></nav>
+    <nav class="nav"><a class="brand" href="../../index.html">Павел Насута</a><div class="nav-right"><a href="../index.html">Каталог skills</a><a href="../../index.html#skills">Skills</a><a class="github" href="https://github.com/pavelnasuta/book-summary-skill" target="_blank" rel="noopener">GitHub ↗</a></div></nav>
     <main>
       <header class="hero">
         <div class="meta">OPEN SOURCE SKILL · КНИГИ И АУДИОКНИГИ</div>
@@ -50,12 +50,14 @@
         <div class="hero-actions"><a class="button primary" href="https://github.com/pavelnasuta/book-summary-skill" target="_blank" rel="noopener">Открыть репозиторий ↗</a><a class="button secondary" href="#start">Как начать</a></div>
       </header>
 
-      <section class="status"><b>Статус публичной версии</b><p>Сейчас в репозитории готовы общий контракт проекта, настройка языка и длительности, а также адаптеры для Hermes, Claude Code и Codex. Полный конвейер извлечения, синтеза, вёрстки и сборки аудио описан как следующий этап разработки.</p></section>
+      <section id="release" class="status"><b>Статус публичной версии</b><p>Сейчас в репозитории готовы общий контракт проекта, настройка языка и длительности, а также адаптеры для Hermes, Claude Code и Codex. Полный конвейер извлечения, синтеза, вёрстки и сборки аудио описан как следующий этап разработки.</p><p><b>Последнее существенное обновление:</b> 20 октября 2026.</p></section>
 
       <section class="layout">
         <aside class="toc"><div>НА СТРАНИЦЕ</div><a href="#purpose">Что делает</a><a href="#start">Быстрый старт</a><a href="#agents">Подключение к агенту</a><a href="#workflow">Полный маршрут</a><a href="#limits">Границы и права</a></aside>
         <article class="content">
           <section id="purpose"><h2>Не пересказ, а рабочее саммари</h2><p>Skill задуман для книг, электронных изданий и аудиокниг. Он помогает сохранить структуру аргументов, проверить факты, подготовить связный текст и при необходимости — версию для прослушивания.</p><div class="outcomes"><div><b>НА ВХОДЕ</b><span>Книга, документ или аудиокнига с надёжной расшифровкой.</span></div><div><b>НА ВЫХОДЕ</b><span>Саммари, редактируемый текст озвучки, PDF, FB2 и один MP3 — по мере готовности полного конвейера.</span></div><div><b>ПРИНЦИП</b><span>Модель не подменяет источник: итог проверяется по именам, числам, причинным связям и структуре книги.</span></div></div></section>
+
+          <section id="scenarios"><h2>Сценарии</h2><p>Используйте навык, когда нужно собрать из книги или аудиокниги самостоятельный материал для чтения, обучения или личной практики. Он подходит для одной книги за раз и требует легального доступа к исходнику или расшифровке.</p></section>
 
           <section id="start"><h2>Быстрый старт</h2><p>Репозиторий запускается как обычный проект: он спрашивает язык саммари и целевую длительность аудио, а затем сохраняет выборы в отдельной конфигурации проекта.</p><pre><code>git clone https://github.com/pavelnasuta/book-summary-skill.git
 cd book-summary-skill
