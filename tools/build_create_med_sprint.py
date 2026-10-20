@@ -151,6 +151,7 @@ def render_markdown(source: str) -> str:
 TELEGRAM_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 3.2 18.4 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.3L5.8 13.5.9 12c-1.1-.3-1.1-1.1.2-1.6L20.3 3c.9-.3 1.7.2 1.3.2Z"/></svg>'
 LINKEDIN_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.3 8.3H1.8V22h3.5V8.3ZM3.5 2A2 2 0 1 0 3.5 6a2 2 0 0 0 0-4ZM22.5 14.1c0-4.1-2.2-6-5.1-6-2.4 0-3.5 1.3-4.1 2.2V8.3H9.8V22h3.5v-6.8c0-1.8.3-3.5 2.5-3.5 2.2 0 2.2 2 2.2 3.6V22h3.5v-7.9Z"/></svg>'
 EMAIL_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3v-13Zm1.8 1.8 7.2 5.6 7.2-5.6H4.8Zm14.4 9.4V9.6L12 15.2 4.8 9.6v7.1h14.4Z"/></svg>'
+DISCLOSURE_ICON = '<svg class="disclosure-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>'
 PERSONAL_CONTACTS = (
     ("Telegram Павла Насуты", "Telegram Павла", "https://t.me/pavelnasuta", TELEGRAM_ICON),
     ("LinkedIn Павла Насуты", "LinkedIn", "https://www.linkedin.com/in/nasuta", LINKEDIN_ICON),
@@ -201,7 +202,7 @@ def material_block(filename: str, *, material_id: str = "") -> str:
     return (
         f'<section class="material contextual-material"{identifier}>'
         '<details class="material-details">'
-        f'<summary><span>Дополнительный материал</span>{escape(label)}</summary>'
+        f'<summary><span>Дополнительный материал</span><strong class="disclosure-title">{escape(label)}</strong>{DISCLOSURE_ICON}</summary>'
         f'<div class="material-body">{content}</div></details></section>'
     )
 
@@ -234,7 +235,7 @@ def main() -> None:
     rendered.append(
         '<section class="material">'
         '<details class="material-details pdf-source">'
-        '<summary><span>Полнота материала</span>Текстовая версия PDF-раздатки</summary>'
+        f'<summary><span>Полнота материала</span><strong class="disclosure-title">Текстовая версия PDF-раздатки</strong>{DISCLOSURE_ICON}</summary>'
         '<div class="material-body"><p>Этот блок сохраняет полный извлечённый текст оригинальной раздатки. Для чтения используйте инструкцию выше; для печати и передачи — скачайте PDF.</p>'
         f'<pre class="pdf-text">{escape(PDF_TEXT.read_text(encoding="utf-8"))}</pre>'
         '</div></details></section>'
@@ -249,7 +250,7 @@ def main() -> None:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="CREATE MED Sprint — полная практическая инструкция для студентов: от наблюдаемой проблемы до исследования, прототипа и честной защиты.">
   <title>CREATE MED Sprint — практический гид для студентов</title>
-  <link rel="stylesheet" href="../assets/styles/create-med-sprint.css?v=20261020-contacts">
+  <link rel="stylesheet" href="../assets/styles/create-med-sprint.css?v=20261020-disclosure-icons">
   <link rel="canonical" href="https://nasuta.ru/create-med-sprint/">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="ru_RU">

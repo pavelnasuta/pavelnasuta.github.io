@@ -20,7 +20,7 @@ class CreateMedSprintPageTests(unittest.TestCase):
 
         html = PAGE.read_text(encoding="utf-8")
         self.assertIn(
-            '<link rel="stylesheet" href="../assets/styles/create-med-sprint.css?v=20261020-contacts">',
+            '<link rel="stylesheet" href="../assets/styles/create-med-sprint.css?v=20261020-disclosure-icons">',
             html,
         )
         home = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -101,7 +101,7 @@ class CreateMedSprintPageTests(unittest.TestCase):
 
         def material_position(title: str) -> int:
             return html.index(
-                '<summary><span>Дополнительный материал</span>' + title + "</summary>"
+                '<summary><span>Дополнительный материал</span><strong class="disclosure-title">' + title + '</strong><svg class="disclosure-icon"'
             )
 
         step_1 = position("Шаг 1. Создайте Project и главный чат")
@@ -123,7 +123,12 @@ class CreateMedSprintPageTests(unittest.TestCase):
             ("Питч и защита", step_7, position("5. Медицинские и этические границы")),
         )
         for title, before, after in materials:
-            self.assertEqual(html.count('<summary><span>Дополнительный материал</span>' + title + "</summary>"), 1)
+            self.assertEqual(
+                html.count(
+                    '<summary><span>Дополнительный материал</span><strong class="disclosure-title">' + title + '</strong><svg class="disclosure-icon"'
+                ),
+                1,
+            )
             self.assertLess(before, material_position(title))
             self.assertLess(material_position(title), after)
 
@@ -133,6 +138,10 @@ class CreateMedSprintPageTests(unittest.TestCase):
         self.assertEqual(len(contextual_details), len(materials))
         self.assertTrue(all(" open" not in details for details in contextual_details))
         self.assertEqual(html.count('class="copy"'), 25)
+        self.assertEqual(html.count('class="disclosure-icon"'), len(materials) + 1)
+        css = CSS.read_text(encoding="utf-8")
+        self.assertIn(".disclosure-icon", css)
+        self.assertIn(".material-details[open] .disclosure-icon", css)
         self.assertEqual(html.count('id="materials"'), 1)
         self.assertIn("</section>\n<hr>\n<h3>5. Медицинские и этические границы", html)
 
