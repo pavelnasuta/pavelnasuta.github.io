@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 import argparse
+from datetime import date
 import html
 import json
 from pathlib import Path
 import re
 from typing import Any, Iterable
+import xml.etree.ElementTree as ET
 
 
 DETAIL_CATEGORIES = frozenset(
@@ -50,6 +52,8 @@ CATEGORY_FILTERS = {
 }
 COUNTER_ID = "27865374"
 SAFE_SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
+SITE_ORIGIN = "https://nasuta.ru"
+SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 
 
 def load_catalogue(path: str | Path) -> list[dict[str, Any]]:
@@ -301,6 +305,30 @@ def _remove_stale_generated_routes(root: Path, published_slugs: set[str]) -> Non
             page.unlink()
 
 
+def refresh_sitemap(root: Path, published: Iterable[dict[str, Any]]) -> None:
+    """Preserve existing non-bias URLs and replace the generated bias URL set."""
+    sitemap_path = root / "sitemap.xml"
+    url_tag = f"{{{SITEMAP_NS}}}url"
+    loc_tag = f"{{{SITEMAP_NS}}}loc"
+    lastmod_tag = f"{{{SITEMAP_NS}}}lastmod"
+    ET.register_namespace("", SITEMAP_NS)
+    if sitemap_path.exists():
+        sitemap = ET.parse(sitemap_path).getroot()
+    else:
+        sitemap = ET.Element(f"{{{SITEMAP_NS}}}urlset")
+    for entry in list(sitemap):
+        loc = entry.find(loc_tag)
+        if loc is not None and (loc.text or "").startswith(f"{SITE_ORIGIN}/biases/"):
+            sitemap.remove(entry)
+    urls = [f"{SITE_ORIGIN}/biases/"]
+    urls.extend(f"{SITE_ORIGIN}/biases/{item['slug']}/" for item in published)
+    for url in urls:
+        entry = ET.SubElement(sitemap, url_tag)
+        ET.SubElement(entry, loc_tag).text = url
+        ET.SubElement(entry, lastmod_tag).text = date.today().isoformat()
+    ET.ElementTree(sitemap).write(sitemap_path, encoding="utf-8", xml_declaration=True)
+
+
 def build(
     root: str | Path, catalogue: Iterable[dict[str, Any]], *, expected_count: int = 188
 ) -> list[Path]:
@@ -326,6 +354,7 @@ def build(
     catalogue_page = root_path / "biases" / "index.html"
     catalogue_page.parent.mkdir(parents=True, exist_ok=True)
     catalogue_page.write_text(render_catalogue(items), encoding="utf-8")
+    refresh_sitemap(root_path, published)
     return [catalogue_page, *built]
 
 
