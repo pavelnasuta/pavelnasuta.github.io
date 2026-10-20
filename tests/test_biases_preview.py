@@ -42,7 +42,10 @@ class BiasesPreviewTests(unittest.TestCase):
 
     def test_catalog_is_not_added_to_primary_navigation(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertNotIn('href="biases/', home)
+        nav_start = home.index('<nav class="site-nav"')
+        nav_end = home.index("</nav>", nav_start)
+        primary_navigation = home[nav_start:nav_end]
+        self.assertNotIn('href="biases/', primary_navigation)
 
     def test_preview_routes_keep_the_site_metrika_counter(self):
         for page in (CATALOG, DETAIL):
