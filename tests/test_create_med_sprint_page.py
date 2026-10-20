@@ -19,7 +19,7 @@ class CreateMedSprintPageTests(unittest.TestCase):
 
         html = PAGE.read_text(encoding="utf-8")
         self.assertIn(
-            '<link rel="stylesheet" href="../assets/styles/create-med-sprint.css?v=initial-7febd99">',
+            '<link rel="stylesheet" href="../assets/styles/create-med-sprint.css?v=20261020-contacts">',
             html,
         )
         home = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -61,6 +61,36 @@ class CreateMedSprintPageTests(unittest.TestCase):
         self.assertNotIn("create-med-sprint", home)
         self.assertIn('href="../create-med-sprint/"', create)
         self.assertIn("https://nasuta.ru/create-med-sprint/", sitemap)
+
+    def test_coach_card_uses_brand_icons_without_changing_channel_button_and_contacts_repeat_it(self):
+        html = PAGE.read_text(encoding="utf-8")
+        coach = html[html.index('class="coach-card"'):html.index('class="letters med-letters"')]
+
+        self.assertIn(
+            '<a class="button" href="https://t.me/niimozgii" target="_blank" rel="noopener">Открыть канал ↗</a>',
+            coach,
+        )
+        for label, url in (
+            ("Telegram Павла Насуты", "https://t.me/pavelnasuta"),
+            ("LinkedIn Павла Насуты", "https://www.linkedin.com/in/nasuta"),
+            ("Написать Павлу по email", "mailto:pavelnasuta@gmail.com"),
+        ):
+            self.assertIn(f'href="{url}"', coach)
+            self.assertIn(f'aria-label="{label}"', coach)
+        self.assertEqual(coach.count('class="coach-contact-icon"'), 3)
+        self.assertGreaterEqual(coach.count("<svg"), 3)
+
+        contacts = html[html.index('class="contact-section"'):html.index("</section>", html.index('class="contact-section"'))]
+        for item in (
+            "НИИ «МОЗГИ»",
+            "Персональный тренер для вашего агента",
+            "Павел Насута — AI-powered product builder",
+            "https://t.me/niimozgii",
+            "https://t.me/pavelnasuta",
+            "https://www.linkedin.com/in/nasuta",
+            "mailto:pavelnasuta@gmail.com",
+        ):
+            self.assertIn(item, contacts)
 
 
 if __name__ == "__main__":

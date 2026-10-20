@@ -123,6 +123,43 @@ def render_markdown(source: str) -> str:
     return "\n".join(result)
 
 
+TELEGRAM_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 3.2 18.4 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.3L5.8 13.5.9 12c-1.1-.3-1.1-1.1.2-1.6L20.3 3c.9-.3 1.7.2 1.3.2Z"/></svg>'
+LINKEDIN_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.3 8.3H1.8V22h3.5V8.3ZM3.5 2A2 2 0 1 0 3.5 6a2 2 0 0 0 0-4ZM22.5 14.1c0-4.1-2.2-6-5.1-6-2.4 0-3.5 1.3-4.1 2.2V8.3H9.8V22h3.5v-6.8c0-1.8.3-3.5 2.5-3.5 2.2 0 2.2 2 2.2 3.6V22h3.5v-7.9Z"/></svg>'
+EMAIL_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3v-13Zm1.8 1.8 7.2 5.6 7.2-5.6H4.8Zm14.4 9.4V9.6L12 15.2 4.8 9.6v7.1h14.4Z"/></svg>'
+PERSONAL_CONTACTS = (
+    ("Telegram Павла Насуты", "Telegram Павла", "https://t.me/pavelnasuta", TELEGRAM_ICON),
+    ("LinkedIn Павла Насуты", "LinkedIn", "https://www.linkedin.com/in/nasuta", LINKEDIN_ICON),
+    ("Написать Павлу по email", "Написать по email", "mailto:pavelnasuta@gmail.com", EMAIL_ICON),
+)
+
+
+def external_attributes(url: str) -> str:
+    return ' target="_blank" rel="noopener"' if url.startswith("https://") else ""
+
+
+def coach_contact_icons() -> str:
+    return "".join(
+        f'<a class="coach-contact-icon" href="{url}"{external_attributes(url)} aria-label="{label}">{icon}<span class="sr-only">{visible}</span></a>'
+        for label, visible, url, icon in PERSONAL_CONTACTS
+    )
+
+
+def contact_section() -> str:
+    links = "".join(
+        f'<a class="contact-link" href="{url}"{external_attributes(url)} aria-label="{label}">{icon}<span>{visible}</span></a>'
+        for label, visible, url, icon in PERSONAL_CONTACTS
+    )
+    return (
+        '<section class="contact-section" id="contact">'
+        '<div class="kicker">Контакты</div><div>'
+        '<p class="contact-org">НИИ «МОЗГИ»</p>'
+        '<h2>Персональный тренер для вашего агента</h2>'
+        '<p>Павел Насута — AI-powered product builder</p>'
+        '<a class="button" href="https://t.me/niimozgii" target="_blank" rel="noopener">Открыть канал ↗</a>'
+        f'<div class="contact-links">{links}</div></div></section>'
+    )
+
+
 def metrika() -> str:
     return """<!-- Yandex.Metrika counter -->
 <script type=\"text/javascript\">
@@ -154,6 +191,7 @@ def main() -> None:
         f'<pre class="pdf-text">{escape(PDF_TEXT.read_text(encoding="utf-8"))}</pre>'
         '</div></details></section>'
     )
+    rendered.append(contact_section())
 
     page = f"""<!doctype html>
 <html lang="ru">
@@ -163,7 +201,7 @@ def main() -> None:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="CREATE MED Sprint — полная практическая инструкция для студентов: от наблюдаемой проблемы до исследования, прототипа и честной защиты.">
   <title>CREATE MED Sprint — практический гид для студентов</title>
-  <link rel="stylesheet" href="../assets/styles/create-med-sprint.css?v=initial-7febd99">
+  <link rel="stylesheet" href="../assets/styles/create-med-sprint.css?v=20261020-contacts">
   <link rel="canonical" href="https://nasuta.ru/create-med-sprint/">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="ru_RU">
@@ -187,7 +225,7 @@ def main() -> None:
     <header class="hero med-hero">
       <div class="hero-grid">
         <div><div class="kicker">Практический гид для студентов · октябрь 2026</div><h1><em>CREATE MED</em><br>Sprint</h1><p class="lede">От наблюдаемой проблемы — к понятной демонстрации, фактам и первому разговору с пользователем.</p><div class="hero-actions"><a class="button" href="../assets/downloads/CREATE_MED_SPRINT_ГИД_ДЛЯ_СТУДЕНТОВ.pdf" download>Забрать PDF с собой ↓</a><a class="text-link" href="#guide">Начать инструкцию →</a></div></div>
-        <aside class="coach-card"><p class="kicker">НИИ «МОЗГИ»</p><h2>Персональный тренер для вашего агента</h2><p>Павел Насута — AI-powered product builder</p><a class="button" href="https://t.me/niimozgii" target="_blank" rel="noopener">Открыть канал ↗</a><nav class="coach-links" aria-label="Связаться с Павлом Насутой"><a href="https://t.me/pavelnasuta" target="_blank" rel="noopener">Telegram Павла</a><a href="https://www.linkedin.com/in/nasuta" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:pavelnasuta@gmail.com">Написать по email</a></nav></aside>
+        <aside class="coach-card"><p class="kicker">НИИ «МОЗГИ»</p><h2>Персональный тренер для вашего агента</h2><p>Павел Насута — AI-powered product builder</p><a class="button" href="https://t.me/niimozgii" target="_blank" rel="noopener">Открыть канал ↗</a><nav class="coach-links" aria-label="Связаться с Павлом Насутой">{coach_contact_icons()}</nav></aside>
       </div>
       <div class="letters med-letters"><div class="letter"><b>C</b><span>CONTEXT<br>ситуация</span></div><div class="letter"><b>R</b><span>RESEARCH<br>факты</span></div><div class="letter"><b>E</b><span>ELABORATION<br>Offer / MVP</span></div><div class="letter"><b>A</b><span>ASSEMBLE<br>демо</span></div><div class="letter"><b>T</b><span>TEST<br>проверка</span></div></div>
     </header>
