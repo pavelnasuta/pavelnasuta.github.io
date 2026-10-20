@@ -15,8 +15,8 @@ class HomepageBiasesPromoTests(unittest.TestCase):
         self.assertIn('принимать решения точнее.', HOME)
         self.assertNotIn('Раздел о мышлении', HOME)
         self.assertNotIn('180+ когнитивных искажений', HOME)
-        self.assertLess(HOME.index('class="method author-quote"'), HOME.index('class="biases"'))
-        self.assertLess(HOME.index('class="biases"'), HOME.index('class="content-section products"'))
+        self.assertLess(HOME.index('class="content-section skills"'), HOME.index('class="biases"'))
+        self.assertLess(HOME.index('class="biases"'), HOME.index('class="telegram"'))
         self.assertRegex(CSS, r'\.biases\{[^}]*margin:0 -42px')
 
 
