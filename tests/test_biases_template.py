@@ -46,8 +46,8 @@ class BiasesTemplateTests(unittest.TestCase):
             built = build(root, self.items)
             catalogue = (root / "biases" / "index.html").read_text(encoding="utf-8")
 
-            self.assertEqual(len(built), 41)
-            self.assertEqual(catalogue.count('<a class="bias-row"'), 40)
+            self.assertEqual(len(built), 61)
+            self.assertEqual(catalogue.count('<a class="bias-row"'), 60)
             self.assertIn('href="availability-heuristic/index.html"', catalogue)
             self.assertIn('href="confirmation-bias/index.html"', catalogue)
             self.assertIn('href="anchoring/index.html"', catalogue)
