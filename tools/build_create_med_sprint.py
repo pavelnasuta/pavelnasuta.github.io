@@ -163,7 +163,7 @@ def main() -> None:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="CREATE MED Sprint — полная практическая инструкция для студентов: от наблюдаемой проблемы до исследования, прототипа и честной защиты.">
   <title>CREATE MED Sprint — практический гид для студентов</title>
-  <link rel="stylesheet" href="../assets/styles/create-med-sprint.css">
+  <link rel="stylesheet" href="../assets/styles/create-med-sprint.css?v=initial-7febd99">
   <link rel="canonical" href="https://nasuta.ru/create-med-sprint/">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="ru_RU">

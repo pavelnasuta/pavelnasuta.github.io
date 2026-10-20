@@ -18,6 +18,10 @@ class CreateMedSprintPageTests(unittest.TestCase):
         self.assertTrue(SCRIPT.is_file())
 
         html = PAGE.read_text(encoding="utf-8")
+        self.assertIn(
+            '<link rel="stylesheet" href="../assets/styles/create-med-sprint.css?v=initial-7febd99">',
+            html,
+        )
         home = (ROOT / "index.html").read_text(encoding="utf-8")
         create = (ROOT / "create" / "index.html").read_text(encoding="utf-8")
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
