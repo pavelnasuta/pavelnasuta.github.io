@@ -3,6 +3,8 @@ import json
 import re
 import unittest
 
+from PIL import Image
+
 from tools.build_skills import load_registry, public_items
 
 
@@ -38,6 +40,33 @@ class SkillHubQualityTests(unittest.TestCase):
         schema = json.loads(blocks[0])
         self.assertEqual(schema["@type"], "CollectionPage")
         self.assertEqual(len(schema["hasPart"]), 3)
+
+    def test_each_skill_and_the_catalogue_have_distinct_og_images(self):
+        expected = {
+            "skills/index.html": "og-skills-hub.jpg",
+            "skills/book-summary/index.html": "og-skill-book-summary.jpg",
+            "skills/adaptive-support-dialogue/index.html": "og-skill-adaptive-support.jpg",
+            "skills/management-assistant/index.html": "og-skill-management-assistant.jpg",
+        }
+        image_urls = []
+        for page, image_name in expected.items():
+            html = (ROOT / page).read_text(encoding="utf-8")
+            with self.subTest(page=page):
+                og_image = re.search(r'<meta property="og:image" content="([^"]+)">', html)
+                twitter_image = re.search(r'<meta name="twitter:image" content="([^"]+)">', html)
+                self.assertIsNotNone(og_image)
+                self.assertIsNotNone(twitter_image)
+                if og_image is None or twitter_image is None:
+                    self.fail("Social image metadata is missing")
+                self.assertTrue(og_image.group(1).endswith(f"/assets/images/{image_name}"))
+                self.assertEqual(og_image.group(1), twitter_image.group(1))
+                image_path = ROOT / "assets/images" / image_name
+                self.assertTrue(image_path.is_file())
+                with Image.open(image_path) as image:
+                    self.assertEqual(image.size, (1200, 630))
+                    self.assertEqual(image.format, "JPEG")
+                image_urls.append(og_image.group(1))
+        self.assertEqual(len(image_urls), len(set(image_urls)))
 
 
 if __name__ == "__main__":
