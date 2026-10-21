@@ -42,6 +42,9 @@ class SkillHubTests(unittest.TestCase):
                 self.assertIn('href="../index.html"', html)
                 self.assertIn(status, html)
                 self.assertIn("Последнее существенное обновление", html)
+                self.assertIn('class="hero-mark', html)
+                self.assertGreaterEqual(html.count('class="skill-icon"'), 4)
+                self.assertIn('aria-hidden="true"', html)
 
 
 if __name__ == "__main__":
