@@ -39,7 +39,7 @@ class SkillHubQualityTests(unittest.TestCase):
         self.assertEqual(len(blocks), 1)
         schema = json.loads(blocks[0])
         self.assertEqual(schema["@type"], "CollectionPage")
-        self.assertEqual(len(schema["hasPart"]), 3)
+        self.assertEqual(len(schema["hasPart"]), 4)
 
     def test_each_skill_and_the_catalogue_have_distinct_og_images(self):
         expected = {
@@ -47,6 +47,7 @@ class SkillHubQualityTests(unittest.TestCase):
             "skills/book-summary/index.html": "og-skill-book-summary.jpg",
             "skills/adaptive-support-dialogue/index.html": "og-skill-adaptive-support.jpg",
             "skills/management-assistant/index.html": "og-skill-management-assistant.jpg",
+            "skills/anytype-agent-skill/index.html": "og-skill-anytype-agent.jpg",
         }
         image_urls = []
         for page, image_name in expected.items():

@@ -100,7 +100,7 @@ def render_card(item: dict[str, Any]) -> str:
         if state != "not-applicable"
     )
     tags = "".join(f'<li>{html.escape(tag)}</li>' for tag in item["tags"])
-    status = STATUS_LABELS[item["status"]]
+    status = item.get("catalogue_label") or STATUS_LABELS[item["status"]]
     return f'''<article class="skill-card" data-category="{html.escape(item['category'])}" data-search="{html.escape(' '.join([item['name'], item['summary'], item['category'], *item['tags']]).lower())}">
       <p class="skill-card__meta">{status} · {html.escape(item['category'])}</p>
       <h2><a href="{html.escape(item['page_url'].removeprefix('skills/'))}">{html.escape(item['name'])}</a></h2>

@@ -121,6 +121,32 @@ def management_assistant():
     save(image, "og-skill-management-assistant.jpg")
 
 
+def anytype_agent():
+    image = gradient((20, 35, 52), (38, 77, 92))
+    draw = ImageDraw.Draw(image)
+    for x in range(0, WIDTH, 48):
+        draw.line((x, 0, x, HEIGHT), fill=(40, 92, 105), width=1)
+    for y in range(0, HEIGHT, 48):
+        draw.line((0, y, WIDTH, y), fill=(40, 92, 105), width=1)
+    pill(draw, (72, 56), "PUBLIC REPOSITORY", (207, 235, 225), (22, 61, 67))
+    text(draw, (72, 147), "Anytype Agent\nSkill", 68, (243, 247, 241), bold=True, spacing=-2)
+    text(draw, (77, 335), "структура → поиск → проверяемая правка\nкарточки · схема · read-back", 25, (181, 220, 211), spacing=12)
+    # A navigable object graph: connected cards and an inspected target.
+    nodes = [(748, 195, 178, 92, (110, 205, 185), "SPACE"), (951, 151, 172, 92, (235, 186, 101), "MODEL"), (892, 365, 192, 96, (218, 130, 113), "VERIFY")]
+    draw.line((835, 240, 951, 198), fill=(225, 240, 235), width=5)
+    draw.line((1030, 243, 987, 365), fill=(225, 240, 235), width=5)
+    draw.line((838, 287, 938, 365), fill=(225, 240, 235), width=5)
+    for x, y, width, height, color, label in nodes:
+        draw.rounded_rectangle((x, y, x + width, y + height), radius=18, fill=color)
+        draw.rounded_rectangle((x + 18, y + 19, x + 59, y + 60), radius=11, fill=(22, 51, 60))
+        text(draw, (x + 76, y + 25), label, 19, (22, 51, 60), bold=True)
+        draw.line((x + 76, y + 65, x + width - 20, y + 65), fill=(22, 51, 60), width=3)
+    # The small check mark is the difference between a plausible and verified change.
+    draw.line((1058, 481, 1082, 505, 1131, 449), fill=(235, 241, 234), width=8)
+    text(draw, (72, 565), "PAVEL NASUTA  /  SKILL HUB", 15, (145, 207, 196), mono=True)
+    save(image, "og-skill-anytype-agent.jpg")
+
+
 def skill_hub():
     image = gradient((22, 29, 63), (22, 59, 83))
     draw = ImageDraw.Draw(image)
@@ -151,5 +177,6 @@ if __name__ == "__main__":
     book_summary()
     adaptive_support()
     management_assistant()
+    anytype_agent()
     skill_hub()
-    print("Generated 4 Skill Hub Open Graph images.")
+    print("Generated 5 Skill Hub Open Graph images.")

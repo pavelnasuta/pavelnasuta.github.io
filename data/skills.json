@@ -58,6 +58,26 @@
       "release_priority": 3
     },
     {
+      "slug": "anytype-agent-skill",
+      "name": "Anytype Agent Skill",
+      "summary": "Операционный skill для AI-агентов: строит связные пространства Anytype с безопасной навигацией, схемой данных и проверяемыми правками.",
+      "category": "Operations & Knowledge",
+      "tags": ["anytype", "knowledge-management", "local-api", "verification"],
+      "status": "released",
+      "catalogue_label": "PUBLIC REPOSITORY",
+      "visibility": "public",
+      "source_status": "published",
+      "compatibility": {"hermes": "verified", "claude-code": "compatible", "codex": "compatible", "opencode": "compatible", "agents-md": "compatible"},
+      "updated": "2026-10-22",
+      "version": "1.1.0",
+      "license": "Private preview",
+      "repository_url": "https://github.com/pavelnasuta/anytype-agent-skill",
+      "page_url": "skills/anytype-agent-skill/index.html",
+      "privacy_review": "approved",
+      "release_notes": "Публичная версия добавляет capability-aware поиск, schema snapshots и точечные правки длинных страниц.",
+      "release_priority": 4
+    },
+    {
       "slug": "art-directing-visuals",
       "name": "Art-directing visuals",
       "summary": "Осмысленная арт-дирекция для обложек, карточек, баннеров и социальных визуалов.",
