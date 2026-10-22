@@ -48,6 +48,10 @@ class SkillHubTests(unittest.TestCase):
                 self.assertIn('class="hero-mark', html)
                 self.assertGreaterEqual(html.count('class="skill-icon"'), 4)
                 self.assertIn('aria-hidden="true"', html)
+    def test_anytype_page_uses_the_site_canonical_network_icon(self):
+        html = (ROOT / "skills" / "anytype-agent-skill" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<rect x="16" y="16" width="6" height="6" rx="1">', html)
+        self.assertIn('<path d="M12 12V8">', html)
 
 
 if __name__ == "__main__":
