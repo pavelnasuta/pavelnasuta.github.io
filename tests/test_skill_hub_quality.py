@@ -41,16 +41,16 @@ class SkillHubQualityTests(unittest.TestCase):
         self.assertEqual(schema["@type"], "CollectionPage")
         self.assertEqual(len(schema["hasPart"]), 4)
 
-    def test_each_skill_and_the_catalogue_have_distinct_og_images(self):
+    def test_skills_use_distinct_social_art_and_page_heroes(self):
         expected = {
-            "skills/index.html": "og-skills-hub.jpg",
-            "skills/book-summary/index.html": "og-skill-book-summary.jpg",
-            "skills/adaptive-support-dialogue/index.html": "og-skill-adaptive-support.jpg",
-            "skills/management-assistant/index.html": "og-skill-management-assistant.jpg",
-            "skills/anytype-agent-skill/index.html": "og-skill-anytype-agent.jpg",
+            "skills/index.html": ("og-skills-hub.jpg", "hero-visual"),
+            "skills/book-summary/index.html": ("og-skill-book-summary.jpg", "skill-visual"),
+            "skills/adaptive-support-dialogue/index.html": ("og-skill-adaptive-support.jpg", "skill-visual"),
+            "skills/management-assistant/index.html": ("og-skill-management-assistant.jpg", "skill-visual"),
+            "skills/anytype-agent-skill/index.html": ("og-skill-anytype-agent.jpg", "skill-visual"),
         }
         image_urls = []
-        for page, image_name in expected.items():
+        for page, (image_name, hero_class) in expected.items():
             html = (ROOT / page).read_text(encoding="utf-8")
             with self.subTest(page=page):
                 og_image = re.search(r'<meta property="og:image" content="([^"]+)">', html)
@@ -61,6 +61,7 @@ class SkillHubQualityTests(unittest.TestCase):
                     self.fail("Social image metadata is missing")
                 self.assertTrue(og_image.group(1).endswith(f"/assets/images/{image_name}"))
                 self.assertEqual(og_image.group(1), twitter_image.group(1))
+                self.assertRegex(html, rf'class="{hero_class}"><img src="(?:\.\./)+assets/images/{re.escape(image_name)}" alt="[^"]+"')
                 image_path = ROOT / "assets/images" / image_name
                 self.assertTrue(image_path.is_file())
                 with Image.open(image_path) as image:

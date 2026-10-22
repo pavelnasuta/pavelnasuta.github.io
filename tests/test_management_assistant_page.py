@@ -29,11 +29,11 @@ class ManagementAssistantPageTests(unittest.TestCase):
         self.assertIn('href="skills/management-assistant/index.html"', home)
         self.assertIn("Ассистент руководителя", home)
 
-    def test_page_includes_dedicated_style_and_social_metadata(self):
+    def test_page_includes_editorial_style_and_social_metadata(self):
         html = PAGE.read_text(encoding="utf-8")
-        self.assertIn("skills-management-assistant-index.css", html)
+        self.assertIn("skills-editorial.css", html)
+        self.assertTrue((ROOT / "assets/styles/skills-editorial.css").is_file())
         self.assertIn("og-skill-management-assistant.jpg", html)
-        self.assertTrue((ROOT / "assets/styles/skills-management-assistant-index.css").is_file())
         self.assertTrue((ROOT / "assets/images/og-skill-management-assistant.jpg").is_file())
 
 

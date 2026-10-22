@@ -150,7 +150,7 @@ def render_hub(items: list[dict[str, Any]]) -> str:
   <div class="shell">
     <nav class="nav" aria-label="Основная навигация"><a class="brand" href="../index.html">Павел Насута</a><a href="../articles/index.html">Блог</a><a href="../create/index.html">CREATE</a><a href="../about/index.html">Обо мне</a><a class="nav-telegram" href="https://t.me/niimozgii" target="_blank" rel="noopener">Telegram ↗</a></nav>
     <main>
-      <header class="hero"><p class="eyebrow">ПРАКТИКА · AI-АГЕНТЫ · OPEN WORKFLOWS</p><h1>Skills, собранные из реальной работы.</h1><p>Не набор промптов, а проверяемые рабочие контуры: задача, границы, онбординг, адаптеры агентов и способ проверить результат.</p></header>
+      <header class="hero"><p class="eyebrow">ПРАКТИКА · AI-АГЕНТЫ · OPEN WORKFLOWS</p><h1>Skills, собранные из реальной работы.</h1><p>Не набор промптов, а проверяемые рабочие контуры: задача, границы, онбординг, адаптеры агентов и способ проверить результат.</p><figure class="hero-visual"><img src="../assets/images/og-skills-hub.jpg" alt="Абстрактная схема: связанные рабочие контуры и точка принятия решения"></figure></header>
       <section class="catalogue" aria-labelledby="catalogue-title"><div class="catalogue-head"><div><p class="eyebrow">КАТАЛОГ</p><h2 id="catalogue-title">Открытые и пилотные навыки</h2></div><label class="search"><span class="sr-only">Поиск по навыкам</span><input type="search" id="skill-search" placeholder="Найти навык" autocomplete="off"></label></div>
         <div class="filters" aria-label="Фильтр по категории"><button type="button" class="filter-button is-active" data-filter="category" data-value="all">Все</button>{category_controls}</div>
         <div class="skill-grid" id="skill-grid">{cards}</div>
