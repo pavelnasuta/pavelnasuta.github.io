@@ -9,6 +9,11 @@ import re
 from pathlib import Path
 from typing import Any
 
+try:
+    from tools.site_footer import SITE_FOOTER, STYLESHEET
+except ModuleNotFoundError:  # Direct execution from tools/.
+    from site_footer import SITE_FOOTER, STYLESHEET
+
 
 SAFE_SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 AGENT_STATES = frozenset({"verified", "compatible", "planned", "not-applicable"})
@@ -140,6 +145,7 @@ def render_hub(items: list[dict[str, Any]]) -> str:
   <title>Skills для AI-агентов · Павел Насута</title>
   <link rel="canonical" href="https://nasuta.ru/skills/">
   <link rel="stylesheet" href="../assets/styles/skills-index.css">
+  {STYLESHEET}
   <meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Павел Насута"><meta property="og:title" content="Skills для AI-агентов · Павел Насута"><meta property="og:description" content="Публичный каталог практических навыков для AI-агентов."><meta property="og:url" content="https://nasuta.ru/skills/"><meta property="og:image" content="https://nasuta.ru/assets/images/og-skills-hub.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Skills для AI-агентов">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Skills для AI-агентов · Павел Насута"><meta name="twitter:description" content="Публичный каталог практических навыков для AI-агентов."><meta name="twitter:image" content="https://nasuta.ru/assets/images/og-skills-hub.jpg"><meta name="twitter:image:alt" content="Skills для AI-агентов">
   <script type="application/ld+json">{schema}</script>
@@ -158,7 +164,7 @@ def render_hub(items: list[dict[str, Any]]) -> str:
       </section>
       <section class="method"><p class="eyebrow">КАК ПОЯВЛЯЮТСЯ НАВЫКИ</p><h2>Сначала практика, затем открытый выпуск.</h2><p>Каждый новый навык проходит обезличивание, проверку границ и адаптацию для агентных сред. Исходники появляются на GitHub только после отдельного ревью.</p></section>
     </main>
-    <footer class="footer"><span>© Павел Насута</span><span>Skills для AI-агентов</span></footer>
+    {SITE_FOOTER}
   </div>
   <script>const search=document.getElementById('skill-search');const buttons=[...document.querySelectorAll('[data-filter="category"]')];const cards=[...document.querySelectorAll('.skill-card')];const none=document.getElementById('no-results');let category='all';function apply(){{const query=search.value.trim().toLowerCase();let shown=0;cards.forEach((card)=>{{const matchCategory=category==='all'||card.dataset.category===category;const matchQuery=!query||card.dataset.search.includes(query);const visible=matchCategory&&matchQuery;card.hidden=!visible;if(visible)shown+=1;}});none.hidden=shown!==0;}}buttons.forEach((button)=>button.addEventListener('click',()=>{{category=button.dataset.value;buttons.forEach((item)=>item.classList.toggle('is-active',item===button));apply();}}));search.addEventListener('input',apply);</script>
 </body>

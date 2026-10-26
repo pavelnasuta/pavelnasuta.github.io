@@ -7,6 +7,11 @@ from html import escape
 from pathlib import Path
 import re
 
+try:
+    from tools.site_footer import SITE_FOOTER, STYLESHEET
+except ModuleNotFoundError:  # Direct execution from tools/.
+    from site_footer import SITE_FOOTER, STYLESHEET
+
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIR = ROOT / "content" / "create-med-sprint"
 OUTPUT = ROOT / "create-med-sprint" / "index.html"
@@ -256,6 +261,7 @@ def main() -> None:
   <meta name="twitter:description" content="Полный маршрут от наблюдаемой проблемы до фактов, прототипа и первого разговора с пользователем.">
   <meta name="twitter:image" content="https://nasuta.ru/assets/images/og-pavel-nasuta-agents.jpg">
   <script type="application/ld+json">{{"@context":"https://schema.org","@type":"Course","name":"CREATE MED Sprint","description":"Практический гид для студентов: от наблюдаемой проблемы к понятной демонстрации, фактам и первому разговору с пользователем.","inLanguage":"ru-RU","url":"https://nasuta.ru/create-med-sprint/","provider":{{"@type":"Person","name":"Павел Насута","url":"https://nasuta.ru/about/"}},"isAccessibleForFree":true}}</script>
+  {STYLESHEET}
   {metrika()}
 </head>
 <body>
@@ -274,7 +280,7 @@ def main() -> None:
     <aside class="bias-note"><div class="kicker">Проверка мышления</div><div><h2>Не выдавайте первую правдоподобную версию за факт.</h2><p>Когда отделяете факт от гипотезы и проверяете источник, помогает <a href="../biases/index.html">справочник когнитивных искажений</a>: он даёт язык для ловушек мышления, которые мешают исследованию и продуктовым решениям.</p></div></aside>
     {''.join(rendered)}
   </main>
-  <footer class="footer"><span>© Павел Насута</span><span>CREATE MED Sprint · практический гид</span></footer>
+  {SITE_FOOTER}
 </div>
 <script src="../assets/scripts/create-med-sprint.js" defer></script>
 </body>

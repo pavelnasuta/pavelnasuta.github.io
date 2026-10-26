@@ -11,6 +11,11 @@ import re
 from typing import Any, Iterable
 import xml.etree.ElementTree as ET
 
+try:
+    from tools.site_footer import SITE_FOOTER, STYLESHEET
+except ModuleNotFoundError:  # Direct execution from tools/.
+    from site_footer import SITE_FOOTER, STYLESHEET
+
 
 DETAIL_CATEGORIES = frozenset(
     {
@@ -223,6 +228,7 @@ def render_detail(
   <meta property="og:type" content="article"><meta property="og:locale" content="ru_RU"><meta property="og:title" content="{_text(seo['title'])}"><meta property="og:description" content="{description}"><meta property="og:url" content="https://nasuta.ru/biases/{slug}/"><meta property="og:image" content="https://nasuta.ru/assets/images/og-cognitive-biases.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Когнитивные искажения — справочник Павла Насуты">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{_text(seo['title'])}"><meta name="twitter:description" content="{description}"><meta name="twitter:image" content="https://nasuta.ru/assets/images/og-cognitive-biases.jpg"><meta name="twitter:image:alt" content="Когнитивные искажения — справочник Павла Насуты">
   <script type="application/ld+json">{article_schema}</script>
+  {STYLESHEET}
   {_metrika()}
 </head>
 <body>
@@ -246,7 +252,7 @@ def render_detail(
       {render_cta()}
       <nav class="route-nav" aria-label="Продолжить изучение">{''.join(route_links)}</nav>
     </main>
-    <footer class="footer"><span>© Павел Насута</span><span>Когнитивные искажения</span></footer>
+    {SITE_FOOTER}
   </div>
   <script>const random=document.getElementById('random-bias');const routes={json.dumps(random_routes, ensure_ascii=False)};random.addEventListener('click',(event)=>{{event.preventDefault();window.location.href=routes[Math.floor(Math.random()*routes.length)]}});</script>
 </body>
@@ -275,6 +281,7 @@ def render_catalogue(items: Iterable[dict[str, Any]]) -> str:
   <meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:title" content="Когнитивные искажения · Павел Насута"><meta property="og:description" content="Когнитивные искажения: понятный каталог с примерами, механизмами, способами самопроверки и источниками исследований."><meta property="og:url" content="https://nasuta.ru/biases/"><meta property="og:image" content="https://nasuta.ru/assets/images/og-cognitive-biases.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Когнитивные искажения — справочник Павла Насуты">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Когнитивные искажения · Павел Насута"><meta name="twitter:description" content="Когнитивные искажения: понятный каталог с примерами, механизмами, способами самопроверки и источниками исследований."><meta name="twitter:image" content="https://nasuta.ru/assets/images/og-cognitive-biases.jpg"><meta name="twitter:image:alt" content="Когнитивные искажения — справочник Павла Насуты">
   <script type="application/ld+json">{{"@context":"https://schema.org","@type":"CollectionPage","@id":"https://nasuta.ru/biases/#webpage","url":"https://nasuta.ru/biases/","name":"Когнитивные искажения","description":"Понятный каталог когнитивных искажений с примерами, механизмами и источниками.","inLanguage":"ru-RU","about":{{"@type":"Thing","name":"Когнитивные искажения"}},"isPartOf":{{"@id":"https://nasuta.ru/#website"}}}}</script>
+  {STYLESHEET}
   {_metrika()}
 </head>
 <body>
@@ -289,7 +296,7 @@ def render_catalogue(items: Iterable[dict[str, Any]]) -> str:
 {chr(10).join(rows)}
         </ol><p class="empty-state" id="empty-state" hidden>Ничего не найдено. Попробуй другое слово или фильтр.</p>
       </section>
-    </main><footer class="footer"><span>© Павел Насута</span><span>Когнитивные искажения</span></footer>
+    </main>{SITE_FOOTER}
   </div>
   <script>const search=document.getElementById('bias-search');const filters=[...document.querySelectorAll('[data-filter]')];const rows=[...document.querySelectorAll('.bias-row')];const empty=document.getElementById('empty-state');let group='all';const update=()=>{{const query=search.value.trim().toLowerCase();let visible=0;rows.forEach((row)=>{{const show=(group==='all'||row.dataset.group===group)&&(!query||row.dataset.search.includes(query));row.hidden=!show;if(show)visible+=1}});empty.hidden=visible!==0}};filters.forEach((button)=>button.addEventListener('click',()=>{{group=button.dataset.filter;filters.forEach((item)=>item.setAttribute('aria-pressed',String(item===button)));update()}}));search.addEventListener('input',update);</script>
 </body>
