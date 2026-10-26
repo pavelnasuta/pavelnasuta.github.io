@@ -28,6 +28,9 @@ class TelegramChannelAnalyticsPageTests(unittest.TestCase):
 
     def test_page_has_truthful_metadata_boundaries_and_original_og_image(self):
         html = PAGE.read_text(encoding="utf-8")
+        style = (ROOT / "assets/styles/skills-telegram-channel-analytics-index.css").read_text(encoding="utf-8")
+        self.assertIn("border-radius:0", style)
+        self.assertIn("position:absolute", style)
         self.assertIn(REPO, html)
         for key in (
             "og:title",

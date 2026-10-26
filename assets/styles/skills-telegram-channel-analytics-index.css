@@ -1,5 +1,7 @@
 @import url("skills-art-directing-visuals-index.css");
 :root{--blue:#163d52;--orange:#c95d38;--yellow:#d4b342;--pink:#438b88}
-.skill-visual{background:var(--blue)}
+/* This skill uses a literal evidence board, not the generic arched hero mask. */
+.skill-visual{position:relative;background:transparent;border-radius:0}
+.skill-visual img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
 @media (max-width:860px){.layout{grid-template-columns:minmax(0,1fr)}.toc{display:none}.content{min-width:0}}
 @media (max-width:760px){.shell{padding:0 20px}.nav{min-height:64px;gap:14px;flex-wrap:wrap;padding:14px 0}.nav .brand{width:100%}.hero{padding:42px 0}.hero-grid{grid-template-columns:minmax(0,1fr);gap:28px}.skill-visual{min-height:230px}.release{padding:24px 0}.outcomes{grid-template-columns:minmax(0,1fr)}.content pre{max-width:100%;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere}.hero h1,.content h2{letter-spacing:-.05em}}
