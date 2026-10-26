@@ -15,6 +15,7 @@ REQUIRED_LINKS = (
     'href="https://menhausen.com/"',
     'href="https://t.me/niimozgii"',
     'href="https://www.linkedin.com/in/nasuta"',
+    'href="https://github.com/pavelnasuta"',
     'href="mailto:pavelnasuta@gmail.com"',
 )
 
