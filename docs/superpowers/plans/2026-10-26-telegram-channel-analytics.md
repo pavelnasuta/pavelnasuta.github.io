@@ -4,7 +4,7 @@
 
 **Goal:** Publish a portable, read-only Telegram channel analytics skill with an honest weekly report, append-only evidence, delayed post measurements, and an optional comparable-channel watchlist.
 
-**Architecture:** The public repository is a self-contained skill package. A canonical `SKILL.md` describes the workflow; JSON templates define durable artifacts; a stdlib Python validator checks project integrity offline. The existing static site exposes the released package through the Skill Hub registry, a Russian explanation page, and a unique social image.
+**Architecture:** The public repository is built in its own standalone local package workspace, never inside the static-site checkout. A canonical `SKILL.md` describes the workflow; JSON templates define durable artifacts; a stdlib Python validator checks project integrity offline. The existing static site exposes only the released package through the Skill Hub registry, a Russian explanation page, and a unique social image.
 
 **Tech Stack:** Markdown, JSON, Python standard library/unittest, static HTML/CSS, Pillow, GitHub CLI, GitHub Pages.
 
