@@ -164,7 +164,7 @@
       "source_status": "published",
       "compatibility": {"hermes": "verified", "claude-code": "compatible", "codex": "compatible", "opencode": "planned", "agents-md": "compatible"},
       "updated": "2026-10-26",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "license": "MIT",
       "repository_url": "https://github.com/pavelnasuta/telegram-channel-analytics-skill",
       "page_url": "skills/telegram-channel-analytics/index.html",

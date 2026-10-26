@@ -19,6 +19,7 @@ class TelegramChannelAnalyticsPageTests(unittest.TestCase):
         record = next(item for item in records if item["slug"] == SLUG)
         self.assertEqual(record["status"], "released")
         self.assertEqual(record["visibility"], "public")
+        self.assertEqual(record["version"], "1.0.2")
         self.assertEqual(record["repository_url"], REPO)
         self.assertEqual(record["page_url"], "skills/telegram-channel-analytics/index.html")
         hub = (ROOT / "skills" / "index.html").read_text(encoding="utf-8")
