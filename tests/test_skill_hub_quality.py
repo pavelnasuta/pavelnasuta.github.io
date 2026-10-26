@@ -39,7 +39,7 @@ class SkillHubQualityTests(unittest.TestCase):
         self.assertEqual(len(blocks), 1)
         schema = json.loads(blocks[0])
         self.assertEqual(schema["@type"], "CollectionPage")
-        self.assertEqual(len(schema["hasPart"]), 4)
+        self.assertEqual(len(schema["hasPart"]), 5)
 
     def test_skills_use_distinct_social_art_and_page_heroes(self):
         expected = {
@@ -48,6 +48,7 @@ class SkillHubQualityTests(unittest.TestCase):
             "skills/adaptive-support-dialogue/index.html": ("og-skill-adaptive-support.jpg", "skill-visual"),
             "skills/management-assistant/index.html": ("og-skill-management-assistant.jpg", "skill-visual"),
             "skills/anytype-agent-skill/index.html": ("og-skill-anytype-agent.jpg", "skill-visual"),
+            "skills/art-directing-visuals/index.html": ("og-skill-art-directing-visuals.jpg", "skill-visual"),
         }
         image_urls = []
         for page, (image_name, hero_class) in expected.items():

@@ -147,6 +147,23 @@ def anytype_agent():
     save(image, "og-skill-anytype-agent.jpg")
 
 
+def art_directing_visuals():
+    image = gradient((28, 55, 86), (17, 37, 61))
+    draw = ImageDraw.Draw(image)
+    pill(draw, (72, 56), "OPEN SOURCE SKILL", (245, 238, 212), (36, 58, 84))
+    text(draw, (72, 147), "Art-directing\nvisuals", 68, (246, 242, 231), bold=True, spacing=-2)
+    text(draw, (77, 335), "одна идея → читаемый визуал\nфакты · композиция · права", 25, (190, 215, 224), spacing=12)
+    draw.polygon(((706, 130), (924, 173), (839, 347), (627, 299)), fill=(240, 200, 88))
+    draw.rectangle((920, 161, 1108, 397), fill=(216, 96, 99))
+    draw.ellipse((775, 331, 997, 553), fill=(230, 106, 58))
+    draw.polygon(((1054, 414), (1140, 480), (1072, 558), (986, 492)), fill=(244, 241, 226))
+    draw.rectangle((672, 116, 1127, 537), outline=(244, 241, 226), width=5)
+    draw.line((694, 472, 1081, 196), fill=(25, 53, 80), width=7)
+    draw.ellipse((1010, 257, 1032, 279), fill=(25, 53, 80))
+    text(draw, (72, 565), "PAVEL NASUTA  /  SKILL HUB", 15, (147, 196, 213), mono=True)
+    save(image, "og-skill-art-directing-visuals.jpg")
+
+
 def skill_hub():
     image = gradient((22, 29, 63), (22, 59, 83))
     draw = ImageDraw.Draw(image)
@@ -178,5 +195,6 @@ if __name__ == "__main__":
     adaptive_support()
     management_assistant()
     anytype_agent()
+    art_directing_visuals()
     skill_hub()
-    print("Generated 5 Skill Hub Open Graph images.")
+    print("Generated 6 Skill Hub Open Graph images.")

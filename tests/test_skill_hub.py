@@ -24,8 +24,8 @@ class SkillHubTests(unittest.TestCase):
         self.assertIn("Adaptive Support Dialogue", self.html)
         self.assertIn("Ассистент руководителя", self.html)
         self.assertIn("Anytype Agent Skill", self.html)
-        self.assertNotIn("Art-directing visuals", self.html)
-        self.assertEqual(self.html.count('class="skill-card"'), 4)
+        self.assertIn("Art-directing visuals", self.html)
+        self.assertEqual(self.html.count('class="skill-card"'), 5)
 
     def test_hub_has_metadata_filters_and_real_local_links(self):
         self.assertIn('<link rel="canonical" href="https://nasuta.ru/skills/">', self.html)
@@ -34,6 +34,7 @@ class SkillHubTests(unittest.TestCase):
         self.assertIn('href="book-summary/index.html"', self.html)
         self.assertIn('href="management-assistant/index.html"', self.html)
         self.assertIn('href="anytype-agent-skill/index.html"', self.html)
+        self.assertIn('href="art-directing-visuals/index.html"', self.html)
         self.assertIn('assets/styles/skills-index.css', self.html)
 
     def test_each_current_skill_page_has_hub_sections_and_return_route(self):
