@@ -164,6 +164,32 @@ def art_directing_visuals():
     save(image, "og-skill-art-directing-visuals.jpg")
 
 
+def telegram_channel_analytics():
+    image = gradient((18, 50, 66), (16, 29, 56))
+    draw = ImageDraw.Draw(image)
+    pill(draw, (72, 56), "OPEN SOURCE SKILL", (222, 238, 229), (24, 72, 77))
+    text(draw, (72, 147), "Telegram Channel\nAnalytics", 62, (245, 242, 229), bold=True, spacing=-2)
+    text(draw, (77, 335), "снимок → повторный замер → вывод\nнеделя · месяц · watchlist", 25, (180, 218, 215), spacing=12)
+    # Immutable post timeline: each circle is an additional observation, not a rewritten past value.
+    draw.line((674, 426, 1117, 426), fill=(216, 229, 218), width=5)
+    for x, y, radius, color, label in (
+        (704, 356, 17, (231, 180, 83), "0H"),
+        (806, 312, 20, (88, 190, 173), "24H"),
+        (920, 260, 24, (224, 110, 79), "7D"),
+        (1040, 205, 29, (221, 205, 114), "14D"),
+    ):
+        draw.line((x, 426, x, y + radius), fill=(155, 208, 199), width=4)
+        draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=color, outline=(244, 242, 229), width=3)
+        text(draw, (x, y), label, 14, (19, 44, 58), bold=True, mono=True, anchor="mm")
+    # A deliberately separate, dashed watchlist contour avoids the visual language of a ranking table.
+    for offset in range(0, 210, 20):
+        draw.line((883 + offset, 477, 896 + offset, 477), fill=(191, 218, 215), width=4)
+    draw.rounded_rectangle((874, 496, 1128, 551), radius=18, outline=(191, 218, 215), width=3)
+    text(draw, (1001, 522), "WATCHLIST / CONTEXT", 15, (191, 218, 215), bold=True, mono=True, anchor="mm")
+    text(draw, (72, 565), "PAVEL NASUTA  /  SKILL HUB", 15, (139, 200, 197), mono=True)
+    save(image, "og-skill-telegram-channel-analytics.jpg")
+
+
 def skill_hub():
     image = gradient((22, 29, 63), (22, 59, 83))
     draw = ImageDraw.Draw(image)
@@ -196,5 +222,6 @@ if __name__ == "__main__":
     management_assistant()
     anytype_agent()
     art_directing_visuals()
+    telegram_channel_analytics()
     skill_hub()
-    print("Generated 6 Skill Hub Open Graph images.")
+    print("Generated 7 Skill Hub Open Graph images.")

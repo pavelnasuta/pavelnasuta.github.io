@@ -15,7 +15,7 @@ class SkillRegistryTests(unittest.TestCase):
         visible = public_items(items)
         self.assertEqual(
             {item["slug"] for item in visible},
-            {"book-summary", "adaptive-support-dialogue", "management-assistant", "anytype-agent-skill", "art-directing-visuals"},
+            {"book-summary", "adaptive-support-dialogue", "management-assistant", "anytype-agent-skill", "art-directing-visuals", "telegram-channel-analytics"},
         )
         for item in visible:
             self.assertTrue(item["summary"])

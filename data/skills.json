@@ -156,21 +156,21 @@
     {
       "slug": "telegram-channel-analytics",
       "name": "Telegram Channel Analytics",
-      "summary": "Честный разбор динамики канала, показателей постов и визуальная сводка без выдуманной нативной аналитики.",
+      "summary": "Накопительная редакционная аналитика Telegram-канала с повторными замерами и честными границами данных.",
       "category": "Editorial & Telegram",
-      "tags": ["telegram", "analytics", "metrics", "visualization"],
-      "status": "withheld",
-      "visibility": "withheld",
-      "source_status": "not-started",
-      "compatibility": {"hermes": "planned", "claude-code": "planned", "codex": "planned", "opencode": "planned", "agents-md": "compatible"},
-      "updated": "2026-10-20",
-      "version": "0.1.0",
-      "license": "Pending review",
-      "repository_url": "",
-      "page_url": "",
-      "privacy_review": "required",
-      "release_notes": "Новый самостоятельный навык, который предстоит выделить из редакционной практики.",
-      "release_priority": 5
+      "tags": ["telegram", "analytics", "editorial", "measurement", "watchlist"],
+      "status": "released",
+      "visibility": "public",
+      "source_status": "published",
+      "compatibility": {"hermes": "verified", "claude-code": "compatible", "codex": "compatible", "opencode": "planned", "agents-md": "compatible"},
+      "updated": "2026-10-26",
+      "version": "1.0.0",
+      "license": "MIT",
+      "repository_url": "https://github.com/pavelnasuta/telegram-channel-analytics-skill",
+      "page_url": "skills/telegram-channel-analytics/index.html",
+      "privacy_review": "approved",
+      "release_notes": "Открытая read-only версия: недельные отчёты, повторные замеры живых постов, накопительная память и объявленный watchlist.",
+      "release_priority": 1
     }
   ]
 }
