@@ -28,6 +28,9 @@ class ArtDirectingVisualsPageTests(unittest.TestCase):
 
     def test_page_has_complete_social_metadata_and_original_og_image(self):
         html = PAGE.read_text(encoding="utf-8")
+        css = (ROOT / "assets/styles/skills-art-directing-visuals-index.css").read_text(encoding="utf-8")
+        self.assertIn(".content{min-width:0}", css)
+        self.assertIn("overflow-wrap:anywhere", css)
         self.assertIn(REPO, html)
         for key in ("og:title", "og:description", "og:image", "og:image:width", "og:image:height", "og:image:alt", "twitter:image"):
             self.assertIn(key, html)

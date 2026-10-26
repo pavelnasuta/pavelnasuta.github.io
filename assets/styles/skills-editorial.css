@@ -79,7 +79,7 @@ p code, .agent-grid code { padding: 2px 4px; background: #dfeae5; font-size: .84
 .repository p a { color: inherit; font: inherit; text-decoration-thickness: 1px; }
 .footer { display: flex; justify-content: space-between; gap: 20px; padding: 23px 0 30px; border-top: 1px solid var(--line); color: var(--slate); font-size: 12px; }
 
-@media (max-width: 760px) {
+@media (max-width: 800px) {
   .shell { padding: 0 20px; }
   .nav { min-height: 70px; align-items: flex-start; padding: 13px 0; }
   .nav-right { justify-content: flex-end; gap: 11px; font-size: 13px; }
