@@ -41,9 +41,9 @@ class SkillHubQualityTests(unittest.TestCase):
         self.assertEqual(schema["@type"], "CollectionPage")
         self.assertEqual(len(schema["hasPart"]), 6)
 
-    def test_skills_use_distinct_social_art_and_page_heroes(self):
+    def test_skills_keep_distinct_social_art_and_detail_page_heroes(self):
         expected = {
-            "skills/index.html": ("og-skills-hub.jpg", "hero-visual"),
+            "skills/index.html": ("og-skills-hub.jpg", None),
             "skills/book-summary/index.html": ("og-skill-book-summary.jpg", "skill-visual"),
             "skills/adaptive-support-dialogue/index.html": ("og-skill-adaptive-support.jpg", "skill-visual"),
             "skills/management-assistant/index.html": ("og-skill-management-assistant.jpg", "skill-visual"),
@@ -63,7 +63,10 @@ class SkillHubQualityTests(unittest.TestCase):
                     self.fail("Social image metadata is missing")
                 self.assertTrue(og_image.group(1).endswith(f"/assets/images/{image_name}"))
                 self.assertEqual(og_image.group(1), twitter_image.group(1))
-                self.assertRegex(html, rf'class="{hero_class}"><img src="(?:\.\./)+assets/images/{re.escape(image_name)}" alt="[^"]+"')
+                if hero_class is None:
+                    self.assertNotIn('class="hero-visual"', html)
+                else:
+                    self.assertRegex(html, rf'class="{hero_class}"><img src="(?:\.\./)+assets/images/{re.escape(image_name)}" alt="[^"]+"')
                 image_path = ROOT / "assets/images" / image_name
                 self.assertTrue(image_path.is_file())
                 with Image.open(image_path) as image:

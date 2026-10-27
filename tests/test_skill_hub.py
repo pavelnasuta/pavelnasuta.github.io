@@ -39,6 +39,10 @@ class SkillHubTests(unittest.TestCase):
         self.assertIn('href="telegram-channel-analytics/index.html"', self.html)
         self.assertIn('assets/styles/skills-index.css', self.html)
 
+    def test_hub_keeps_social_preview_without_an_inline_hero_illustration(self):
+        self.assertIn('https://nasuta.ru/assets/images/og-skills-hub.jpg', self.html)
+        self.assertNotIn('class="hero-visual"', self.html)
+
     def test_each_current_skill_page_has_hub_sections_and_return_route(self):
         for slug, status in PAGES.items():
             html = (ROOT / "skills" / slug / "index.html").read_text(encoding="utf-8")
