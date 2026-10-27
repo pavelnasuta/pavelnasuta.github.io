@@ -59,6 +59,11 @@ class SitewideNavigationTests(unittest.TestCase):
         self.assertIn('aria-expanded="false"', html)
         self.assertIn('target="_blank" rel="noopener"', html)
 
+    def test_opening_a_dropdown_closes_the_other_dropdowns(self):
+        script = (ROOT / "assets" / "scripts" / "navigation.js").read_text(encoding="utf-8")
+        self.assertIn("group.addEventListener('toggle'", script)
+        self.assertIn("other.open = false", script)
+
 
 if __name__ == "__main__":
     unittest.main()
