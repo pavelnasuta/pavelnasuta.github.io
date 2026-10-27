@@ -45,7 +45,7 @@ class SkillHubTests(unittest.TestCase):
             with self.subTest(slug=slug):
                 for section in REQUIRED_SECTIONS:
                     self.assertIn(f'id="{section}"', html)
-                self.assertIn('href="../index.html"', html)
+                self.assertIn('href="/skills/"', html)
                 self.assertIn(status, html)
                 self.assertIn("Последнее существенное обновление", html)
                 self.assertIn('class="hero-mark', html)

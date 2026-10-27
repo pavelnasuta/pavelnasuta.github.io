@@ -35,13 +35,43 @@
 </script>
 <!-- /Yandex.Metrika counter -->
   <link rel="stylesheet" href="/assets/styles/footer.css">
+  <link rel="stylesheet" href="/assets/styles/navigation.css">
+  <script defer src="/assets/scripts/navigation.js"></script>
 </head>
 <body>
 <!-- Yandex.Metrika counter (noscript) -->
 <noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter (noscript) -->
+
+  <nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">
+  <div class="site-navigation__inner">
+    <a class="site-navigation__brand" href="/">Павел Насута</a>
+    <button class="site-navigation__toggle" type="button" aria-controls="site-navigation-panel" aria-expanded="false">
+      <span class="site-navigation__toggle-label">Меню</span><span class="site-navigation__toggle-icon" aria-hidden="true"></span>
+    </button>
+    <div class="site-navigation__panel" id="site-navigation-panel">
+      <a href="/articles/">Блог</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Библиотека <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="/skills/" aria-label="Открыть каталог Skills для AI-агентов">Skills для AI-агентов</a>
+          <a href="/biases/">Когнитивные искажения</a>
+        </div>
+      </details>
+      <a href="/create/">C.R.E.A.T.E.</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Проекты <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a>
+          <a href="/pomokitty/">pomokitty</a>
+        </div>
+      </details>
+      <a href="/about/">Обо мне</a>
+      <a class="site-navigation__contact" href="/contact/">Написать</a>
+    </div>
+  </div>
+</nav>
 <div class="shell">
-<nav class="nav"><a class="brand" href="../index.html">Павел Насута</a><div class="nav-right"><a href="#guide">Справочник</a><a href="https://t.me/niimozgii" target="_blank" rel="noopener">Telegram ↗</a></div></nav>
 <main>
 <section class="hero"><div class="hero-grid"><div><div class="kicker">Авторская методология продуктовой работы с AI · редакция 2026.1</div><h1><em>C.R.E.A.T.E.</em><br>Путь от идеи к проверяемому продукту.</h1><p class="lede">Авторская методология для команды, которая хочет применять AI в продуктовой работе системно: собрать контекст, исследовать рынок, проверить гипотезы, собрать MVP, измерить результат и развивать продукт после проверки ценности.</p></div><aside class="hero-note"><p>Это не набор волшебных промптов и не линейный конвейер. CREATE задаёт порядок вопросов и артефактов, чтобы AI ускорял осмысленную работу, а не производил убедительно звучащую случайность.</p><a class="button" href="#guide">Перейти к справочнику ↓</a></aside></div><div class="letters"><div class="letter"><b>C</b><span>CONTEXT</span></div><div class="letter"><b>R</b><span>RESEARCH</span></div><div class="letter"><b>E</b><span>ELABORATION</span></div><div class="letter"><b>A</b><span>ASSEMBLY</span></div><div class="letter"><b>T</b><span>TUNING</span></div><div class="letter"><b>E</b><span>EXPANSION</span></div></div></section>
 <section class="how"><div class="kicker">Как пользоваться</div><div><h2>Сначала соберите входные данные. Затем используйте результат каждого этапа как контекст для следующего.</h2><div class="how-steps"><div class="how-step"><b>01 / ЗАПОЛНИТЬ</b><p>Замените всё в квадратных скобках своими фактами, наблюдениями и ограничениями.</p></div><div class="how-step"><b>02 / ПРОВЕРИТЬ</b><p>Отнеситесь к ответу модели как к черновику: проверьте источники, цифры, причинно-следственные связи.</p></div><div class="how-step"><b>03 / СОХРАНИТЬ</b><p>Зафиксируйте артефакт. Он становится входом в следующий этап и уменьшает повторение работы.</p></div></div></div></section>

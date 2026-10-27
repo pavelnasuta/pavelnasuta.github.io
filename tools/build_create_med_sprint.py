@@ -9,8 +9,10 @@ import re
 
 try:
     from tools.site_footer import SITE_FOOTER, STYLESHEET
+    from tools.site_navigation import SCRIPT as NAVIGATION_SCRIPT, SITE_NAVIGATION, STYLESHEET as NAVIGATION_STYLESHEET
 except ModuleNotFoundError:  # Direct execution from tools/.
     from site_footer import SITE_FOOTER, STYLESHEET
+    from site_navigation import SCRIPT as NAVIGATION_SCRIPT, SITE_NAVIGATION, STYLESHEET as NAVIGATION_STYLESHEET
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIR = ROOT / "content" / "create-med-sprint"
@@ -262,12 +264,14 @@ def main() -> None:
   <meta name="twitter:image" content="https://nasuta.ru/assets/images/og-pavel-nasuta-agents.jpg">
   <script type="application/ld+json">{{"@context":"https://schema.org","@type":"Course","name":"CREATE MED Sprint","description":"Практический гид для студентов: от наблюдаемой проблемы к понятной демонстрации, фактам и первому разговору с пользователем.","inLanguage":"ru-RU","url":"https://nasuta.ru/create-med-sprint/","provider":{{"@type":"Person","name":"Павел Насута","url":"https://nasuta.ru/about/"}},"isAccessibleForFree":true}}</script>
   {STYLESHEET}
+  {NAVIGATION_STYLESHEET}
+  {NAVIGATION_SCRIPT}
   {metrika()}
 </head>
 <body>
 <noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+{SITE_NAVIGATION}
 <div class="shell">
-  <nav class="nav" aria-label="Навигация страницы"><a class="brand" href="../index.html">Павел Насута</a><div class="nav-right"><a href="../create/">CREATE</a><a href="#guide">Инструкция</a><a href="../assets/downloads/CREATE_MED_SPRINT_ГИД_ДЛЯ_СТУДЕНТОВ.pdf" download>Скачать PDF ↓</a></div></nav>
   <main>
     <header class="hero med-hero">
       <div class="hero-grid">

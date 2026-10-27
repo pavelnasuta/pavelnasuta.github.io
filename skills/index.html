@@ -9,6 +9,8 @@
   <link rel="canonical" href="https://nasuta.ru/skills/">
   <link rel="stylesheet" href="../assets/styles/skills-index.css">
   <link rel="stylesheet" href="/assets/styles/footer.css">
+  <link rel="stylesheet" href="/assets/styles/navigation.css">
+  <script defer src="/assets/scripts/navigation.js"></script>
   <meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Павел Насута"><meta property="og:title" content="Skills для AI-агентов · Павел Насута"><meta property="og:description" content="Публичный каталог практических навыков для AI-агентов."><meta property="og:url" content="https://nasuta.ru/skills/"><meta property="og:image" content="https://nasuta.ru/assets/images/og-skills-hub.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Skills для AI-агентов">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Skills для AI-агентов · Павел Насута"><meta name="twitter:description" content="Публичный каталог практических навыков для AI-агентов."><meta name="twitter:image" content="https://nasuta.ru/assets/images/og-skills-hub.jpg"><meta name="twitter:image:alt" content="Skills для AI-агентов">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","@id":"https://nasuta.ru/skills/#collection","name":"Skills для AI-агентов","description":"Публичный каталог агентных навыков, собранных из практики работы с AI-агентами.","url":"https://nasuta.ru/skills/","inLanguage":"ru-RU","author":{"@type":"Person","@id":"https://nasuta.ru/#pavel-nasuta","name":"Павел Насута"},"hasPart":[{"@type":"SoftwareSourceCode","name":"Book Summary Skill","url":"https://nasuta.ru/skills/book-summary/"},{"@type":"SoftwareSourceCode","name":"Adaptive Support Dialogue","url":"https://nasuta.ru/skills/adaptive-support-dialogue/"},{"@type":"SoftwareSourceCode","name":"Ассистент руководителя","url":"https://nasuta.ru/skills/management-assistant/"},{"@type":"SoftwareSourceCode","name":"Anytype Agent Skill","url":"https://nasuta.ru/skills/anytype-agent-skill/"},{"@type":"SoftwareSourceCode","name":"Art-directing visuals","url":"https://nasuta.ru/skills/art-directing-visuals/"},{"@type":"SoftwareSourceCode","name":"Telegram Channel Analytics","url":"https://nasuta.ru/skills/telegram-channel-analytics/"}]}</script>
@@ -16,8 +18,35 @@
 </head>
 <body>
   <noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+  <nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">
+  <div class="site-navigation__inner">
+    <a class="site-navigation__brand" href="/">Павел Насута</a>
+    <button class="site-navigation__toggle" type="button" aria-controls="site-navigation-panel" aria-expanded="false">
+      <span class="site-navigation__toggle-label">Меню</span><span class="site-navigation__toggle-icon" aria-hidden="true"></span>
+    </button>
+    <div class="site-navigation__panel" id="site-navigation-panel">
+      <a href="/articles/">Блог</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Библиотека <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="/skills/" aria-label="Открыть каталог Skills для AI-агентов">Skills для AI-агентов</a>
+          <a href="/biases/">Когнитивные искажения</a>
+        </div>
+      </details>
+      <a href="/create/">C.R.E.A.T.E.</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Проекты <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a>
+          <a href="/pomokitty/">pomokitty</a>
+        </div>
+      </details>
+      <a href="/about/">Обо мне</a>
+      <a class="site-navigation__contact" href="/contact/">Написать</a>
+    </div>
+  </div>
+</nav>
   <div class="shell">
-    <nav class="nav" aria-label="Основная навигация"><a class="brand" href="../index.html">Павел Насута</a><a href="../articles/index.html">Блог</a><a href="../create/index.html">CREATE</a><a href="../about/index.html">Обо мне</a><a class="nav-telegram" href="https://t.me/niimozgii" target="_blank" rel="noopener">Telegram ↗</a></nav>
     <main>
       <header class="hero"><p class="eyebrow">ПРАКТИКА · AI-АГЕНТЫ · OPEN WORKFLOWS</p><h1>Skills, собранные из реальной работы.</h1><p>Не набор промптов, а проверяемые рабочие контуры: задача, границы, онбординг, адаптеры агентов и способ проверить результат.</p><figure class="hero-visual"><img src="../assets/images/og-skills-hub.jpg" alt="Абстрактная схема: связанные рабочие контуры и точка принятия решения"></figure></header>
       <section class="catalogue" aria-labelledby="catalogue-title"><div class="catalogue-head"><div><p class="eyebrow">КАТАЛОГ</p><h2 id="catalogue-title">Открытые и пилотные навыки</h2></div><label class="search"><span class="sr-only">Поиск по навыкам</span><input type="search" id="skill-search" placeholder="Найти навык" autocomplete="off"></label></div>

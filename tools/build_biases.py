@@ -13,8 +13,10 @@ import xml.etree.ElementTree as ET
 
 try:
     from tools.site_footer import SITE_FOOTER, STYLESHEET
+    from tools.site_navigation import SCRIPT as NAVIGATION_SCRIPT, SITE_NAVIGATION, STYLESHEET as NAVIGATION_STYLESHEET
 except ModuleNotFoundError:  # Direct execution from tools/.
     from site_footer import SITE_FOOTER, STYLESHEET
+    from site_navigation import SCRIPT as NAVIGATION_SCRIPT, SITE_NAVIGATION, STYLESHEET as NAVIGATION_STYLESHEET
 
 
 DETAIL_CATEGORIES = frozenset(
@@ -229,10 +231,13 @@ def render_detail(
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{_text(seo['title'])}"><meta name="twitter:description" content="{description}"><meta name="twitter:image" content="https://nasuta.ru/assets/images/og-cognitive-biases.jpg"><meta name="twitter:image:alt" content="Когнитивные искажения — справочник Павла Насуты">
   <script type="application/ld+json">{article_schema}</script>
   {STYLESHEET}
+  {NAVIGATION_STYLESHEET}
+  {NAVIGATION_SCRIPT}
   {_metrika()}
 </head>
 <body>
   {_metrika_pixel()}
+  {SITE_NAVIGATION}
   <div class="shell">
     <nav class="quiet-nav" aria-label="Навигация раздела"><a class="brand" href="../../index.html">Павел Насута</a><a class="back-link" href="../index.html">К каталогу <span aria-hidden="true">↗</span></a></nav>
     <main class="article">
@@ -282,10 +287,13 @@ def render_catalogue(items: Iterable[dict[str, Any]]) -> str:
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Когнитивные искажения · Павел Насута"><meta name="twitter:description" content="Когнитивные искажения: понятный каталог с примерами, механизмами, способами самопроверки и источниками исследований."><meta name="twitter:image" content="https://nasuta.ru/assets/images/og-cognitive-biases.jpg"><meta name="twitter:image:alt" content="Когнитивные искажения — справочник Павла Насуты">
   <script type="application/ld+json">{{"@context":"https://schema.org","@type":"CollectionPage","@id":"https://nasuta.ru/biases/#webpage","url":"https://nasuta.ru/biases/","name":"Когнитивные искажения","description":"Понятный каталог когнитивных искажений с примерами, механизмами и источниками.","inLanguage":"ru-RU","about":{{"@type":"Thing","name":"Когнитивные искажения"}},"isPartOf":{{"@id":"https://nasuta.ru/#website"}}}}</script>
   {STYLESHEET}
+  {NAVIGATION_STYLESHEET}
+  {NAVIGATION_SCRIPT}
   {_metrika()}
 </head>
 <body>
   {_metrika_pixel()}
+  {SITE_NAVIGATION}
   <div class="shell">
     <nav class="quiet-nav" aria-label="Навигация раздела"><a class="brand" href="../index.html">Павел Насута</a><a class="back-link" href="../index.html">К сайту <span aria-hidden="true">↗</span></a></nav>
     <main>

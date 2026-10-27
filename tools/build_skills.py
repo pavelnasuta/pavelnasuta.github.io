@@ -11,8 +11,10 @@ from typing import Any
 
 try:
     from tools.site_footer import SITE_FOOTER, STYLESHEET
+    from tools.site_navigation import SCRIPT as NAVIGATION_SCRIPT, SITE_NAVIGATION, STYLESHEET as NAVIGATION_STYLESHEET
 except ModuleNotFoundError:  # Direct execution from tools/.
     from site_footer import SITE_FOOTER, STYLESHEET
+    from site_navigation import SCRIPT as NAVIGATION_SCRIPT, SITE_NAVIGATION, STYLESHEET as NAVIGATION_STYLESHEET
 
 
 SAFE_SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
@@ -146,6 +148,8 @@ def render_hub(items: list[dict[str, Any]]) -> str:
   <link rel="canonical" href="https://nasuta.ru/skills/">
   <link rel="stylesheet" href="../assets/styles/skills-index.css">
   {STYLESHEET}
+  {NAVIGATION_STYLESHEET}
+  {NAVIGATION_SCRIPT}
   <meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Павел Насута"><meta property="og:title" content="Skills для AI-агентов · Павел Насута"><meta property="og:description" content="Публичный каталог практических навыков для AI-агентов."><meta property="og:url" content="https://nasuta.ru/skills/"><meta property="og:image" content="https://nasuta.ru/assets/images/og-skills-hub.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Skills для AI-агентов">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Skills для AI-агентов · Павел Насута"><meta name="twitter:description" content="Публичный каталог практических навыков для AI-агентов."><meta name="twitter:image" content="https://nasuta.ru/assets/images/og-skills-hub.jpg"><meta name="twitter:image:alt" content="Skills для AI-агентов">
   <script type="application/ld+json">{schema}</script>
@@ -153,8 +157,8 @@ def render_hub(items: list[dict[str, Any]]) -> str:
 </head>
 <body>
   <noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+  {SITE_NAVIGATION}
   <div class="shell">
-    <nav class="nav" aria-label="Основная навигация"><a class="brand" href="../index.html">Павел Насута</a><a href="../articles/index.html">Блог</a><a href="../create/index.html">CREATE</a><a href="../about/index.html">Обо мне</a><a class="nav-telegram" href="https://t.me/niimozgii" target="_blank" rel="noopener">Telegram ↗</a></nav>
     <main>
       <header class="hero"><p class="eyebrow">ПРАКТИКА · AI-АГЕНТЫ · OPEN WORKFLOWS</p><h1>Skills, собранные из реальной работы.</h1><p>Не набор промптов, а проверяемые рабочие контуры: задача, границы, онбординг, адаптеры агентов и способ проверить результат.</p><figure class="hero-visual"><img src="../assets/images/og-skills-hub.jpg" alt="Абстрактная схема: связанные рабочие контуры и точка принятия решения"></figure></header>
       <section class="catalogue" aria-labelledby="catalogue-title"><div class="catalogue-head"><div><p class="eyebrow">КАТАЛОГ</p><h2 id="catalogue-title">Открытые и пилотные навыки</h2></div><label class="search"><span class="sr-only">Поиск по навыкам</span><input type="search" id="skill-search" placeholder="Найти навык" autocomplete="off"></label></div>
