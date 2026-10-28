@@ -5,11 +5,22 @@
       "name": "Book Summary Skill",
       "summary": "Проверяемый workflow для саммари книг и аудиокниг с PDF, FB2 и единым MP3.",
       "category": "Editorial & Telegram",
-      "tags": ["books", "audio", "research", "multi-agent"],
+      "tags": [
+        "books",
+        "audio",
+        "research",
+        "multi-agent"
+      ],
       "status": "released",
       "visibility": "public",
       "source_status": "published",
-      "compatibility": {"hermes": "verified", "claude-code": "verified", "codex": "verified", "opencode": "planned", "agents-md": "compatible"},
+      "compatibility": {
+        "hermes": "verified",
+        "claude-code": "verified",
+        "codex": "verified",
+        "opencode": "planned",
+        "agents-md": "compatible"
+      },
       "updated": "2026-10-20",
       "version": "1.0.0",
       "license": "MIT",
@@ -24,11 +35,22 @@
       "name": "Adaptive Support Dialogue",
       "summary": "Безопасная основа для поддерживающего диалога с прозрачными границами и работой с контекстом.",
       "category": "Personal Systems",
-      "tags": ["support", "ACT", "CBT", "safety"],
+      "tags": [
+        "support",
+        "ACT",
+        "CBT",
+        "safety"
+      ],
       "status": "released",
       "visibility": "public",
       "source_status": "published",
-      "compatibility": {"hermes": "verified", "claude-code": "compatible", "codex": "compatible", "opencode": "planned", "agents-md": "compatible"},
+      "compatibility": {
+        "hermes": "verified",
+        "claude-code": "compatible",
+        "codex": "compatible",
+        "opencode": "planned",
+        "agents-md": "compatible"
+      },
       "updated": "2026-10-20",
       "version": "1.0.0",
       "license": "MIT",
@@ -43,11 +65,22 @@
       "name": "Ассистент руководителя",
       "summary": "Превращает рабочие входящие в проверяемые действия, решения и риски без самовольных внешних действий.",
       "category": "Operations & Knowledge",
-      "tags": ["management", "decisions", "risks", "operations"],
+      "tags": [
+        "management",
+        "decisions",
+        "risks",
+        "operations"
+      ],
       "status": "private-pilot",
       "visibility": "public",
       "source_status": "sanitizing",
-      "compatibility": {"hermes": "verified", "claude-code": "compatible", "codex": "compatible", "opencode": "planned", "agents-md": "compatible"},
+      "compatibility": {
+        "hermes": "verified",
+        "claude-code": "compatible",
+        "codex": "compatible",
+        "opencode": "planned",
+        "agents-md": "compatible"
+      },
       "updated": "2026-10-20",
       "version": "0.1.0",
       "license": "Proprietary pilot",
@@ -62,12 +95,23 @@
       "name": "Anytype Agent Skill",
       "summary": "Операционный skill для AI-агентов: строит связные пространства Anytype с безопасной навигацией, схемой данных и проверяемыми правками.",
       "category": "Operations & Knowledge",
-      "tags": ["anytype", "knowledge-management", "local-api", "verification"],
+      "tags": [
+        "anytype",
+        "knowledge-management",
+        "local-api",
+        "verification"
+      ],
       "status": "released",
       "catalogue_label": "PUBLIC REPOSITORY",
       "visibility": "public",
       "source_status": "published",
-      "compatibility": {"hermes": "verified", "claude-code": "compatible", "codex": "compatible", "opencode": "compatible", "agents-md": "compatible"},
+      "compatibility": {
+        "hermes": "verified",
+        "claude-code": "compatible",
+        "codex": "compatible",
+        "opencode": "compatible",
+        "agents-md": "compatible"
+      },
       "updated": "2026-10-22",
       "version": "1.1.0",
       "license": "Private preview",
@@ -82,11 +126,22 @@
       "name": "Art-directing visuals",
       "summary": "Осмысленная арт-дирекция для обложек, карточек, баннеров и социальных визуалов.",
       "category": "Visual Direction",
-      "tags": ["art-direction", "social", "visuals", "verification"],
+      "tags": [
+        "art-direction",
+        "social",
+        "visuals",
+        "verification"
+      ],
       "status": "released",
       "visibility": "public",
       "source_status": "published",
-      "compatibility": {"hermes": "verified", "claude-code": "compatible", "codex": "compatible", "opencode": "planned", "agents-md": "compatible"},
+      "compatibility": {
+        "hermes": "verified",
+        "claude-code": "compatible",
+        "codex": "compatible",
+        "opencode": "planned",
+        "agents-md": "compatible"
+      },
       "updated": "2026-10-26",
       "version": "1.0.0",
       "license": "MIT",
@@ -101,11 +156,22 @@
       "name": "Multi-agent workflow packaging",
       "summary": "Упаковывает единый workflow для нескольких AI-агентов без дублирования логики.",
       "category": "Agent Workflows",
-      "tags": ["agents", "adapters", "packaging", "open-source"],
+      "tags": [
+        "agents",
+        "adapters",
+        "packaging",
+        "open-source"
+      ],
       "status": "withheld",
       "visibility": "withheld",
       "source_status": "not-started",
-      "compatibility": {"hermes": "verified", "claude-code": "verified", "codex": "verified", "opencode": "planned", "agents-md": "compatible"},
+      "compatibility": {
+        "hermes": "verified",
+        "claude-code": "verified",
+        "codex": "verified",
+        "opencode": "planned",
+        "agents-md": "compatible"
+      },
       "updated": "2026-10-20",
       "version": "0.1.0",
       "license": "Pending review",
@@ -120,11 +186,22 @@
       "name": "Pavel Presentations",
       "summary": "Собирает убедительные презентации: история, доказательства, дизайн и проверка готового файла.",
       "category": "Visual Direction",
-      "tags": ["presentations", "slides", "charts", "storytelling"],
+      "tags": [
+        "presentations",
+        "slides",
+        "charts",
+        "storytelling"
+      ],
       "status": "withheld",
       "visibility": "withheld",
       "source_status": "not-started",
-      "compatibility": {"hermes": "verified", "claude-code": "compatible", "codex": "compatible", "opencode": "planned", "agents-md": "compatible"},
+      "compatibility": {
+        "hermes": "verified",
+        "claude-code": "compatible",
+        "codex": "compatible",
+        "opencode": "planned",
+        "agents-md": "compatible"
+      },
       "updated": "2026-10-20",
       "version": "1.0.0",
       "license": "Pending review",
@@ -139,11 +216,22 @@
       "name": "Meeting Recording Brief",
       "summary": "Превращает запись встречи в решения, задачи, владельцев, сроки и риски.",
       "category": "Operations & Knowledge",
-      "tags": ["meetings", "briefs", "decisions", "privacy"],
+      "tags": [
+        "meetings",
+        "briefs",
+        "decisions",
+        "privacy"
+      ],
       "status": "withheld",
       "visibility": "withheld",
       "source_status": "not-started",
-      "compatibility": {"hermes": "verified", "claude-code": "compatible", "codex": "compatible", "opencode": "planned", "agents-md": "compatible"},
+      "compatibility": {
+        "hermes": "verified",
+        "claude-code": "compatible",
+        "codex": "compatible",
+        "opencode": "planned",
+        "agents-md": "compatible"
+      },
       "updated": "2026-10-20",
       "version": "0.1.0",
       "license": "Pending review",
@@ -158,11 +246,23 @@
       "name": "Telegram Channel Analytics",
       "summary": "Накопительная редакционная аналитика Telegram-канала с повторными замерами и честными границами данных.",
       "category": "Editorial & Telegram",
-      "tags": ["telegram", "analytics", "editorial", "measurement", "watchlist"],
+      "tags": [
+        "telegram",
+        "analytics",
+        "editorial",
+        "measurement",
+        "watchlist"
+      ],
       "status": "released",
       "visibility": "public",
       "source_status": "published",
-      "compatibility": {"hermes": "verified", "claude-code": "compatible", "codex": "compatible", "opencode": "planned", "agents-md": "compatible"},
+      "compatibility": {
+        "hermes": "verified",
+        "claude-code": "compatible",
+        "codex": "compatible",
+        "opencode": "planned",
+        "agents-md": "compatible"
+      },
       "updated": "2026-10-26",
       "version": "1.0.2",
       "license": "MIT",
@@ -170,6 +270,37 @@
       "page_url": "skills/telegram-channel-analytics/index.html",
       "privacy_review": "approved",
       "release_notes": "Открытая read-only версия: недельные отчёты, повторные замеры живых постов, накопительная память и объявленный watchlist.",
+      "release_priority": 1
+    },
+    {
+      "slug": "yandex-metrica-analytics-full",
+      "name": "Yandex Metrica Analytics Full",
+      "summary": "Разбирает агрегированные данные Метрики в проверяемое решение: вопрос, срез, ограничения и следующий шаг.",
+      "category": "Web & Product Analytics",
+      "tags": [
+        "yandex-metrica",
+        "web-analytics",
+        "seo",
+        "marketing",
+        "product"
+      ],
+      "status": "released",
+      "visibility": "public",
+      "source_status": "published",
+      "compatibility": {
+        "hermes": "verified",
+        "claude-code": "compatible",
+        "codex": "compatible",
+        "opencode": "planned",
+        "agents-md": "compatible"
+      },
+      "updated": "2026-10-28",
+      "version": "1.0.0",
+      "license": "MIT",
+      "repository_url": "https://github.com/pavelnasuta/yandex-metrica-analytics-full-full-skill",
+      "page_url": "skills/yandex-metrica-analytics-full/index.html",
+      "privacy_review": "approved",
+      "release_notes": "Публичная read-only версия: агрегированные отчёты, бриф решения, карта целей и явные границы данных.",
       "release_priority": 1
     }
   ]
