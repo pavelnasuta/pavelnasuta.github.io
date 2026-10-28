@@ -39,11 +39,12 @@ class YandexMetricaAnalyticsPageTests(unittest.TestCase):
         self.assertEqual(html.count('class="report-carousel__slide report-visual"'), 3)
         self.assertEqual(html.count('class="report-carousel__slide text-report"'), 3)
         self.assertIn('metrica-report-examples.js', html)
+        self.assertNotIn("Воронка показывает", html)
         for image_name in ("metrica-demo-traffic.jpg", "metrica-demo-funnel.jpg", "metrica-demo-sources.jpg"):
             image_path = ROOT / "assets" / "images" / image_name
             self.assertTrue(image_path.is_file())
             with Image.open(image_path) as image:
-                self.assertEqual(image.size, (1600, 900))
+                self.assertEqual(image.size, (1080, 1920))
                 self.assertEqual(image.format, "JPEG")
 
     def test_role_section_sells_the_skill_without_expanding_its_data_claims(self):
