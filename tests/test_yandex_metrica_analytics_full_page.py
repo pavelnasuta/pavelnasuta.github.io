@@ -31,6 +31,21 @@ class YandexMetricaAnalyticsPageTests(unittest.TestCase):
         self.assertNotIn("/root/", html)
         self.assertIn('href="/skills/"', html)
 
+    def test_examples_are_explicitly_synthetic_and_have_three_visual_and_text_cards(self):
+        html = PAGE.read_text(encoding="utf-8")
+        self.assertIn('id="examples"', html)
+        self.assertIn("синтетические примеры", html)
+        self.assertIn("вымышлены", html)
+        self.assertEqual(html.count('class="report-carousel__slide report-visual"'), 3)
+        self.assertEqual(html.count('class="report-carousel__slide text-report"'), 3)
+        self.assertIn('metrica-report-examples.js', html)
+        for image_name in ("metrica-demo-traffic.jpg", "metrica-demo-funnel.jpg", "metrica-demo-sources.jpg"):
+            image_path = ROOT / "assets" / "images" / image_name
+            self.assertTrue(image_path.is_file())
+            with Image.open(image_path) as image:
+                self.assertEqual(image.size, (1600, 900))
+                self.assertEqual(image.format, "JPEG")
+
     def test_page_uses_a_distinct_valid_social_image(self):
         self.assertTrue(IMAGE.is_file())
         with Image.open(IMAGE) as image:
