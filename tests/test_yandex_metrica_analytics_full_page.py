@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SLUG = "yandex-metrica-analytics-full"
 PAGE = ROOT / "skills" / SLUG / "index.html"
 IMAGE = ROOT / "assets" / "images" / "og-skill-yandex-metrica-analytics-full.jpg"
-REPO = "https://github.com/pavelnasuta/yandex-metrica-analytics-full-full-skill"
+REPO = "https://github.com/pavelnasuta/yandex-metrica-analytics-full-skill"
 
 
 class YandexMetricaAnalyticsPageTests(unittest.TestCase):
