@@ -46,6 +46,16 @@ class YandexMetricaAnalyticsPageTests(unittest.TestCase):
                 self.assertEqual(image.size, (1600, 900))
                 self.assertEqual(image.format, "JPEG")
 
+    def test_role_section_sells_the_skill_without_expanding_its_data_claims(self):
+        html = PAGE.read_text(encoding="utf-8")
+        self.assertIn('id="roles"', html)
+        self.assertEqual(html.count('class="role-card"'), 5)
+        for role in ("ВЕБ-АНАЛИТИКУ", "SEO-СПЕЦИАЛИСТУ", "МАРКЕТОЛОГУ", "ТАРГЕТОЛОГУ", "ПРОДУКТОВИКУ"):
+            self.assertIn(role, html)
+        self.assertIn("отдельный источник затрат", html)
+        self.assertIn("агрегированными отчётами", html)
+        self.assertIn('href="#roles"', html)
+
     def test_page_uses_a_distinct_valid_social_image(self):
         self.assertTrue(IMAGE.is_file())
         with Image.open(IMAGE) as image:
