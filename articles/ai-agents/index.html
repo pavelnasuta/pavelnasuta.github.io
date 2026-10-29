@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Гайды по AI-агентам: Hermes, Telegram, VPS, память, Anytype, skills и безопасная автоматизация рабочих процессов.">
+  <title>Практика AI-агентов · Павел Насута</title>
+  <link rel="stylesheet" href="../../assets/styles/articles-editorial.css">
+  <link rel="stylesheet" href="../../assets/styles/ai-agent-guides.css">
+  <link rel="canonical" href="https://nasuta.ru/articles/ai-agents/">
+  <meta property="og:type" content="article"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Павел Насута">
+  <meta property="og:title" content="Практика AI-агентов"><meta property="og:description" content="Гайды по AI-агентам: Hermes, Telegram, VPS, память, Anytype, skills и безопасная автоматизация рабочих процессов."><meta property="og:url" content="https://nasuta.ru/articles/ai-agents/">
+  <meta property="og:image" content="https://nasuta.ru/assets/images/og-ai-agent-practice.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Карта пути AI-агента от компьютера и сервера к проверяемым рабочим материалам">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Практика AI-агентов"><meta name="twitter:description" content="Гайды по AI-агентам: Hermes, Telegram, VPS, память, Anytype, skills и безопасная автоматизация рабочих процессов."><meta name="twitter:image" content="https://nasuta.ru/assets/images/og-ai-agent-practice.jpg"><meta name="twitter:image:alt" content="Карта пути AI-агента от компьютера и сервера к проверяемым рабочим материалам">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://nasuta.ru/articles/ai-agents/#article", "headline": "Практика AI-агентов", "description": "Гайды по AI-агентам: Hermes, Telegram, VPS, память, Anytype, skills и безопасная автоматизация рабочих процессов.", "image": "https://nasuta.ru/assets/images/og-ai-agent-practice.jpg", "author": {"@type": "Person", "@id": "https://nasuta.ru/#pavel-nasuta", "name": "Павел Насута", "url": "https://nasuta.ru/about/"}, "datePublished": "2026-10-29", "dateModified": "2026-10-29", "inLanguage": "ru-RU", "mainEntityOfPage": "https://nasuta.ru/articles/ai-agents/", "isPartOf": {"@id": "https://nasuta.ru/articles/#webpage"}, "keywords": ["AI-агенты", "автоматизация", "Hermes", "Telegram", "VPS", "skills"]}</script>
+  <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');ym(27865374, 'init', {clickmap:true,referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});</script>
+  <link rel="stylesheet" href="/assets/styles/navigation.css">
+  <script defer src="/assets/scripts/navigation.js"></script>
+  <link rel="stylesheet" href="/assets/styles/footer.css">
+</head>
+<body><noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+
+  <nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">
+  <div class="site-navigation__inner">
+    <a class="site-navigation__brand" href="/">Павел Насута</a>
+    <button class="site-navigation__toggle" type="button" aria-controls="site-navigation-panel" aria-expanded="false">
+      <span class="site-navigation__toggle-label">Меню</span><span class="site-navigation__toggle-icon" aria-hidden="true"></span>
+    </button>
+    <div class="site-navigation__panel" id="site-navigation-panel">
+      <a href="/articles/">Блог</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Библиотека <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="/skills/" aria-label="Открыть каталог Skills для AI-агентов">Skills для AI-агентов</a>
+          <a href="/biases/">Когнитивные искажения</a>
+        </div>
+      </details>
+      <a href="/create/">C.R.E.A.T.E.</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Проекты <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a>
+          <a href="/pomokitty/">pomokitty</a>
+        </div>
+      </details>
+      <a href="/about/">Обо мне</a>
+      <a class="site-navigation__contact" href="/contact/">Написать</a>
+    </div>
+  </div>
+</nav>
+<div class="shell">
+    <main>
+      <header class="hero ai-agent-hero"><div class="meta">ПРАКТИКА AI-АГЕНТОВ · ГАЙДЫ · AI-АГЕНТЫ · АВТОМАТИЗАЦИЯ</div><h1>Практика AI-агентов</h1><p class="lede">Не витрина нейросетей, а рабочие маршруты: поставить агента, дать ему одну задачу, сохранить результат и не потерять контроль.</p><figure class="hero-visual"><img src="../../assets/images/og-ai-agent-practice.jpg" alt="Карта пути AI-агента от компьютера и сервера к проверяемым рабочим материалам"></figure></header>
+      <section class="article"><article class="content ai-guide-content"><p>AI-агент полезен не потому, что умеет красиво отвечать. Он становится полезен, когда берёт повторяющийся кусок работы, оставляет понятный результат и не забирает у человека право на решение.</p><p>В этой ветке собраны материалы именно про это: как поставить агента, где хранить его результаты, какой процесс выбрать первым и как не перепутать автоматизацию с красивой демонстрацией.</p><div class="decision-flow"><div><span>1</span><strong>Есть работа</strong><p>Повторяющийся процесс, где уже есть входящие данные и понятный результат.</p></div><div><span>2</span><strong>Есть граница</strong><p>Человек оставляет за собой публикации, деньги, доступы и необратимые решения.</p></div><div><span>3</span><strong>Есть артефакт</strong><p>Итог можно открыть, проверить, передать дальше или найти через месяц.</p></div></div><h2>С чего начать</h2><div class="guide-cards"><a href="../hermes-agent-installation/"><span>УСТАНОВКА</span><h3>Hermes на Mac, Windows и VPS</h3><p>Выберите Desktop или постоянный сервер, подключите Telegram и не потеряйте контроль над доступами.</p></a><a href="../hermes-agent-telegram-vps/"><span>24/7</span><h3>Telegram-агент на VPS</h3><p>Как устроить серверный контур, который не исчезает вместе с закрытым ноутбуком.</p></a><a href="../ai-agent-knowledge-storage/"><span>ПАМЯТЬ</span><h3>Агенту нужно куда складывать работу</h3><p>Зачем связать Hermes и Anytype, чтобы результат жил не только в переписке.</p></a><a href="../how-to-choose-an-ai-task/"><span>ВЫБОР</span><h3>Как выбрать первую задачу</h3><p>Проверить проблему, цену ошибки и способ человеческого контроля до покупки инструмента.</p></a></div><h2>Не начинайте с пустого чата</h2><p>Если уже знаете свою задачу, лучше взять готовый workflow и адаптировать его под себя. В <a href="../../skills/">Skill Hub</a> собраны навыки для аудиосаммари, работы руководителя и базы знаний. Если нужна практика и новые разборы, подписывайтесь на <a href="https://t.me/niimozgii" target="_blank" rel="noopener">НИИ «МОЗГИ» ↗</a>.</p><section class="agent-cta"><div><div class="eyebrow">Свой процесс</div><h2>Сначала разложите работу, потом автоматизируйте</h2><p>Не уверены, есть ли у процесса потенциал для агента? Начните с проблемы, входящих данных, критерия результата и цены ошибки.</p></div><div class="agent-cta__links"><a href="../how-to-choose-an-ai-task/">Выбрать задачу →</a><a href="../../contact/">Разобрать процесс →</a></div></section></article></section>
+    </main>
+    <footer class="site-footer" data-site-footer="global">
+  <div class="site-footer__grid">
+    <div class="site-footer__brand">
+      <a class="site-footer__name" href="/">Павел Насута</a>
+      <p>Product builder · AI-агенты · автоматизация</p>
+    </div>
+    <nav class="site-footer__group" aria-label="Навигация в подвале">
+      <h2>Разделы</h2>
+      <a href="/articles/">Блог</a>
+      <a href="/skills/">Skills для AI-агентов</a>
+      <a href="/create/">Framework C.R.E.A.T.E.</a>
+      <a href="/biases/">Когнитивные искажения</a>
+      <a href="/about/">Обо мне</a>
+    </nav>
+    <nav class="site-footer__group" aria-label="Проекты">
+      <h2>Проекты</h2>
+      <a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a>
+      <a href="/pomokitty/">pomokitty</a>
+      <a href="/create/">C.R.E.A.T.E.</a>
+    </nav>
+    <nav class="site-footer__group" aria-label="Связь">
+      <h2>Связь</h2>
+      <a href="/contact/">Все способы связи</a>
+      <a href="https://t.me/niimozgii" target="_blank" rel="noopener">Telegram ↗</a>
+      <a href="https://www.linkedin.com/in/nasuta" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/pavelnasuta" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="mailto:pavelnasuta@gmail.com">Email</a>
+    </nav>
+  </div>
+  <div class="site-footer__bottom">
+    <span>© 2026 Павел Насута</span>
+    <a href="/contact/">Написать</a>
+  </div>
+</footer>
+  </div>
+</body></html>

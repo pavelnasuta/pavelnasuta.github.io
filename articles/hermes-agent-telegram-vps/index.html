@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Как настроить Hermes Agent на VPS для Telegram: когда нужен сервер, как запустить gateway, ограничить доступы и проверить работу после перезагрузки.">
+  <title>Hermes + Telegram на VPS: агент 24/7 · Павел Насута</title>
+  <link rel="stylesheet" href="../../assets/styles/articles-editorial.css">
+  <link rel="stylesheet" href="../../assets/styles/ai-agent-guides.css">
+  <link rel="canonical" href="https://nasuta.ru/articles/hermes-agent-telegram-vps/">
+  <meta property="og:type" content="article"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Павел Насута">
+  <meta property="og:title" content="Hermes + Telegram на VPS: агент 24/7"><meta property="og:description" content="Как настроить Hermes Agent на VPS для Telegram: когда нужен сервер, как запустить gateway, ограничить доступы и проверить работу после перезагрузки."><meta property="og:url" content="https://nasuta.ru/articles/hermes-agent-telegram-vps/">
+  <meta property="og:image" content="https://nasuta.ru/assets/images/og-hermes-agent-telegram-vps.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Серверный AI-агент ночью передаёт сообщение и проверяемый отчёт человеку">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Hermes + Telegram на VPS: агент 24/7"><meta name="twitter:description" content="Как настроить Hermes Agent на VPS для Telegram: когда нужен сервер, как запустить gateway, ограничить доступы и проверить работу после перезагрузки."><meta name="twitter:image" content="https://nasuta.ru/assets/images/og-hermes-agent-telegram-vps.jpg"><meta name="twitter:image:alt" content="Серверный AI-агент ночью передаёт сообщение и проверяемый отчёт человеку">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://nasuta.ru/articles/hermes-agent-telegram-vps/#article", "headline": "Hermes + Telegram на VPS: агент 24/7", "description": "Как настроить Hermes Agent на VPS для Telegram: когда нужен сервер, как запустить gateway, ограничить доступы и проверить работу после перезагрузки.", "image": "https://nasuta.ru/assets/images/og-hermes-agent-telegram-vps.jpg", "author": {"@type": "Person", "@id": "https://nasuta.ru/#pavel-nasuta", "name": "Павел Насута", "url": "https://nasuta.ru/about/"}, "datePublished": "2026-10-29", "dateModified": "2026-10-29", "inLanguage": "ru-RU", "mainEntityOfPage": "https://nasuta.ru/articles/hermes-agent-telegram-vps/", "isPartOf": {"@id": "https://nasuta.ru/articles/#webpage"}, "keywords": ["Hermes Telegram", "Hermes VPS", "Telegram бот", "AI-агент 24/7", "VPS"]}</script>
+  <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');ym(27865374, 'init', {clickmap:true,referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});</script>
+  <link rel="stylesheet" href="/assets/styles/navigation.css">
+  <script defer src="/assets/scripts/navigation.js"></script>
+  <link rel="stylesheet" href="/assets/styles/footer.css">
+</head>
+<body><noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+
+  <nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">
+  <div class="site-navigation__inner">
+    <a class="site-navigation__brand" href="/">Павел Насута</a>
+    <button class="site-navigation__toggle" type="button" aria-controls="site-navigation-panel" aria-expanded="false">
+      <span class="site-navigation__toggle-label">Меню</span><span class="site-navigation__toggle-icon" aria-hidden="true"></span>
+    </button>
+    <div class="site-navigation__panel" id="site-navigation-panel">
+      <a href="/articles/">Блог</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Библиотека <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="/skills/" aria-label="Открыть каталог Skills для AI-агентов">Skills для AI-агентов</a>
+          <a href="/biases/">Когнитивные искажения</a>
+        </div>
+      </details>
+      <a href="/create/">C.R.E.A.T.E.</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Проекты <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a>
+          <a href="/pomokitty/">pomokitty</a>
+        </div>
+      </details>
+      <a href="/about/">Обо мне</a>
+      <a class="site-navigation__contact" href="/contact/">Написать</a>
+    </div>
+  </div>
+</nav>
+<div class="shell">
+    <main>
+      <header class="hero ai-agent-hero"><div class="meta">ПРАКТИКА AI-АГЕНТОВ · ПРАКТИЧЕСКИЙ ГАЙД · 12 МИНУТ</div><h1>Hermes + Telegram на VPS: агент 24/7</h1><p class="lede">Как сделать так, чтобы агент был доступен в Telegram, когда ноутбук закрыт, но не превратить собственный сервер в открытую дверь.</p><figure class="hero-visual"><img src="../../assets/images/og-hermes-agent-telegram-vps.jpg" alt="Серверный AI-агент ночью передаёт сообщение и проверяемый отчёт человеку"></figure></header>
+      <section class="article"><aside class="toc"><div class="eyebrow">В статье</div><a href="#when">Когда нужен VPS</a><a href="#shape">Как выглядит контур</a><a href="#start">Порядок запуска</a><a href="#security">Доступы и безопасность</a><a href="#operating">Еженедельная проверка</a></aside><article class="content ai-guide-content"><p>Ноутбук удобен, пока агент нужен в рабочее время и рядом лежат ваши файлы. Но как только он должен отвечать в Telegram утром, ночью, в поездке или по расписанию, домашний компьютер превращается в ненадёжную часть системы.</p><p>VPS решает не проблему «где взять магию». Он решает простую задачу: где живёт постоянно работающая программа, пока вы занимаетесь своей жизнью.</p><h2 id="when">Когда VPS действительно нужен</h2><ul><li>бот должен отвечать, когда ноутбук закрыт;</li><li>есть регулярные обзоры, напоминания или мониторинг;</li><li>агенту нужен устойчивый адрес и отдельная среда;</li><li>вы готовы раз в неделю проверить состояние сервера и резервных копий.</li></ul><p>Если вы только пробуете сценарий с файлами на своём компьютере, VPS можно отложить. Не нужно арендовать сервер, чтобы задать первый хороший вопрос.</p><h2 id="shape">Контур, который стоит собирать</h2><div class="decision-flow"><div><span>1</span><strong>VPS</strong><p>Отдельный пользователь для Hermes. Не root. Обновления и только нужные сетевые доступы.</p></div><div><span>2</span><strong>Gateway</strong><p>Сервис Hermes держит соединение с Telegram и запускается снова после перезагрузки.</p></div><div><span>3</span><strong>Человек</strong><p>Получает итог в Telegram, проверяет его и подтверждает необратимые действия.</p></div></div><h2 id="start">Порядок запуска без инфраструктурного фетиша</h2><ol><li>Выберите VPS у провайдера, который показывает страну размещения, стоимость и резервные опции. Например, <a href="https://timeweb.cloud/services/servers-europe" target="_blank" rel="noopener">Timeweb Cloud</a> предлагает зарубежные локации через привычную панель.</li><li>Создайте отдельного пользователя для Hermes и не запускайте агента от root.</li><li>Поставьте Hermes по <a href="https://hermes-agent.nousresearch.com/docs/getting-started/installation" target="_blank" rel="noopener">официальной инструкции</a>.</li><li>Подключите Telegram через интерфейс Hermes или создайте бота в <a href="https://t.me/BotFather" target="_blank" rel="noopener">BotFather ↗</a>.</li><li>Разрешите писать боту только тем аккаунтам, которым доверяете.</li><li>Включите автозапуск gateway, перезагрузите сервер и отправьте тестовое сообщение.</li></ol><p>Не открывайте веб-интерфейс агента в интернет ради удобства. Telegram не требует от вас публичного webhook для базового сценария, а админский доступ лучше оставлять за SSH или закрытой сетью.</p><h2 id="security">Где чаще всего ломается безопасность</h2><p>Не в сложной криптографии. Обычно всё ломается в момент, когда токен бота отправляют в чат, сервер оставляют с парольным root-входом, а агенту дают доступ ко всему сразу.</p><div class="route-box"><strong>Минимальное правило:</strong> один бот, один ответственный владелец, отдельный пользователь на сервере, ограниченный список Telegram-пользователей и человек перед публикацией, платежом, удалением или изменением прав.</div><p>Если для вашей работы нужен личный VPN, не смешивайте его с агентом на одном сервере только ради экономии. Это разные контуры доступа и разные последствия ошибки.</p><h2 id="operating">Десять минут в неделю</h2><p>Раз в неделю проверьте: отвечает ли бот, хватает ли места на диске, прошли ли обновления, есть ли резервная копия и понятна ли карта восстановления. Серверный агент не должен быть хрупкой штукой, о которой вспоминают только после тишины в Telegram.</p><section class="agent-cta"><div><div class="eyebrow">После VPS</div><h2>Сервер не является сценарием</h2><p>Когда агент стабильно доступен, выберите одну полезную работу: аудиосаммари, помощник руководителя, рыночный радар или база знаний.</p></div><div class="agent-cta__links"><a href="../../skills/">Выбрать skill →</a><a href="../hermes-agent-installation/">Полная инструкция Hermes →</a><a href="../../contact/">Разобрать процесс →</a></div></section></article></section>
+    </main>
+    <footer class="site-footer" data-site-footer="global">
+  <div class="site-footer__grid">
+    <div class="site-footer__brand">
+      <a class="site-footer__name" href="/">Павел Насута</a>
+      <p>Product builder · AI-агенты · автоматизация</p>
+    </div>
+    <nav class="site-footer__group" aria-label="Навигация в подвале">
+      <h2>Разделы</h2>
+      <a href="/articles/">Блог</a>
+      <a href="/skills/">Skills для AI-агентов</a>
+      <a href="/create/">Framework C.R.E.A.T.E.</a>
+      <a href="/biases/">Когнитивные искажения</a>
+      <a href="/about/">Обо мне</a>
+    </nav>
+    <nav class="site-footer__group" aria-label="Проекты">
+      <h2>Проекты</h2>
+      <a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a>
+      <a href="/pomokitty/">pomokitty</a>
+      <a href="/create/">C.R.E.A.T.E.</a>
+    </nav>
+    <nav class="site-footer__group" aria-label="Связь">
+      <h2>Связь</h2>
+      <a href="/contact/">Все способы связи</a>
+      <a href="https://t.me/niimozgii" target="_blank" rel="noopener">Telegram ↗</a>
+      <a href="https://www.linkedin.com/in/nasuta" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/pavelnasuta" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="mailto:pavelnasuta@gmail.com">Email</a>
+    </nav>
+  </div>
+  <div class="site-footer__bottom">
+    <span>© 2026 Павел Насута</span>
+    <a href="/contact/">Написать</a>
+  </div>
+</footer>
+  </div>
+</body></html>
