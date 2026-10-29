@@ -4,9 +4,9 @@ from pathlib import Path
 import re
 
 try:
-    from tools.site_navigation import SCRIPT, SITE_NAVIGATION, STYLESHEET
+    from tools.site_navigation import LEGACY_STYLESHEET, SCRIPT, SITE_NAVIGATION, STYLESHEET
 except ModuleNotFoundError:  # Direct execution from tools/.
-    from site_navigation import SCRIPT, SITE_NAVIGATION, STYLESHEET
+    from site_navigation import LEGACY_STYLESHEET, SCRIPT, SITE_NAVIGATION, STYLESHEET
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,6 +23,7 @@ def update_page(page: Path) -> bool:
     original = html
     html = LEGACY_NAVIGATION.sub("\n", html, count=1)
     html = SHARED_NAVIGATION.sub("\n", html, count=1)
+    html = html.replace(LEGACY_STYLESHEET, STYLESHEET)
     if STYLESHEET not in html:
         html = html.replace("</head>", f"  {STYLESHEET}\n</head>", 1)
     if SCRIPT not in html:

@@ -13,6 +13,7 @@
 .site-navigation__submenu-toggle span { display:inline-block; font-size:15px; transition:transform .16s ease; }
 .site-navigation__group[open] .site-navigation__submenu-toggle span { transform:rotate(180deg); }
 .site-navigation__submenu { position:absolute; top:calc(100% + 10px); left:-14px; display:grid; min-width:220px; padding:8px; border:1px solid var(--navigation-line); background:var(--navigation-white); box-shadow:5px 5px 0 rgba(11,113,109,.12); }
+.site-navigation__group--contacts .site-navigation__submenu { right:0; left:auto; }
 .site-navigation__submenu a { display:block; padding:10px 11px; font-size:12px; }
 .site-navigation__submenu a:hover { background:#d6ede5; }
 .site-navigation__contact { padding:10px 13px; border:1px solid var(--navigation-ink); }
