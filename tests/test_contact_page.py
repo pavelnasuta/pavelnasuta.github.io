@@ -14,15 +14,15 @@ class ContactPageTests(unittest.TestCase):
         self.assertNotIn("Локальный макет", html)
         self.assertNotIn("ещё редактируются", html)
 
-    def test_contact_page_has_three_direct_contact_options(self):
+    def test_contact_page_distinguishes_personal_telegram_from_channel(self):
         html = CONTACT.read_text(encoding="utf-8")
+        self.assertIn('href="https://t.me/pavelnasuta"', html)
+        self.assertIn("Личный Telegram", html)
+        self.assertIn('href="https://t.me/niimozgii"', html)
+        self.assertIn("НИИ «МОЗГИ»", html)
         self.assertEqual(html.count('class="contact-card"'), 3)
         self.assertIn('href="https://www.linkedin.com/in/nasuta"', html)
-        self.assertIn('href="https://t.me/niimozgii"', html)
         self.assertIn('href="mailto:pavelnasuta@gmail.com"', html)
-        self.assertIn("LinkedIn", html)
-        self.assertIn("Telegram", html)
-        self.assertIn("Email", html)
         self.assertNotIn("Новых контактов и email", html)
 
 
