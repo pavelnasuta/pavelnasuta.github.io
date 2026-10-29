@@ -24,7 +24,7 @@ class TelegramChannelAnalyticsPageTests(unittest.TestCase):
         self.assertEqual(record["page_url"], "skills/telegram-channel-analytics/index.html")
         hub = (ROOT / "skills" / "index.html").read_text(encoding="utf-8")
         self.assertIn("Telegram Channel Analytics", hub)
-        self.assertIn("telegram-channel-analytics/index.html", hub)
+        self.assertIn("/skills/telegram-channel-analytics/", hub)
 
     def test_page_has_truthful_metadata_boundaries_and_original_og_image(self):
         html = PAGE.read_text(encoding="utf-8")
@@ -52,7 +52,7 @@ class TelegramChannelAnalyticsPageTests(unittest.TestCase):
 
     def test_home_page_has_a_link_to_the_new_skill(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertIn('href="skills/telegram-channel-analytics/index.html"', home)
+        self.assertIn('href="/skills/telegram-channel-analytics/"', home)
 
 
 if __name__ == "__main__":

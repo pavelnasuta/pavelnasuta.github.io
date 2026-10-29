@@ -12,8 +12,8 @@ class AIAgentGuideTests(unittest.TestCase):
         home = (ROOT / 'index.html').read_text(encoding='utf-8')
         archive = (ROOT / 'articles' / 'index.html').read_text(encoding='utf-8')
         self.assertIn('Практика AI-агентов', hub)
-        self.assertIn('articles/ai-agents/index.html', home)
-        self.assertIn('articles/hermes-agent-installation/index.html', home)
+        self.assertIn('/articles/ai-agents/', home)
+        self.assertIn('/articles/hermes-agent-installation/', home)
         for link in ('ai-agents/index.html', 'hermes-agent-installation/index.html', 'hermes-agent-telegram-vps/index.html'):
             self.assertIn(link, archive)
 

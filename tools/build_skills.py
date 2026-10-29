@@ -112,7 +112,7 @@ def render_card(item: dict[str, Any]) -> str:
     status = item.get("catalogue_label") or STATUS_LABELS[item["status"]]
     return f'''<article class="skill-card" data-category="{html.escape(item['category'])}" data-search="{html.escape(' '.join([item['name'], item['summary'], item['category'], *item['tags']]).lower())}">
       <p class="skill-card__meta">{status} · {html.escape(item['category'])}</p>
-      <h2><a href="{html.escape(item['page_url'].removeprefix('skills/'))}">{html.escape(item['name'])}</a></h2>
+      <h2><a href="/{html.escape(item['page_url'].removesuffix('index.html'))}">{html.escape(item['name'])}</a></h2>
       <p>{html.escape(item['summary'])}</p>
       <ul class="skill-card__tags">{tags}</ul>
       <div class="skill-card__agents" aria-label="Совместимость с агентами">{badges}</div>
@@ -133,7 +133,7 @@ def render_hub(items: list[dict[str, Any]]) -> str:
         "@type": "CollectionPage",
         "@id": f"{SITE_ORIGIN}/skills/#collection",
         "name": "Skills для AI-агентов",
-        "description": "Публичный каталог агентных навыков, собранных из практики работы с AI-агентами.",
+        "description": "Публичный каталог повторяемых рабочих процедур для AI-агентов: задача, правила, границы и проверка результата.",
         "url": f"{SITE_ORIGIN}/skills/",
         "inLanguage": "ru-RU",
         "author": {"@type": "Person", "@id": f"{SITE_ORIGIN}/#pavel-nasuta", "name": "Павел Насута"},
@@ -145,7 +145,7 @@ def render_hub(items: list[dict[str, Any]]) -> str:
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Публичный каталог навыков для AI-агентов: реальные workflows, собранные из продуктовой, редакционной и операционной практики.">
+  <meta name="description" content="Skills для AI-агентов: повторяемые рабочие процедуры с правилами, границами и проверкой результата.">
   <title>Skills для AI-агентов · Павел Насута</title>
   <link rel="canonical" href="https://nasuta.ru/skills/">
   <link rel="stylesheet" href="../assets/styles/skills-index.css">
@@ -164,7 +164,7 @@ def render_hub(items: list[dict[str, Any]]) -> str:
   {SITE_NAVIGATION}
   <div class="shell">
     <main>
-      <header class="hero"><p class="eyebrow">ПРАКТИКА · AI-АГЕНТЫ · OPEN WORKFLOWS</p><h1>Skills, собранные из реальной работы.</h1><p>Не набор промптов, а проверяемые рабочие контуры: задача, границы, онбординг, адаптеры агентов и способ проверить результат.</p></header>
+      <header class="hero"><p class="eyebrow">ПРАКТИКА · AI-АГЕНТЫ · OPEN WORKFLOWS</p><h1>Skills для AI-агентов, собранные из реальной работы.</h1><p>Skill: повторяемая рабочая процедура, в которой зафиксированы задача, правила, границы, онбординг, адаптеры агентов и способ проверить результат. Это не плагин и не набор промптов.</p></header>
       <section class="catalogue" aria-labelledby="catalogue-title"><div class="catalogue-head"><div><p class="eyebrow">КАТАЛОГ</p><h2 id="catalogue-title">Открытые и пилотные навыки</h2></div><label class="search"><span class="sr-only">Поиск по навыкам</span><input type="search" id="skill-search" placeholder="Найти навык" autocomplete="off"></label></div>
         <div class="filters" aria-label="Фильтр по категории"><button type="button" class="filter-button is-active" data-filter="category" data-value="all">Все</button>{category_controls}</div>
         <div class="skill-grid" id="skill-grid">{cards}</div>

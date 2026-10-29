@@ -33,12 +33,12 @@ class SkillHubTests(unittest.TestCase):
         self.assertIn('<link rel="canonical" href="https://nasuta.ru/skills/">', self.html)
         self.assertIn('"@type":"CollectionPage"', self.html)
         self.assertIn('data-filter="category"', self.html)
-        self.assertIn('href="book-summary/index.html"', self.html)
-        self.assertIn('href="management-assistant/index.html"', self.html)
-        self.assertIn('href="anytype-agent-skill/index.html"', self.html)
-        self.assertIn('href="art-directing-visuals/index.html"', self.html)
-        self.assertIn('href="telegram-channel-analytics/index.html"', self.html)
-        self.assertIn('href="yandex-metrica-analytics-full/index.html"', self.html)
+        self.assertIn('href="/skills/book-summary/"', self.html)
+        self.assertIn('href="/skills/management-assistant/"', self.html)
+        self.assertIn('href="/skills/anytype-agent-skill/"', self.html)
+        self.assertIn('href="/skills/art-directing-visuals/"', self.html)
+        self.assertIn('href="/skills/telegram-channel-analytics/"', self.html)
+        self.assertIn('href="/skills/yandex-metrica-analytics-full/"', self.html)
         self.assertIn('assets/styles/skills-index.css', self.html)
 
     def test_hub_keeps_social_preview_without_an_inline_hero_illustration(self):
