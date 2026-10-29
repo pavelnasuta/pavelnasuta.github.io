@@ -8,6 +8,7 @@ PAGES = sorted(ROOT.rglob("*.html"))
 NAVIGATION_MARKER = '<nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">'
 REQUIRED_LABELS = (
     "Блог",
+    "Установка Hermes",
     "Библиотека",
     "Skills для AI-агентов",
     "Когнитивные искажения",
@@ -16,11 +17,16 @@ REQUIRED_LABELS = (
     "Menhausen",
     "pomokitty",
     "Обо мне",
-    "Написать",
+    "Контакты",
+    "Личный Telegram",
+    "НИИ «МОЗГИ»",
+    "LinkedIn",
+    "Email",
 )
 REQUIRED_LINKS = (
     'href="/"',
     'href="/articles/"',
+    'href="/articles/hermes-agent-installation/"',
     'href="/skills/"',
     'href="/biases/"',
     'href="/create/"',
@@ -28,6 +34,10 @@ REQUIRED_LINKS = (
     'href="/pomokitty/"',
     'href="/about/"',
     'href="/contact/"',
+    'href="https://t.me/pavelnasuta"',
+    'href="https://t.me/niimozgii"',
+    'href="https://www.linkedin.com/in/nasuta"',
+    'href="mailto:pavelnasuta@gmail.com"',
 )
 
 
@@ -38,7 +48,7 @@ class SitewideNavigationTests(unittest.TestCase):
         for page in PAGES:
             with self.subTest(page=page.relative_to(ROOT)):
                 html = page.read_text(encoding="utf-8")
-                self.assertIn('href="/assets/styles/navigation.css"', html)
+                self.assertIn('href="/assets/styles/navigation.css?v=contacts-nav"', html)
                 self.assertIn(NAVIGATION_MARKER, html)
                 navigation = re.search(r'<nav class="site-navigation".*?</nav>', html, re.S)
                 if navigation is None:
@@ -57,6 +67,9 @@ class SitewideNavigationTests(unittest.TestCase):
             self.assertIn(control, html)
         self.assertIn('aria-controls="site-navigation-panel"', html)
         self.assertIn('aria-expanded="false"', html)
+        self.assertIn('site-navigation__group--contacts', html)
+        css = (ROOT / "assets" / "styles" / "navigation.css").read_text(encoding="utf-8")
+        self.assertIn('.site-navigation__group--contacts .site-navigation__submenu { right:0; left:auto; }', css)
         self.assertIn('target="_blank" rel="noopener"', html)
 
     def test_opening_a_dropdown_closes_the_other_dropdowns(self):

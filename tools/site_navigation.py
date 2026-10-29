@@ -1,6 +1,7 @@
 """Shared responsive navigation for every public static route."""
 
-STYLESHEET = '<link rel="stylesheet" href="/assets/styles/navigation.css">'
+STYLESHEET = '<link rel="stylesheet" href="/assets/styles/navigation.css?v=contacts-nav">'
+LEGACY_STYLESHEET = '<link rel="stylesheet" href="/assets/styles/navigation.css">'
 SCRIPT = '<script defer src="/assets/scripts/navigation.js"></script>'
 
 SITE_NAVIGATION = '''<nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">
@@ -11,6 +12,7 @@ SITE_NAVIGATION = '''<nav class="site-navigation" data-site-navigation="global" 
     </button>
     <div class="site-navigation__panel" id="site-navigation-panel">
       <a href="/articles/">Блог</a>
+      <a href="/articles/hermes-agent-installation/">Установка Hermes</a>
       <details class="site-navigation__group">
         <summary class="site-navigation__submenu-toggle">Библиотека <span aria-hidden="true">⌄</span></summary>
         <div class="site-navigation__submenu">
@@ -27,7 +29,16 @@ SITE_NAVIGATION = '''<nav class="site-navigation" data-site-navigation="global" 
         </div>
       </details>
       <a href="/about/">Обо мне</a>
-      <a class="site-navigation__contact" href="/contact/">Написать</a>
+      <details class="site-navigation__group site-navigation__group--contacts">
+        <summary class="site-navigation__submenu-toggle">Контакты <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="/contact/">Все контакты</a>
+          <a href="https://t.me/pavelnasuta" target="_blank" rel="noopener">Личный Telegram ↗</a>
+          <a href="https://t.me/niimozgii" target="_blank" rel="noopener">НИИ «МОЗГИ» ↗</a>
+          <a href="https://www.linkedin.com/in/nasuta" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="mailto:pavelnasuta@gmail.com">Email</a>
+        </div>
+      </details>
     </div>
   </div>
 </nav>'''
