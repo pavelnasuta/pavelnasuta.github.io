@@ -7,9 +7,9 @@ HOME = (ROOT / 'index.html').read_text(encoding='utf-8')
 class HomeArticleFeatureTests(unittest.TestCase):
     def test_new_article_is_first_in_home_blog_and_all_articles_remain(self):
         links = [
-            'articles/ai-agent-knowledge-storage/index.html',
-            'articles/how-to-choose-an-ai-task/index.html',
-            'articles/how-to-verify-ai-automation/index.html',
+            '/articles/ai-agent-knowledge-storage/',
+            '/articles/how-to-choose-an-ai-task/',
+            '/articles/how-to-verify-ai-automation/',
         ]
         positions = [HOME.index(link) for link in links]
         self.assertEqual(positions, sorted(positions))

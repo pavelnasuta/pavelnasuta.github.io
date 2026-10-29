@@ -26,7 +26,7 @@ class ManagementAssistantPageTests(unittest.TestCase):
 
     def test_home_tile_links_to_site_article(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertIn('href="skills/management-assistant/index.html"', home)
+        self.assertIn('href="/skills/management-assistant/"', home)
         self.assertIn("Ассистент руководителя", home)
 
     def test_page_includes_editorial_style_and_social_metadata(self):

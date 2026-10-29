@@ -24,7 +24,7 @@ class ArtDirectingVisualsPageTests(unittest.TestCase):
         self.assertEqual(record["page_url"], "skills/art-directing-visuals/index.html")
         hub = (ROOT / "skills" / "index.html").read_text(encoding="utf-8")
         self.assertIn("Art-directing visuals", hub)
-        self.assertIn("art-directing-visuals/index.html", hub)
+        self.assertIn("/skills/art-directing-visuals/", hub)
 
     def test_page_has_complete_social_metadata_and_original_og_image(self):
         html = PAGE.read_text(encoding="utf-8")
@@ -42,7 +42,7 @@ class ArtDirectingVisualsPageTests(unittest.TestCase):
 
     def test_home_page_has_a_link_to_the_new_skill(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertIn('href="skills/art-directing-visuals/index.html"', home)
+        self.assertIn('href="/skills/art-directing-visuals/"', home)
 
 
 if __name__ == "__main__":
