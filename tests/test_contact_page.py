@@ -22,7 +22,7 @@ class ContactPageTests(unittest.TestCase):
         self.assertIn('href="https://t.me/niimozgii"', html)
         self.assertIn("НИИ «МОЗГИ»", html)
         self.assertEqual(html.count('class="contact-card"'), 4)
-        self.assertEqual(html.count('class="lucide '), 4)
+        self.assertGreaterEqual(html.count('class="lucide '), 4)
         self.assertIn('class="contact-card" href="https://t.me/pavelnasuta"', html)
         self.assertIn('href="https://www.linkedin.com/in/nasuta"', html)
         self.assertIn('href="mailto:pavelnasuta@gmail.com"', html)

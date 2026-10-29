@@ -11,8 +11,10 @@
   <!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');ym(27865374, 'init', {clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});</script><!-- /Yandex.Metrika counter -->
   <link rel="stylesheet" href="/assets/styles/navigation.css?v=contacts-nav">
   <script defer src="/assets/scripts/navigation.js"></script>
+  <link rel="stylesheet" href="/assets/styles/back-to-top.css?v=1">
+  <script defer src="/assets/scripts/back-to-top.js?v=1"></script>
 </head>
-<body>
+<body id="top">
   <!-- Yandex.Metrika counter (noscript) --><noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute;left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter (noscript) -->
 
   <nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">
@@ -287,5 +289,9 @@
 </footer>
   </div>
   <script>const search=document.getElementById('bias-search');const filters=[...document.querySelectorAll('[data-filter]')];const rows=[...document.querySelectorAll('.bias-row')];const empty=document.getElementById('empty-state');let group='all';const update=()=>{const query=search.value.trim().toLowerCase();let visible=0;rows.forEach((row)=>{const show=(group==='all'||row.dataset.group===group)&&(!query||row.dataset.search.includes(query));row.hidden=!show;if(show)visible+=1});empty.hidden=visible!==0};filters.forEach((button)=>button.addEventListener('click',()=>{group=button.dataset.filter;filters.forEach((item)=>item.setAttribute('aria-pressed',String(item===button)));update()}));search.addEventListener('input',update);</script>
+  <a class="back-to-top" href="#top" data-back-to-top aria-label="Наверх">
+  <svg class="lucide lucide-arrow-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+  <span>Наверх</span>
+</a>
 </body>
 </html>

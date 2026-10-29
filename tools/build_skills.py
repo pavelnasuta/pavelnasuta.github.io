@@ -12,9 +12,11 @@ from typing import Any
 try:
     from tools.site_footer import SITE_FOOTER, STYLESHEET
     from tools.site_navigation import SCRIPT as NAVIGATION_SCRIPT, SITE_NAVIGATION, STYLESHEET as NAVIGATION_STYLESHEET
+    from tools.site_back_to_top import BACK_TO_TOP, SCRIPT as TOP_SCRIPT, STYLESHEET as TOP_STYLESHEET
 except ModuleNotFoundError:  # Direct execution from tools/.
     from site_footer import SITE_FOOTER, STYLESHEET
     from site_navigation import SCRIPT as NAVIGATION_SCRIPT, SITE_NAVIGATION, STYLESHEET as NAVIGATION_STYLESHEET
+    from site_back_to_top import BACK_TO_TOP, SCRIPT as TOP_SCRIPT, STYLESHEET as TOP_STYLESHEET
 
 
 SAFE_SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
@@ -149,13 +151,15 @@ def render_hub(items: list[dict[str, Any]]) -> str:
   <link rel="stylesheet" href="../assets/styles/skills-index.css">
   {STYLESHEET}
   {NAVIGATION_STYLESHEET}
+  {TOP_STYLESHEET}
   {NAVIGATION_SCRIPT}
+  {TOP_SCRIPT}
   <meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Павел Насута"><meta property="og:title" content="Skills для AI-агентов · Павел Насута"><meta property="og:description" content="Публичный каталог практических навыков для AI-агентов."><meta property="og:url" content="https://nasuta.ru/skills/"><meta property="og:image" content="https://nasuta.ru/assets/images/og-skills-hub.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Skills для AI-агентов">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Skills для AI-агентов · Павел Насута"><meta name="twitter:description" content="Публичный каталог практических навыков для AI-агентов."><meta name="twitter:image" content="https://nasuta.ru/assets/images/og-skills-hub.jpg"><meta name="twitter:image:alt" content="Skills для AI-агентов">
   <script type="application/ld+json">{schema}</script>
   <script type="text/javascript">(function(m,e,t,r,i,k,a){{m[i]=m[i]||function(){{(m[i].a=m[i].a||[]).push(arguments)}};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){{if(document.scripts[j].src===r){{return;}}}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');ym(27865374, 'init', {{clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true}});</script>
 </head>
-<body>
+<body id="top">
   <noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute;left:-9999px;" alt=""></div></noscript>
   {SITE_NAVIGATION}
   <div class="shell">
@@ -171,6 +175,7 @@ def render_hub(items: list[dict[str, Any]]) -> str:
     {SITE_FOOTER}
   </div>
   <script>const search=document.getElementById('skill-search');const buttons=[...document.querySelectorAll('[data-filter="category"]')];const cards=[...document.querySelectorAll('.skill-card')];const none=document.getElementById('no-results');let category='all';function apply(){{const query=search.value.trim().toLowerCase();let shown=0;cards.forEach((card)=>{{const matchCategory=category==='all'||card.dataset.category===category;const matchQuery=!query||card.dataset.search.includes(query);const visible=matchCategory&&matchQuery;card.hidden=!visible;if(visible)shown+=1;}});none.hidden=shown!==0;}}buttons.forEach((button)=>button.addEventListener('click',()=>{{category=button.dataset.value;buttons.forEach((item)=>item.classList.toggle('is-active',item===button));apply();}}));search.addEventListener('input',apply);</script>
+  {BACK_TO_TOP}
 </body>
 </html>'''
 
