@@ -10,13 +10,15 @@
   <link rel="stylesheet" href="../assets/styles/skills-index.css">
   <link rel="stylesheet" href="/assets/styles/footer.css">
   <link rel="stylesheet" href="/assets/styles/navigation.css?v=contacts-nav">
+  <link rel="stylesheet" href="/assets/styles/back-to-top.css?v=1">
   <script defer src="/assets/scripts/navigation.js"></script>
+  <script defer src="/assets/scripts/back-to-top.js?v=1"></script>
   <meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Павел Насута"><meta property="og:title" content="Skills для AI-агентов · Павел Насута"><meta property="og:description" content="Публичный каталог практических навыков для AI-агентов."><meta property="og:url" content="https://nasuta.ru/skills/"><meta property="og:image" content="https://nasuta.ru/assets/images/og-skills-hub.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Skills для AI-агентов">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Skills для AI-агентов · Павел Насута"><meta name="twitter:description" content="Публичный каталог практических навыков для AI-агентов."><meta name="twitter:image" content="https://nasuta.ru/assets/images/og-skills-hub.jpg"><meta name="twitter:image:alt" content="Skills для AI-агентов">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","@id":"https://nasuta.ru/skills/#collection","name":"Skills для AI-агентов","description":"Публичный каталог агентных навыков, собранных из практики работы с AI-агентами.","url":"https://nasuta.ru/skills/","inLanguage":"ru-RU","author":{"@type":"Person","@id":"https://nasuta.ru/#pavel-nasuta","name":"Павел Насута"},"hasPart":[{"@type":"SoftwareSourceCode","name":"Book Summary Skill","url":"https://nasuta.ru/skills/book-summary/"},{"@type":"SoftwareSourceCode","name":"Adaptive Support Dialogue","url":"https://nasuta.ru/skills/adaptive-support-dialogue/"},{"@type":"SoftwareSourceCode","name":"Ассистент руководителя","url":"https://nasuta.ru/skills/management-assistant/"},{"@type":"SoftwareSourceCode","name":"Anytype Agent Skill","url":"https://nasuta.ru/skills/anytype-agent-skill/"},{"@type":"SoftwareSourceCode","name":"Art-directing visuals","url":"https://nasuta.ru/skills/art-directing-visuals/"},{"@type":"SoftwareSourceCode","name":"Telegram Channel Analytics","url":"https://nasuta.ru/skills/telegram-channel-analytics/"},{"@type":"SoftwareSourceCode","name":"Yandex Metrica Analytics Full","url":"https://nasuta.ru/skills/yandex-metrica-analytics-full/"}]}</script>
   <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');ym(27865374, 'init', {clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});</script>
 </head>
-<body>
+<body id="top">
   <noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute;left:-9999px;" alt=""></div></noscript>
   <nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">
   <div class="site-navigation__inner">
@@ -150,5 +152,9 @@
 </footer>
   </div>
   <script>const search=document.getElementById('skill-search');const buttons=[...document.querySelectorAll('[data-filter="category"]')];const cards=[...document.querySelectorAll('.skill-card')];const none=document.getElementById('no-results');let category='all';function apply(){const query=search.value.trim().toLowerCase();let shown=0;cards.forEach((card)=>{const matchCategory=category==='all'||card.dataset.category===category;const matchQuery=!query||card.dataset.search.includes(query);const visible=matchCategory&&matchQuery;card.hidden=!visible;if(visible)shown+=1;});none.hidden=shown!==0;}buttons.forEach((button)=>button.addEventListener('click',()=>{category=button.dataset.value;buttons.forEach((item)=>item.classList.toggle('is-active',item===button));apply();}));search.addEventListener('input',apply);</script>
+  <a class="back-to-top" href="#top" data-back-to-top aria-label="Наверх">
+  <svg class="lucide lucide-arrow-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+  <span>Наверх</span>
+</a>
 </body>
 </html>
