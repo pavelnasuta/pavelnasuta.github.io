@@ -5,6 +5,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 HOME = ROOT / "index.html"
 CONTACT = ROOT / "contact/index.html"
+CONTACT_CSS = ROOT / "assets" / "styles" / "contact-index.css"
 
 
 class ContactPageTests(unittest.TestCase):
@@ -21,10 +22,13 @@ class ContactPageTests(unittest.TestCase):
         self.assertIn('href="https://t.me/niimozgii"', html)
         self.assertIn("НИИ «МОЗГИ»", html)
         self.assertEqual(html.count('class="contact-card"'), 4)
+        self.assertEqual(html.count('class="lucide '), 4)
         self.assertIn('class="contact-card" href="https://t.me/pavelnasuta"', html)
         self.assertIn('href="https://www.linkedin.com/in/nasuta"', html)
         self.assertIn('href="mailto:pavelnasuta@gmail.com"', html)
         self.assertNotIn("Новых контактов и email", html)
+        css = CONTACT_CSS.read_text(encoding="utf-8")
+        self.assertIn(".contact-icon{flex:0 0 42px;aspect-ratio:1;border-radius:50%}", css)
 
 
 if __name__ == "__main__":
