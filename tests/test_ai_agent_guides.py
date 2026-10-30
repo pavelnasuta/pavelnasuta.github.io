@@ -30,6 +30,19 @@ class AIAgentGuideTests(unittest.TestCase):
         visible = re.sub(r'<script.*?</script>', '', page, flags=re.S)
         self.assertIsNone(re.search(r'\[\d+\]', visible))
 
+    def test_guide_tables_have_semantic_patterns_and_mobile_labels(self):
+        page = (ROOT / 'articles' / 'hermes-agent-installation' / 'index.html').read_text(encoding='utf-8')
+        stylesheet = (ROOT / 'assets' / 'styles' / 'ai-agent-guides.css').read_text(encoding='utf-8')
+        self.assertEqual(page.count('class="guide-table '), 7)
+        self.assertIn('guide-table--decision', page)
+        self.assertIn('guide-table--contrast', page)
+        self.assertIn('guide-table--comparison', page)
+        self.assertIn('data-label="Если для вас важнее"', page)
+        self.assertIn('data-label="Обычный чат"', page)
+        self.assertIn('assets/styles/ai-agent-guides.css?v=table-cards-1', page)
+        self.assertIn('@media (max-width: 680px)', stylesheet)
+        self.assertIn('.guide-table td::before', stylesheet)
+
     def test_new_covers_are_unique_jpegs_at_social_size(self):
         names = ('og-ai-agent-practice.jpg', 'og-hermes-agent-installation.jpg', 'og-hermes-agent-telegram-vps.jpg')
         images = [ROOT / 'assets' / 'images' / name for name in names]

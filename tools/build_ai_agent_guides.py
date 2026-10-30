@@ -44,7 +44,7 @@ def page(*, title: str, description: str, url: str, image: str, image_alt: str, 
   <meta name="description" content="{html.escape(description, quote=True)}">
   <title>{html.escape(title)} · Павел Насута</title>
   <link rel="stylesheet" href="../../assets/styles/articles-editorial.css">
-  <link rel="stylesheet" href="../../assets/styles/ai-agent-guides.css">
+  <link rel="stylesheet" href="../../assets/styles/ai-agent-guides.css?v=table-cards-1">
   <link rel="canonical" href="{url}">
   <meta property="og:type" content="article"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Павел Насута">
   <meta property="og:title" content="{html.escape(title, quote=True)}"><meta property="og:description" content="{html.escape(description, quote=True)}"><meta property="og:url" content="{url}">
@@ -75,6 +75,46 @@ def strip_citations(markdown: str) -> str:
     return markdown.strip()
 
 
+TABLE_PATTERNS = {
+    ('Если для вас важнее', 'Разумнее выбрать', 'Почему'): 'guide-table--decision',
+    ('Обычный чат', 'Агент с памятью, skills и инструментами'): 'guide-table--contrast',
+    ('Сценарий', 'Кому подходит', 'Что учитывать'): 'guide-table--decision',
+    ('Вопрос', 'Компьютер', 'VPS'): 'guide-table--comparison',
+    ('Если вам нужно', 'Выберите'): 'guide-table--decision',
+    ('Где', 'Что туда писать', 'Почему это удобно'): 'guide-table--decision',
+    ('Вопрос', 'Hermes Desktop на компьютере', 'Hermes на VPS'): 'guide-table--comparison',
+}
+
+
+def decorate_guide_tables(body: str) -> str:
+    def decorate(match: re.Match[str]) -> str:
+        table = match.group(0)
+        headers = tuple(re.sub(r'<[^>]+>', '', value).strip() for value in re.findall(r'<th>(.*?)</th>', table, flags=re.S))
+        pattern = TABLE_PATTERNS.get(headers)
+        if not pattern:
+            return table
+        table = table.replace('<table>', f'<table class="guide-table {pattern}">', 1)
+        table = table.replace('<th>', '<th scope="col">')
+        head = list(headers)
+
+        def decorate_row(row: re.Match[str]) -> str:
+            cell_number = 0
+
+            def decorate_cell(cell: re.Match[str]) -> str:
+                nonlocal cell_number
+                label = html.escape(head[cell_number], quote=True)
+                cell_number += 1
+                return f'<td data-label="{label}">{cell.group(1)}</td>'
+
+            return '<tr>' + re.sub(r'<td>(.*?)</td>', decorate_cell, row.group(1), flags=re.S) + '</tr>'
+
+        before, tbody = table.split('<tbody>', 1)
+        tbody = re.sub(r'<tr>(.*?)</tr>', decorate_row, tbody, flags=re.S)
+        return before + '<tbody>' + tbody
+
+    return re.sub(r'<table>.*?</table>', decorate, body, flags=re.S)
+
+
 def build_pillar() -> None:
     source = SOURCE.read_text(encoding='utf-8')
     clean = strip_citations(source)
@@ -86,6 +126,7 @@ def build_pillar() -> None:
     body = body.replace('Timeweb Cloud', '<a href="https://timeweb.cloud/" target="_blank" rel="noopener">Timeweb Cloud</a>')
     body = body.replace('ChatGPT в браузере', '<a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT в браузере</a>')
     body = body.replace('Plati', '<a href="https://plati.market/" target="_blank" rel="noopener">Plati</a>')
+    body = decorate_guide_tables(body)
     article = f'''<section class="article"><aside class="toc"><div class="eyebrow">Маршруты</div><a href="#быстрый-выбор-компьютер-или-vps">Компьютер или VPS</a><a href="#маршрут-1-установка-hermes-desktop-без-терминала">Desktop</a><a href="#telegram-бот-и-организация-работы">Telegram</a><a href="#маршрут-4-постоянный-hermes-на-собственном-vps">VPS</a><a href="#шесть-сценариев-где-агент-сильнее-обычного-чата">Сценарии</a><a href="#что-делать-дальше">Следующий шаг</a></aside><article class="content ai-guide-content"><div class="route-box"><strong>Если хотите попробовать:</strong> начните с Desktop на своём компьютере. <strong>Если агент должен отвечать в Telegram круглосуточно:</strong> переходите к маршруту VPS. <a href="https://hermes-agent.nousresearch.com/desktop" target="_blank" rel="noopener">Официальный Hermes Desktop ↗</a></div>{body}</article></section>'''
     output = ROOT / 'articles' / 'hermes-agent-installation' / 'index.html'
     output.parent.mkdir(parents=True, exist_ok=True)
