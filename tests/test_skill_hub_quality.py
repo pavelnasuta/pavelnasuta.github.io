@@ -48,13 +48,14 @@ class SkillHubQualityTests(unittest.TestCase):
         self.assertEqual(len(blocks), 1)
         schema = json.loads(blocks[0])
         self.assertEqual(schema["@type"], "CollectionPage")
-        self.assertEqual(len(schema["hasPart"]), 7)
+        self.assertEqual(len(schema["hasPart"]), 8)
 
     def test_skills_keep_distinct_social_art_and_detail_page_heroes(self):
         expected = {
             "skills/index.html": ("og-skills-hub.jpg", None),
             "skills/book-summary/index.html": ("og-skill-book-summary.jpg", "skill-visual"),
             "skills/adaptive-support-dialogue/index.html": ("og-skill-adaptive-support.jpg", "skill-visual"),
+            "skills/adaptive-english-tutor/index.html": ("og-skill-adaptive-english-tutor.jpg", "skill-visual"),
             "skills/management-assistant/index.html": ("og-skill-management-assistant.jpg", "skill-visual"),
             "skills/anytype-agent-skill/index.html": ("og-skill-anytype-agent.jpg", "skill-visual"),
             "skills/art-directing-visuals/index.html": ("og-skill-art-directing-visuals.jpg", "skill-visual"),

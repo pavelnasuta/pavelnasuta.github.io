@@ -20,6 +20,7 @@
 - [Предвзятость подтверждения](https://nasuta.ru/biases/confirmation-bias/): как мы ищем подтверждения уже выбранной версии и как проверить гипотезу до решения.
 - [Якорение](https://nasuta.ru/biases/anchoring/): как первая цифра становится точкой отсчёта и влияет на последующую оценку.
 - [Adaptive Support Dialogue Skill](https://nasuta.ru/skills/adaptive-support-dialogue/): open-source основа для поддерживающего диалога, ACT, КПТ и прозрачной работы с личным контекстом.
+- [Adaptive English Tutor](https://nasuta.ru/skills/adaptive-english-tutor/): практика английского через свободную переписку, короткие занятия, голосовые и пользовательский файл прогресса.
 
 ## Редакционный принцип
 

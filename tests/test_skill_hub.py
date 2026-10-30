@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PAGES = {
     "book-summary": "OPEN SOURCE",
     "adaptive-support-dialogue": "OPEN SOURCE",
+    "adaptive-english-tutor": "OPEN SOURCE",
     "management-assistant": "PRIVATE PILOT",
     "anytype-agent-skill": "PUBLIC REPOSITORY",
 }
@@ -22,18 +23,20 @@ class SkillHubTests(unittest.TestCase):
     def test_hub_lists_only_the_current_public_records(self):
         self.assertIn("Book Summary Skill", self.html)
         self.assertIn("Adaptive Support Dialogue", self.html)
+        self.assertIn("Adaptive English Tutor", self.html)
         self.assertIn("Ассистент руководителя", self.html)
         self.assertIn("Anytype Agent Skill", self.html)
         self.assertIn("Art-directing visuals", self.html)
         self.assertIn("Telegram Channel Analytics", self.html)
         self.assertIn("Yandex Metrica Analytics Full", self.html)
-        self.assertEqual(self.html.count('class="skill-card"'), 7)
+        self.assertEqual(self.html.count('class="skill-card"'), 8)
 
     def test_hub_has_metadata_filters_and_real_local_links(self):
         self.assertIn('<link rel="canonical" href="https://nasuta.ru/skills/">', self.html)
         self.assertIn('"@type":"CollectionPage"', self.html)
         self.assertIn('data-filter="category"', self.html)
         self.assertIn('href="/skills/book-summary/"', self.html)
+        self.assertIn('href="/skills/adaptive-english-tutor/"', self.html)
         self.assertIn('href="/skills/management-assistant/"', self.html)
         self.assertIn('href="/skills/anytype-agent-skill/"', self.html)
         self.assertIn('href="/skills/art-directing-visuals/"', self.html)

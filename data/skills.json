@@ -152,6 +152,37 @@
       "release_priority": 1
     },
     {
+      "slug": "adaptive-english-tutor",
+      "name": "Adaptive English Tutor",
+      "summary": "Помогает вернуть английский через свободную переписку, короткие занятия и разбор голосовых с пользовательским контекстом обучения.",
+      "category": "Personal Systems",
+      "tags": [
+        "english",
+        "language-learning",
+        "conversation",
+        "writing",
+        "voice"
+      ],
+      "status": "released",
+      "visibility": "public",
+      "source_status": "published",
+      "compatibility": {
+        "hermes": "verified",
+        "claude-code": "not-applicable",
+        "codex": "not-applicable",
+        "opencode": "not-applicable",
+        "agents-md": "not-applicable"
+      },
+      "updated": "2026-10-30",
+      "version": "0.1.0",
+      "license": "MIT",
+      "repository_url": "https://github.com/pavelnasuta/adaptive-english-tutor",
+      "page_url": "skills/adaptive-english-tutor/index.html",
+      "privacy_review": "approved",
+      "release_notes": "Первая публичная версия: диагностика по навыкам, свободное общение или короткая практика, разбор голосовых и пользовательский файл прогресса.",
+      "release_priority": 1
+    },
+    {
       "slug": "multi-agent-workflow-packaging",
       "name": "Multi-agent workflow packaging",
       "summary": "Упаковывает единый workflow для нескольких AI-агентов без дублирования логики.",
