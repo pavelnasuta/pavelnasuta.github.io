@@ -51,11 +51,16 @@ class YandexMetricaAnalyticsPageTests(unittest.TestCase):
         html = PAGE.read_text(encoding="utf-8")
         self.assertIn('id="roles"', html)
         self.assertEqual(html.count('class="role-card"'), 5)
-        for role in ("ВЕБ-АНАЛИТИКУ", "SEO-СПЕЦИАЛИСТУ", "МАРКЕТОЛОГУ", "ТАРГЕТОЛОГУ", "ПРОДУКТОВИКУ"):
+        for role in ("ВЕБ-АНАЛИТИКУ", "SEO-СПЕЦИАЛИСТУ", "МАРКЕТОЛОГУ", "ТАРГЕТОЛОГУ", "МЕНЕДЖЕРУ ПРОДУКТА"):
             self.assertIn(role, html)
+        self.assertNotIn("ПРОДУКТОВИКУ", html)
         self.assertIn("отдельный источник затрат", html)
         self.assertIn("агрегированными отчётами", html)
         self.assertIn('href="#roles"', html)
+
+    def test_role_note_has_a_specific_top_gap_rule(self):
+        styles = (ROOT / "assets/styles/skills-metrica-details.css").read_text(encoding="utf-8")
+        self.assertIn(".content .role-cases__note{margin:28px 0 0", styles)
 
     def test_page_uses_a_distinct_valid_social_image(self):
         self.assertTrue(IMAGE.is_file())
