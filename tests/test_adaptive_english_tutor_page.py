@@ -48,6 +48,13 @@ class AdaptiveEnglishTutorPageTests(unittest.TestCase):
             self.assertEqual(image.size, (1200, 630))
             self.assertEqual(image.format, "JPEG")
 
+    def test_hero_heading_preserves_words_for_screen_readers_and_search(self):
+        html = PAGE.read_text(encoding="utf-8")
+        heading = re.search(r"<h1>(.*?)</h1>", html, re.S)
+        self.assertIsNotNone(heading)
+        assert heading is not None
+        self.assertEqual(re.sub(r"<[^>]+>", "", heading.group(1)).strip(), "Adaptive English Tutor")
+
     def test_discoverability_files_list_the_live_page(self):
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
