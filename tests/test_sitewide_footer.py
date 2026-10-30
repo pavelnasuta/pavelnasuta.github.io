@@ -1,5 +1,8 @@
 from pathlib import Path
+import tempfile
 import unittest
+
+from tools.apply_site_footer import update_page
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,6 +40,14 @@ class SitewideFooterTests(unittest.TestCase):
         for label in ("Разделы", "Проекты", "Связь"):
             self.assertIn(f">{label}</h2>", html)
         self.assertIn("Product builder · AI-агенты · автоматизация", html)
+
+    def test_footer_generator_is_idempotent(self):
+        source = (ROOT / "index.html").read_text(encoding="utf-8")
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            page = Path(temporary_directory) / "index.html"
+            page.write_text(source, encoding="utf-8")
+            self.assertFalse(update_page(page))
+            self.assertEqual(page.read_text(encoding="utf-8"), source)
 
 
 if __name__ == "__main__":

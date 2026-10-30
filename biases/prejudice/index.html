@@ -13,8 +13,10 @@
   <script defer src="/assets/scripts/navigation.js"></script>
   <link rel="stylesheet" href="/assets/styles/back-to-top.css?v=1">
   <script defer src="/assets/scripts/back-to-top.js?v=1"></script>
+  <link rel="stylesheet" href="/assets/styles/cookie-notice.css">
+  <script defer src="/assets/scripts/cookie-notice.js"></script>
 </head>
-<body id="top">
+<body id="top" id="top">
   <!-- Yandex.Metrika counter (noscript) --><noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute;left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter (noscript) -->
 
   <nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">
@@ -116,10 +118,15 @@
   </div>
   <div class="site-footer__bottom">
     <span>© 2026 Павел Насута</span>
+    <a href="/cookies/">Cookie и Метрика</a>
     <a href="/contact/">Написать</a>
   </div>
 </footer>
-  </div>
+<aside class="cookie-notice" data-cookie-notice aria-label="Уведомление об использовании cookie" role="status">
+  <p>Использую файлы cookie и Яндекс.Метрику, чтобы понимать, какие материалы полезны. Подробнее — в <a href="/cookies/">политике</a>.</p>
+  <button class="cookie-notice__dismiss" type="button" data-cookie-notice-dismiss>Понятно</button>
+</aside>
+</div>
   <script>const random=document.getElementById('random-bias');const routes=["../stereotypical-bias/index.html", "../negativity-bias-memory/index.html"];random.addEventListener('click',(event)=>{event.preventDefault();window.location.href=routes[Math.floor(Math.random()*routes.length)]});</script>
   <a class="back-to-top" href="#top" data-back-to-top aria-label="Наверх">
   <svg class="lucide lucide-arrow-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>

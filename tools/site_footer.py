@@ -1,8 +1,15 @@
-"""Shared sitewide footer for every static route."""
+"""Shared sitewide footer and cookie notice for every static route."""
 
-STYLESHEET = '<link rel="stylesheet" href="/assets/styles/footer.css">'
+STYLESHEET = '''<link rel="stylesheet" href="/assets/styles/footer.css">
+  <link rel="stylesheet" href="/assets/styles/cookie-notice.css">
+  <script defer src="/assets/scripts/cookie-notice.js"></script>'''
 
-SITE_FOOTER = '''<footer class="site-footer" data-site-footer="global">
+COOKIE_NOTICE = '''<aside class="cookie-notice" data-cookie-notice aria-label="Уведомление об использовании cookie" role="status">
+  <p>Использую файлы cookie и Яндекс.Метрику, чтобы понимать, какие материалы полезны. Подробнее — в <a href="/cookies/">политике</a>.</p>
+  <button class="cookie-notice__dismiss" type="button" data-cookie-notice-dismiss>Понятно</button>
+</aside>'''
+
+SITE_FOOTER = f'''<footer class="site-footer" data-site-footer="global">
   <div class="site-footer__grid">
     <div class="site-footer__brand">
       <a class="site-footer__name" href="/">Павел Насута</a>
@@ -33,6 +40,8 @@ SITE_FOOTER = '''<footer class="site-footer" data-site-footer="global">
   </div>
   <div class="site-footer__bottom">
     <span>© 2026 Павел Насута</span>
+    <a href="/cookies/">Cookie и Метрика</a>
     <a href="/contact/">Написать</a>
   </div>
-</footer>'''
+</footer>
+{COOKIE_NOTICE}'''
