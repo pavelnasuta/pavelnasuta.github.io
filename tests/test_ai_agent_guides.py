@@ -17,6 +17,12 @@ class AIAgentGuideTests(unittest.TestCase):
         for link in ('ai-agents/index.html', 'hermes-agent-installation/index.html', 'hermes-agent-telegram-vps/index.html'):
             self.assertIn(link, archive)
 
+    def test_hub_uses_a_reading_width_when_it_has_no_contents_column(self):
+        hub = (ROOT / 'articles' / 'ai-agents' / 'index.html').read_text(encoding='utf-8')
+        stylesheet = (ROOT / 'assets' / 'styles' / 'ai-agent-guides.css').read_text(encoding='utf-8')
+        self.assertIn('<section class="article article--single">', hub)
+        self.assertIn('.article--single{grid-template-columns:minmax(0,720px)}', stylesheet)
+
     def test_pillar_has_direct_service_and_funnel_links_without_public_sources(self):
         page = (ROOT / 'articles' / 'hermes-agent-installation' / 'index.html').read_text(encoding='utf-8')
         self.assertIn('https://hermes-agent.nousresearch.com/desktop', page)
@@ -39,7 +45,7 @@ class AIAgentGuideTests(unittest.TestCase):
         self.assertIn('guide-table--comparison', page)
         self.assertIn('data-label="Если для вас важнее"', page)
         self.assertIn('data-label="Обычный чат"', page)
-        self.assertIn('assets/styles/ai-agent-guides.css?v=table-cards-1', page)
+        self.assertIn('assets/styles/ai-agent-guides.css?v=layout-1', page)
         self.assertIn('@media (max-width: 680px)', stylesheet)
         self.assertIn('.guide-table td::before', stylesheet)
 
