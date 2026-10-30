@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Полная справка по командам Hermes Agent: 69 встроенных команд Telegram, типичные команды терминала, сценарии и границы доступа.">
+  <title>Справочник команд Hermes: Telegram и консоль · Павел Насута</title>
+  <link rel="stylesheet" href="../../assets/styles/articles-editorial.css">
+  <link rel="stylesheet" href="../../assets/styles/ai-agent-guides.css">
+  <link rel="canonical" href="https://nasuta.ru/articles/hermes-commands/">
+  <meta property="og:type" content="article"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Павел Насута">
+  <meta property="og:title" content="Справочник команд Hermes: Telegram и консоль"><meta property="og:description" content="Полная справка по командам Hermes Agent: 69 встроенных команд Telegram, типичные команды терминала, сценарии и границы доступа."><meta property="og:url" content="https://nasuta.ru/articles/hermes-commands/">
+  <meta property="og:image" content="https://nasuta.ru/assets/images/og-hermes-commands.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Телефон, терминал и карточка команд Hermes соединены в рабочий контур">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Справочник команд Hermes: Telegram и консоль"><meta name="twitter:description" content="Полная справка по командам Hermes Agent: 69 встроенных команд Telegram, типичные команды терминала, сценарии и границы доступа."><meta name="twitter:image" content="https://nasuta.ru/assets/images/og-hermes-commands.jpg"><meta name="twitter:image:alt" content="Телефон, терминал и карточка команд Hermes соединены в рабочий контур">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://nasuta.ru/articles/hermes-commands/#article", "headline": "Справочник команд Hermes: Telegram и консоль", "description": "Полная справка по командам Hermes Agent: 69 встроенных команд Telegram, типичные команды терминала, сценарии и границы доступа.", "image": "https://nasuta.ru/assets/images/og-hermes-commands.jpg", "author": {"@type": "Person", "@id": "https://nasuta.ru/#pavel-nasuta", "name": "Павел Насута", "url": "https://nasuta.ru/about/"}, "datePublished": "2026-10-30", "dateModified": "2026-10-30", "inLanguage": "ru-RU", "mainEntityOfPage": "https://nasuta.ru/articles/hermes-commands/", "isPartOf": {"@id": "https://nasuta.ru/articles/#webpage"}, "keywords": ["Hermes Agent", "команды Hermes", "Telegram", "CLI", "AI-агент"]}</script>
+  <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');ym(27865374, 'init', {clickmap:true,referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});</script>
+  <link rel="stylesheet" href="/assets/styles/navigation.css?v=contacts-nav">
+  <script defer src="/assets/scripts/navigation.js"></script>
+  <link rel="stylesheet" href="/assets/styles/footer.css">
+  <link rel="stylesheet" href="/assets/styles/back-to-top.css?v=1">
+  <script defer src="/assets/scripts/back-to-top.js?v=1"></script>
+  <link rel="stylesheet" href="/assets/styles/cookie-notice.css">
+  <script defer src="/assets/scripts/cookie-notice.js"></script>
+</head>
+<body id="top"><noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+<nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">
+  <div class="site-navigation__inner">
+    <a class="site-navigation__brand" href="/">Павел Насута</a>
+    <button class="site-navigation__toggle" type="button" aria-controls="site-navigation-panel" aria-expanded="false">
+      <span class="site-navigation__toggle-label">Меню</span><span class="site-navigation__toggle-icon" aria-hidden="true"></span>
+    </button>
+    <div class="site-navigation__panel" id="site-navigation-panel">
+      <a href="/articles/">Блог</a>
+      <a href="/articles/hermes-agent-installation/">Установка Hermes</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Библиотека <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="/skills/" aria-label="Открыть каталог Skills для AI-агентов">Skills для AI-агентов</a>
+          <a href="/biases/">Когнитивные искажения</a>
+        </div>
+      </details>
+      <a href="/create/">C.R.E.A.T.E.</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Проекты <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a>
+          <a href="/pomokitty/">pomokitty</a>
+        </div>
+      </details>
+      <a href="/about/">Обо мне</a>
+      <details class="site-navigation__group site-navigation__group--contacts">
+        <summary class="site-navigation__submenu-toggle">Контакты <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="/contact/">Все контакты</a>
+          <a href="https://t.me/pavelnasuta" target="_blank" rel="noopener">Личный Telegram ↗</a>
+          <a href="https://t.me/niimozgii" target="_blank" rel="noopener">НИИ «МОЗГИ» ↗</a>
+          <a href="https://www.linkedin.com/in/nasuta" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="mailto:pavelnasuta@gmail.com">Email</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</nav>
+<div class="shell">
+  <main>
+    <header class="hero ai-agent-hero"><div class="meta">ПРАКТИКА AI-АГЕНТОВ · СПРАВОЧНИК · 30 ОКТЯБРЯ 2026</div><h1>Справочник команд Hermes: Telegram и консоль</h1><p class="lede">Какие команды доступны в диалоге с ботом и какие нужны в терминале. Сначала короткий ориентир, затем полный список с назначением каждой команды.</p><figure class="hero-visual"><img src="../../assets/images/hermes-commands-hero.jpg" alt="Телефон, терминал и карточка команд Hermes соединены в рабочий контур"></figure></header>
+    <section class="article"><aside class="toc"><div class="eyebrow">В справочнике</div><a href="#как-устроен-справочник">Как читать</a><a href="#telegram-команды-бота">Telegram</a><a href="#консоль-типичные-команды-hermes">Консоль</a><a href="#быстрые-сценарии">Сценарии</a><a href="#источники-и-границы-справки">Источники</a></aside><article class="content ai-guide-content">
+<blockquote>
+<p><strong>Проверено: 30 октября 2026.</strong> Команды ниже взяты из запущенной версии Hermes и официальной документации. Это живая справка: новые версии могут добавлять команды.</p>
+</blockquote>
+<h2 id="как-устроен-справочник">Как устроен справочник</h2>
+<p>У Hermes есть две разные поверхности управления:</p>
+<ol type="1">
+<li><strong>Команды в Telegram</strong> — начинаются с <code>/</code> и вводятся прямо в диалоге с ботом. Они управляют текущей беседой, задачами, моделями и автоматизациями.</li>
+<li><strong>Команды в консоли</strong> — начинаются с <code>hermes</code> и запускаются в терминале компьютера или сервера. Они нужны для установки, настройки, диагностики и администрирования агента.</li>
+</ol>
+<p>В Telegram сейчас зарегистрировано <strong>69 встроенных команд</strong> и <strong>16 алиасов</strong>. Установленные skills добавляют динамические команды вида <code>/&lt;имя-skill&gt;</code>; они намеренно не перечислены, потому что зависят от конкретной установки.</p>
+<blockquote>
+<p><strong>Права и безопасность.</strong> Часть команд доступна только администраторам бота или при соответствующей настройке. Команды, меняющие настройки, запускающие фоновые процессы или отключающие подтверждения, стоит применять осознанно.</p>
+</blockquote>
+<hr />
+<h2 id="telegram-команды-бота">1. Telegram: команды бота</h2>
+<h2 id="с-чего-начать">С чего начать</h2>
+<ul>
+<li><strong><code>/start</code></strong> — отвечает на стартовое сообщение Telegram. Нужна, чтобы бот подтвердил, что готов к диалогу.</li>
+<li><strong><code>/help</code></strong> — показывает доступные команды. Можно написать <code>/help skills</code> или <code>/help &lt;слово&gt;</code>, чтобы отфильтровать справку.</li>
+<li><strong><code>/commands [страница]</code></strong> — постраничный каталог команд и подключённых skills. Удобнее <code>/help</code>, когда команд много.</li>
+<li><strong><code>/new [название]</code></strong> или <strong><code>/reset [название]</code></strong> — создаёт <em>новый чат в логике Hermes</em>: свежую сессию без старого контекста. Переписка Telegram не удаляется, но агент перестаёт опираться на предыдущую беседу. Название помогает позже найти сессию через <code>/resume</code> или <code>/sessions</code>.</li>
+<li><strong><code>/topic [off|help|session-id]</code></strong> — включает и настраивает отдельные сессии по темам в личных сообщениях Telegram.</li>
+</ul>
+<h2 id="контекст-и-история-разговора">Контекст и история разговора</h2>
+<ul>
+<li><strong><code>/title [название]</code></strong> — показывает или задаёт имя текущей сессии.</li>
+<li><strong><code>/save &lt;json|md|html&gt; [имя файла] [redact]</code></strong> — экспортирует текущую беседу. <code>redact</code> просит убрать чувствительные данные из выгрузки.</li>
+<li><strong><code>/retry</code></strong> — повторяет последнее сообщение пользователя; полезно, если ответ оборвался или был неудачным.</li>
+<li><strong><code>/undo [N]</code></strong> — откатывает N последних пользовательских ходов и позволяет сформулировать запрос заново.</li>
+<li><strong><code>/compress [here N|focus тема|--preview]</code></strong> или <strong><code>/compact</code></strong> — сжимает старый контекст в краткое резюме, сохраняя смысл и освобождая окно контекста. <code>--preview</code> показывает план без изменения сессии.</li>
+<li><strong><code>/context [all]</code></strong> или <strong><code>/ctx</code></strong> — показывает заполнение контекстного окна, историю сжатий и распределение токенов.</li>
+<li><strong><code>/resume [название]</code></strong> — возвращает ранее названную сессию.</li>
+<li><strong><code>/sessions [all|search запрос]</code></strong> — показывает прошлые сессии и позволяет вернуться в одну из них. <code>search</code> ищет по названию; <code>all</code> доступен администратору для просмотра не только текущего чата.</li>
+<li><strong><code>/branch [--here] [название]</code></strong> или <strong><code>/fork</code></strong> — создаёт ответвление текущей сессии. В Telegram это может создать отдельную ветку/тему; <code>--here</code> оставляет работу в текущем чате.</li>
+<li><strong><code>/rollback [номер] [--all]</code></strong> — показывает или восстанавливает файловые checkpoints, созданные Hermes во время работы. Безопаснее сначала вызвать без номера.</li>
+</ul>
+<h2 id="управление-текущей-работой">Управление текущей работой</h2>
+<ul>
+<li><strong><code>/stop</code></strong> — жёстко останавливает текущую работу агента и фоновые процессы этой сессии.</li>
+<li><strong><code>/discard</code></strong> — снимает блокировку очереди, если после перезапуска Hermes потерял незавершённый ход.</li>
+<li><strong><code>/pause [причина|off]</code></strong> — аварийно приостанавливает новую работу глобально; <code>/pause off</code> возобновляет её.</li>
+<li><strong><code>/bg &lt;задача&gt;</code></strong> — запускает задачу в отдельной фоновой сессии, не прерывая текущий разговор.</li>
+<li><strong><code>/agents</code></strong> или <strong><code>/tasks</code></strong> — показывает активных агентов и выполняющиеся задачи.</li>
+<li><strong><code>/btw &lt;вопрос&gt;</code></strong> — задаёт короткий вопрос «между делом», не меняя основную линию задачи.</li>
+<li><strong><code>/queue &lt;задача&gt;</code></strong> или <strong><code>/q</code></strong> — добавляет запрос в очередь следующего хода. Также: <code>list</code>, <code>edit N</code>, <code>rm N</code>, <code>move A B</code>, <code>clear</code>.</li>
+<li><strong><code>/steer &lt;уточнение&gt;</code></strong> или <strong><code>/s</code></strong> — подаёт уточнение в выполняющуюся задачу после ближайшего завершённого tool-вызова, не отменяя работу.</li>
+<li><strong><code>/busy [queue|steer|interrupt|status]</code></strong> — задаёт, что делать с новыми сообщениями, пока агент занят: поставить в очередь, встроить в текущую задачу или прервать её.</li>
+<li><strong><code>/goal &lt;цель&gt;</code></strong> — задаёт постоянную цель, над которой Hermes продолжает работать между ходами. Подкоманды: <code>show</code>, <code>status</code>, <code>pause</code>, <code>resume</code>, <code>clear</code>, <code>draft</code>, <code>gate add</code>.</li>
+<li><strong><code>/subgoal &lt;критерий&gt;</code></strong> — добавляет или удаляет критерии готовности активной цели: <code>remove N</code>, <code>clear</code>.</li>
+<li><strong><code>/heartbeat every &lt;интервал&gt; &lt;задача&gt;</code></strong> или <strong><code>/hb</code></strong> — периодически возвращает Hermes к задаче, когда сессия простаивает. Есть <code>status</code>, <code>pause</code>, <code>resume</code>, <code>clear</code>.</li>
+<li><strong><code>/loop &lt;интервал&gt; &lt;задача&gt; [--times N|--until условие]</code></strong> или <strong><code>/proactive</code></strong> — повторяет промпт с заданным интервалом в этой сессии; для управления: <code>status</code>, <code>pause</code>, <code>resume</code>, <code>stop</code>.</li>
+<li><strong><code>/plan [задача]</code></strong> — просит написать план реализации в Markdown, не приступая к выполнению.</li>
+<li><strong><code>/review [инструкции]</code></strong> — запускает независимого агента-ревьюера по текущей работе: коду, документу или PR.</li>
+<li><strong><code>/refine [фокус]</code></strong> — разбирает беседу и сохраняет извлечённые уроки в память или skills.</li>
+</ul>
+<h2 id="модель-стиль-и-способ-ответа">Модель, стиль и способ ответа</h2>
+<ul>
+<li><strong><code>/model [модель] [--provider имя] [--reasoning уровень] [--global|--session]</code></strong> — показывает или меняет модель. По умолчанию выбор относится к текущей сессии; <code>--global</code> делает его постоянной настройкой профиля.</li>
+<li><strong><code>/personality [имя]</code></strong> — включает предустановленную манеру общения; <code>none</code> сбрасывает её.</li>
+<li><strong><code>/reasoning [уровень|show|hide|full|clamp] [--global]</code></strong> — регулирует глубину рассуждений и отображение reasoning. Уровни: <code>none</code>, <code>minimal</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>xhigh</code>, <code>max</code>, <code>ultra</code>.</li>
+<li><strong><code>/fast [normal|fast|auto|cold|ultrafast|status] [--global]</code></strong> — выбирает обычный или приоритетный режим обработки, если его поддерживает провайдер.</li>
+<li><strong><code>/voice [on|off|tts|status]</code></strong> — управляет голосовым режимом и озвучиванием ответов.</li>
+<li><strong><code>/moa &lt;задача&gt;</code></strong> — запускает один запрос через настроенный Mixture of Agents, затем возвращает прежнюю модель.</li>
+<li><strong><code>/codex-runtime [auto|codex_app_server]</code></strong> — переключает режим исполнения для совместимых OpenAI/Codex-моделей.</li>
+<li><strong><code>/footer [on|off|status]</code></strong> — включает или выключает служебную строку с метаданными в финальных ответах бота.</li>
+</ul>
+<h2 id="безопасность-и-подтверждения">Безопасность и подтверждения</h2>
+<ul>
+<li><strong><code>/approve [session|always]</code></strong> — подтверждает ожидающую потенциально опасную команду. <code>session</code> — только для текущей сессии, <code>always</code> — более широкое правило.</li>
+<li><strong><code>/deny [all] [причина]</code></strong> — запрещает ожидающую опасную операцию; <code>all</code> отменяет все ожидающие запросы.</li>
+<li><strong><code>/approvals [manual|smart|off]</code></strong> — показывает или задаёт постоянный режим подтверждения опасных действий.</li>
+<li><strong><code>/yolo</code></strong> — переключает режим без подтверждений опасных команд. Использовать только в доверенной среде.</li>
+<li><strong><code>/whoami</code></strong> — показывает уровень доступа к slash-командам в текущем чате: администратор, пользователь или без ограничений.</li>
+</ul>
+<h2 id="навыки-память-и-автоматизации">Навыки, память и автоматизации</h2>
+<ul>
+<li><strong><code>/memory [pending|approve|reject|approval]</code></strong> — проверяет и утверждает ожидающие записи в долговременную память, либо настраивает их approval gate.</li>
+<li><strong><code>/learn &lt;источник&gt;</code></strong> — создаёт повторно используемый skill на основе папки, URL, заметок или текущего чата.</li>
+<li><strong><code>/bundles</code></strong> — показывает bundles: короткие slash-алиасы, загружающие несколько skills сразу.</li>
+<li><strong><code>/&lt;имя-skill&gt;</code></strong> — запускает установленный skill как команду. Набор таких команд зависит от конкретной установки; <code>/help skills</code> покажет актуальный список.</li>
+<li><strong><code>/init [заметки]</code></strong> — создаёт или обновляет <code>AGENTS.md</code> с инструкциями для проекта после анализа репозитория.</li>
+<li><strong><code>/reload-mcp</code></strong> — перечитывает конфигурацию MCP-серверов.</li>
+<li><strong><code>/reload-skills</code></strong> — пересканирует каталог skills после установки или удаления навыков.</li>
+<li><strong><code>/suggestions [accept|dismiss N|catalog|clear]</code></strong> или <strong><code>/suggest</code></strong> — показывает предложенные автоматизации и позволяет принять или отклонить их.</li>
+<li><strong><code>/blueprint [имя] [параметр=значение]</code></strong> или <strong><code>/bp</code></strong> — разворачивает автоматизацию по готовому шаблону.</li>
+<li><strong><code>/curator [status|run|pause|resume|pin|unpin|restore|list-archived]</code></strong> — управляет фоновым обслуживанием skills: анализом, закреплением, архивированием и восстановлением.</li>
+<li><strong><code>/kanban &lt;подкоманда&gt;</code></strong> — управляет общей доской задач для нескольких профилей/агентов: создание, назначение, комментарии, блокировки, запуск исполнителей, статистика.</li>
+</ul>
+<h2 id="диагностика-файлы-и-среда-разработки">Диагностика, файлы и среда разработки</h2>
+<ul>
+<li><strong><code>/status</code></strong> — показывает сведения о сессии, модели, токенах и контексте.</li>
+<li><strong><code>/profile</code></strong> — показывает активный профиль Hermes.</li>
+<li><strong><code>/diff [staged|all|session] [--stat] [путь]</code></strong> — показывает изменения Git в текущей рабочей папке.</li>
+<li><strong><code>/egress [status]</code></strong> — показывает состояние egress-прокси для Docker/изолированной сети.</li>
+<li><strong><code>/debug [nous|local]</code></strong> — создаёт отчёт диагностики; режим <code>nous</code> может отправить его в поддержку.</li>
+<li><strong><code>/version</code></strong> или <strong><code>/v</code></strong> — показывает текущую версию Hermes.</li>
+<li><strong><code>/update</code></strong> — обновляет Hermes до актуальной версии.</li>
+</ul>
+<h2 id="учётная-запись-и-использование">Учётная запись и использование</h2>
+<ul>
+<li><strong><code>/usage [reset --force]</code></strong> — показывает расход токенов и лимиты. <code>reset</code> используется только там, где провайдер поддерживает погашение накопленного сброса лимита.</li>
+<li><strong><code>/insights [дни]</code></strong> — показывает аналитику использования за выбранный период.</li>
+<li><strong><code>/login</code></strong> — вход в Nous-аккаунт без потери подключённых интеграций.</li>
+<li><strong><code>/topup</code></strong> — показывает баланс и открывает управление биллингом в портале.</li>
+</ul>
+<h2 id="telegram-и-шлюз-сообщений">Telegram и шлюз сообщений</h2>
+<ul>
+<li><strong><code>/sethome</code></strong> или <strong><code>/set-home</code></strong> — назначает текущий чат домашним каналом: сюда могут приходить результаты фоновых задач и системные сообщения.</li>
+<li><strong><code>/restart</code></strong> — корректно перезапускает gateway после завершения активных задач.</li>
+<li><strong><code>/platform &lt;pause|resume|list&gt; [имя]</code></strong> — показывает или приостанавливает/возобновляет конкретную платформу шлюза.</li>
+</ul>
+<hr />
+<h2 id="консоль-типичные-команды-hermes">2. Консоль: типичные команды <code>hermes</code></h2>
+<p>Консольные команды выполняются в терминале компьютера или сервера. Сначала указывается <code>hermes</code>, затем действие. Полную помощь по любому разделу даёт <code>hermes &lt;команда&gt; --help</code>.</p>
+<h2 id="ежедневная-работа">Ежедневная работа</h2>
+<ul>
+<li><strong><code>hermes</code></strong> — открыть интерактивный чат в терминале.</li>
+<li><strong><code>hermes chat -q "вопрос"</code></strong> — разово задать вопрос и получить ответ без диалога.</li>
+<li><strong><code>hermes -z "вопрос"</code></strong> — скриптовый однократный запуск: выводит только финальный ответ.</li>
+<li><strong><code>hermes --tui</code></strong> — открыть современный терминальный интерфейс.</li>
+<li><strong><code>hermes --cli</code></strong> — принудительно открыть классический текстовый интерфейс.</li>
+<li><strong><code>hermes -c</code></strong> — продолжить последнюю сессию.</li>
+<li><strong><code>hermes -c "название"</code></strong> — продолжить последнюю сессию с заданным названием.</li>
+<li><strong><code>hermes --resume &lt;id|latest&gt;</code></strong> — вернуться к конкретной или последней сессии.</li>
+<li><strong><code>hermes --in &lt;папка&gt;</code></strong> — запустить или продолжить сессию в определённой рабочей папке.</li>
+<li><strong><code>hermes -w</code></strong> или <strong><code>hermes --worktree</code></strong> — запустить работу в изолированном Git worktree.</li>
+</ul>
+<h2 id="первичная-настройка-и-здоровье-системы">Первичная настройка и здоровье системы</h2>
+<ul>
+<li><strong><code>hermes setup</code></strong> — мастер настройки Hermes.</li>
+<li><strong><code>hermes setup model</code></strong>, <strong><code>hermes setup gateway</code></strong>, <strong><code>hermes setup tools</code></strong> — мастер настройки отдельного раздела.</li>
+<li><strong><code>hermes model</code></strong> — выбрать модель и провайдера по умолчанию.</li>
+<li><strong><code>hermes auth</code></strong> — управлять сохранёнными учётными данными провайдеров.</li>
+<li><strong><code>hermes login</code></strong> / <strong><code>hermes logout</code></strong> — войти или выйти у провайдера.</li>
+<li><strong><code>hermes fallback add|list|remove</code></strong> — настроить резервную цепочку провайдеров.</li>
+<li><strong><code>hermes doctor [--fix]</code></strong> — проверить зависимости и конфигурацию, при возможности исправить проблемы.</li>
+<li><strong><code>hermes status [--full]</code></strong> — посмотреть статус компонентов; <code>--full</code> выводит расширенную сводку.</li>
+<li><strong><code>hermes verify</code></strong> — найти рецепт запуска текущего проекта и выполнить smoke-проверку.</li>
+</ul>
+<h2 id="настройки-профили-и-безопасность">Настройки, профили и безопасность</h2>
+<ul>
+<li><strong><code>hermes config show|get|set|unset|check</code></strong> — посмотреть, прочитать, изменить, удалить или проверить настройку.</li>
+<li><strong><code>hermes config edit</code></strong> — открыть конфигурацию в редакторе.</li>
+<li><strong><code>hermes config path</code></strong> / <strong><code>hermes config env-path</code></strong> — показать расположение конфигурации и файла окружения.</li>
+<li><strong><code>hermes profile list|create|use|show|rename|delete</code></strong> — управлять изолированными профилями Hermes.</li>
+<li><strong><code>hermes tools list|enable|disable</code></strong> — посмотреть и включить/выключить наборы инструментов для платформы.</li>
+<li><strong><code>hermes approvals</code></strong> — анализировать историю подтверждений и получать предложения правил доступа.</li>
+<li><strong><code>hermes security</code></strong> — проверить зависимости, плагины и MCP-серверы на известные уязвимости.</li>
+<li><strong><code>hermes backup</code></strong> / <strong><code>hermes import &lt;архив&gt;</code></strong> — создать резервную копию или восстановить Hermes.</li>
+<li><strong><code>hermes checkpoints</code></strong> — просмотреть, очистить или обслужить файловые checkpoints.</li>
+</ul>
+<h2 id="telegram-и-другие-мессенджеры">Telegram и другие мессенджеры</h2>
+<ul>
+<li><strong><code>hermes gateway setup</code></strong> — интерактивно подключить и настроить мессенджеры.</li>
+<li><strong><code>hermes gateway run</code></strong> или <strong><code>hermes gateway</code></strong> — запустить gateway в текущем терминале.</li>
+<li><strong><code>hermes gateway install</code></strong> — установить gateway как фоновую службу.</li>
+<li><strong><code>hermes gateway start|stop|restart|status</code></strong> — управлять службой gateway и проверять её состояние.</li>
+<li><strong><code>hermes pairing list|approve|revoke</code></strong> — управлять привязкой пользователей к боту.</li>
+<li><strong><code>hermes send</code></strong> — отправить одиночное сообщение через подключённую платформу; полезно скриптам и cron-задачам.</li>
+<li><strong><code>hermes logs</code></strong> / <strong><code>hermes logs -f</code></strong> / <strong><code>hermes logs errors</code></strong> — посмотреть журнал, следить за ним или открыть ошибки.</li>
+</ul>
+<h2 id="skills-mcp-и-расширения">Skills, MCP и расширения</h2>
+<ul>
+<li><strong><code>hermes skills list|browse|search &lt;запрос&gt;|inspect &lt;id&gt;</code></strong> — искать и изучать skills.</li>
+<li><strong><code>hermes skills install &lt;id|URL&gt;</code></strong> — установить skill из каталога или по прямой ссылке.</li>
+<li><strong><code>hermes skills update|check|uninstall|publish &lt;путь&gt;</code></strong> — обновлять, проверять, удалять или публиковать skills.</li>
+<li><strong><code>hermes bundles</code></strong> — создавать и управлять наборами skills.</li>
+<li><strong><code>hermes mcp list|add|remove|test</code></strong> — подключать, отключать и тестировать MCP-серверы.</li>
+<li><strong><code>hermes mcp catalog|install &lt;имя&gt;</code></strong> — просматривать и ставить серверы из каталога.</li>
+<li><strong><code>hermes plugins</code></strong> — управлять плагинами Hermes.</li>
+<li><strong><code>hermes connectors</code></strong> — управлять подключениями к внешним сервисам.</li>
+<li><strong><code>hermes hooks</code></strong> — просматривать и настраивать shell-hooks.</li>
+</ul>
+<h2 id="автоматизация-и-несколько-агентов">Автоматизация и несколько агентов</h2>
+<ul>
+<li><strong><code>hermes cron list|create|edit|pause|resume|run|remove|status</code></strong> — создавать и обслуживать расписания. Поддерживаются интервалы, cron-выражения и ISO-даты.</li>
+<li><strong><code>hermes webhook subscribe|list|remove|test</code></strong> — принимать вебхуки и запускать действия по внешним событиям.</li>
+<li><strong><code>hermes kanban</code></strong> — работать с долговечной доской задач нескольких профилей.</li>
+<li><strong><code>hermes moa</code></strong> — настроить Mixture of Agents.</li>
+<li><strong><code>hermes project</code></strong> — управлять именованными рабочими пространствами из нескольких папок.</li>
+<li><strong><code>hermes peer</code></strong> — управлять обменом сообщениями между Hermes-gateway на разных машинах.</li>
+</ul>
+<h2 id="сессии-интерфейсы-и-вспомогательные-сервисы">Сессии, интерфейсы и вспомогательные сервисы</h2>
+<ul>
+<li><strong><code>hermes sessions list|browse|rename|export|prune|stats|delete</code></strong> — искать, переименовывать, выгружать и очищать историю сессий.</li>
+<li><strong><code>hermes desktop</code></strong> или <strong><code>hermes gui</code></strong> — запустить нативное настольное приложение.</li>
+<li><strong><code>hermes dashboard</code></strong> — открыть веб-панель администрирования.</li>
+<li><strong><code>hermes dashboard --status</code></strong> / <strong><code>--stop</code></strong> — проверить или остановить веб-панель.</li>
+<li><strong><code>hermes proxy</code></strong> — поднять локальный OpenAI-совместимый proxy к выбранному OAuth-провайдеру.</li>
+<li><strong><code>hermes acp</code></strong> — запустить сервер для IDE по Agent Client Protocol.</li>
+<li><strong><code>hermes browser</code></strong> — управлять подключением Hermes к браузеру через CDP.</li>
+<li><strong><code>hermes computer-use</code></strong> — настроить бэкенд управления компьютером.</li>
+<li><strong><code>hermes completion bash|zsh|fish</code></strong> — сгенерировать автодополнение команд для оболочки.</li>
+</ul>
+<h2 id="диагностика-и-обслуживание">Диагностика и обслуживание</h2>
+<ul>
+<li><strong><code>hermes update</code></strong> — обновить Hermes Agent.</li>
+<li><strong><code>hermes debug</code></strong> — подготовить диагностические данные для поддержки.</li>
+<li><strong><code>hermes dump</code></strong> — вывести сводку конфигурации для диагностики.</li>
+<li><strong><code>hermes monitoring</code></strong> — посмотреть health и диагностический экспорт gateway.</li>
+<li><strong><code>hermes pause</code></strong> / <strong><code>hermes resume</code></strong> — глобально остановить или возобновить новые gateway- и cron-задачи.</li>
+<li><strong><code>hermes uninstall</code></strong> — удалить Hermes Agent.</li>
+</ul>
+<hr />
+<h2 id="быстрые-сценарии">Быстрые сценарии</h2>
+<h2 id="начать-новую-задачу-без-старого-контекста">Начать новую задачу без старого контекста</h2>
+<p>В Telegram: <code>/new Редакционный план</code>.</p>
+<p>В терминале: <code>hermes</code> — затем написать задачу; или <code>hermes chat -q "Собери план"</code> для разового запроса.</p>
+<h2 id="попросить-агента-сделать-длинную-работу-и-не-мешать-беседе">Попросить агента сделать длинную работу и не мешать беседе</h2>
+<p>В Telegram: <code>/bg Подготовь обзор конкурентов и верни краткий вывод</code>.</p>
+<p>Для уточнения во время работы: <code>/steer Добавь сравнение цен</code>.</p>
+<h2 id="найти-старый-разговор">Найти старый разговор</h2>
+<p>В Telegram: <code>/sessions search бюджет</code>, затем <code>/resume &lt;название&gt;</code>.</p>
+<p>В терминале: <code>hermes sessions browse</code>.</p>
+<h2 id="настроить-бота-на-сервере">Настроить бота на сервере</h2>
+<p>В терминале: <code>hermes gateway setup</code>, затем <code>hermes gateway install</code> и <code>hermes gateway status</code>.</p>
+<h2 id="поставить-задачу-по-расписанию">Поставить задачу по расписанию</h2>
+<p>В Telegram: попросить агента настроить регулярную задачу обычным языком или использовать доступные автоматизации.</p>
+<p>В терминале: <code>hermes cron create "0 9 * * 1-5"</code> и затем задать полезный промпт по инструкции мастера.</p>
+<hr />
+<h2 id="источники-и-границы-справки">Источники и границы справки</h2>
+<ul>
+<li>Официальная справка: https://hermes-agent.nousresearch.com/docs/reference/slash-commands</li>
+<li>Официальная справка CLI: https://hermes-agent.nousresearch.com/docs/reference/cli-commands</li>
+<li>Telegram-интеграция: https://hermes-agent.nousresearch.com/docs/user-guide/messaging/telegram</li>
+<li>В самом Telegram всегда можно вызвать <code>/help</code>, <code>/commands</code> и <code>/whoami</code>: они покажут именно те команды и права, которые доступны в конкретном чате.</li>
+</ul>
+<p>Эта страница описывает встроенные команды. Возможности конкретного бота также зависят от его профиля, подключённых skills, прав в чате, модели и настроек безопасности.</p>
+</article></section>
+  </main>
+  <footer class="site-footer" data-site-footer="global">
+  <div class="site-footer__grid">
+    <div class="site-footer__brand">
+      <a class="site-footer__name" href="/">Павел Насута</a>
+      <p>Product builder · AI-агенты · автоматизация</p>
+    </div>
+    <nav class="site-footer__group" aria-label="Навигация в подвале">
+      <h2>Разделы</h2>
+      <a href="/articles/">Блог</a>
+      <a href="/skills/">Skills для AI-агентов</a>
+      <a href="/create/">Framework C.R.E.A.T.E.</a>
+      <a href="/biases/">Когнитивные искажения</a>
+      <a href="/about/">Обо мне</a>
+    </nav>
+    <nav class="site-footer__group" aria-label="Проекты">
+      <h2>Проекты</h2>
+      <a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a>
+      <a href="/pomokitty/">pomokitty</a>
+      <a href="/create/">C.R.E.A.T.E.</a>
+    </nav>
+    <nav class="site-footer__group" aria-label="Связь">
+      <h2>Связь</h2>
+      <a href="/contact/">Все способы связи</a>
+      <a href="https://t.me/niimozgii" target="_blank" rel="noopener">Telegram ↗</a>
+      <a href="https://www.linkedin.com/in/nasuta" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/pavelnasuta" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="mailto:pavelnasuta@gmail.com">Email</a>
+    </nav>
+  </div>
+  <div class="site-footer__bottom">
+    <span>© 2026 Павел Насута</span>
+    <a href="/cookies/">Cookie и Метрика</a>
+    <a href="/contact/">Написать</a>
+  </div>
+</footer>
+<aside class="cookie-notice" data-cookie-notice aria-label="Уведомление об использовании cookie" role="status">
+  <p>Использую файлы cookie и Яндекс.Метрику, чтобы понимать, какие материалы полезны. Подробнее — в <a href="/cookies/">политике</a>.</p>
+  <button class="cookie-notice__dismiss" type="button" data-cookie-notice-dismiss>Понятно</button>
+</aside>
+</div>
+  <a class="back-to-top" href="#top" data-back-to-top aria-label="Наверх">
+  <svg class="lucide lucide-arrow-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+  <span>Наверх</span>
+</a>
+</body></html>

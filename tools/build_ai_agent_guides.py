@@ -6,12 +6,24 @@ import re
 import subprocess
 from pathlib import Path
 
+try:
+    from tools.site_back_to_top import BACK_TO_TOP, SCRIPT as BACK_TO_TOP_SCRIPT, STYLESHEET as BACK_TO_TOP_STYLESHEET
+    from tools.site_footer import SITE_FOOTER, STYLESHEET as FOOTER_ASSETS
+    from tools.site_navigation import SCRIPT as NAVIGATION_SCRIPT, SITE_NAVIGATION, STYLESHEET as NAVIGATION_STYLESHEET
+except ModuleNotFoundError:  # Direct execution from tools/.
+    from site_back_to_top import BACK_TO_TOP, SCRIPT as BACK_TO_TOP_SCRIPT, STYLESHEET as BACK_TO_TOP_STYLESHEET
+    from site_footer import SITE_FOOTER, STYLESHEET as FOOTER_ASSETS
+    from site_navigation import SCRIPT as NAVIGATION_SCRIPT, SITE_NAVIGATION, STYLESHEET as NAVIGATION_STYLESHEET
+
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = Path('/srv/hermes-artifacts/projects/nasuta-hermes-guide/2026-10-29-hermes-agent-setup-guide.md')
 DATE = '2026-10-29'
 
-NAV_ASSETS = '''<link rel="stylesheet" href="/assets/styles/navigation.css">
-  <script defer src="/assets/scripts/navigation.js"></script>'''
+SHARED_ASSETS = f'''{NAVIGATION_STYLESHEET}
+  {NAVIGATION_SCRIPT}
+  {FOOTER_ASSETS}
+  {BACK_TO_TOP_STYLESHEET}
+  {BACK_TO_TOP_SCRIPT}'''
 METRIKA = '''<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');ym(27865374, 'init', {clickmap:true,referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});</script>'''
 NOSCRIPT = '<noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute;left:-9999px;" alt=""></div></noscript>'
 
@@ -40,16 +52,18 @@ def page(*, title: str, description: str, url: str, image: str, image_alt: str, 
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{html.escape(title, quote=True)}"><meta name="twitter:description" content="{html.escape(description, quote=True)}"><meta name="twitter:image" content="{image}"><meta name="twitter:image:alt" content="{html.escape(image_alt, quote=True)}">
   <script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>
   {METRIKA}
-  {NAV_ASSETS}
+  {SHARED_ASSETS}
 </head>
-<body>{NOSCRIPT}
+<body id="top">{NOSCRIPT}
+{SITE_NAVIGATION}
 <div class="shell">
     <main>
       <header class="hero ai-agent-hero"><div class="meta">ПРАКТИКА AI-АГЕНТОВ · {meta}</div><h1>{headline}</h1><p class="lede">{lead}</p><figure class="hero-visual"><img src="{image.replace('https://nasuta.ru', '../..')}" alt="{html.escape(image_alt, quote=True)}"></figure></header>
       {body}
     </main>
-    <footer class="footer"><span>© Павел Насута</span><span>Практика AI-агентов</span></footer>
+    {SITE_FOOTER}
   </div>
+  {BACK_TO_TOP}
 </body></html>'''
 
 
@@ -79,7 +93,7 @@ def build_pillar() -> None:
 
 
 def build_hub() -> None:
-    body = '''<section class="article"><article class="content ai-guide-content"><p>AI-агент полезен не потому, что умеет красиво отвечать. Он становится полезен, когда берёт повторяющийся кусок работы, оставляет понятный результат и не забирает у человека право на решение.</p><p>В этой ветке собраны материалы именно про это: как поставить агента, где хранить его результаты, какой процесс выбрать первым и как не перепутать автоматизацию с красивой демонстрацией.</p><div class="decision-flow"><div><span>1</span><strong>Есть работа</strong><p>Повторяющийся процесс, где уже есть входящие данные и понятный результат.</p></div><div><span>2</span><strong>Есть граница</strong><p>Человек оставляет за собой публикации, деньги, доступы и необратимые решения.</p></div><div><span>3</span><strong>Есть артефакт</strong><p>Итог можно открыть, проверить, передать дальше или найти через месяц.</p></div></div><h2>С чего начать</h2><div class="guide-cards"><a href="../hermes-agent-installation/"><span>УСТАНОВКА</span><h3>Hermes на Mac, Windows и VPS</h3><p>Выберите Desktop или постоянный сервер, подключите Telegram и не потеряйте контроль над доступами.</p></a><a href="../hermes-agent-telegram-vps/"><span>24/7</span><h3>Telegram-агент на VPS</h3><p>Как устроить серверный контур, который не исчезает вместе с закрытым ноутбуком.</p></a><a href="../ai-agent-knowledge-storage/"><span>ПАМЯТЬ</span><h3>Агенту нужно куда складывать работу</h3><p>Зачем связать Hermes и Anytype, чтобы результат жил не только в переписке.</p></a><a href="../how-to-choose-an-ai-task/"><span>ВЫБОР</span><h3>Как выбрать первую задачу</h3><p>Проверить проблему, цену ошибки и способ человеческого контроля до покупки инструмента.</p></a></div><h2>Не начинайте с пустого чата</h2><p>Если уже знаете свою задачу, лучше взять готовый workflow и адаптировать его под себя. В <a href="../../skills/">Skill Hub</a> собраны навыки для аудиосаммари, работы руководителя и базы знаний. Если нужна практика и новые разборы, подписывайтесь на <a href="https://t.me/niimozgii" target="_blank" rel="noopener">НИИ «МОЗГИ» ↗</a>.</p><section class="agent-cta"><div><div class="eyebrow">Свой процесс</div><h2>Сначала разложите работу, потом автоматизируйте</h2><p>Не уверены, есть ли у процесса потенциал для агента? Начните с проблемы, входящих данных, критерия результата и цены ошибки.</p></div><div class="agent-cta__links"><a href="../how-to-choose-an-ai-task/">Выбрать задачу →</a><a href="../../contact/">Разобрать процесс →</a></div></section></article></section>'''
+    body = '''<section class="article"><article class="content ai-guide-content"><p>AI-агент полезен не потому, что умеет красиво отвечать. Он становится полезен, когда берёт повторяющийся кусок работы, оставляет понятный результат и не забирает у человека право на решение.</p><p>В этой ветке собраны материалы именно про это: как поставить агента, где хранить его результаты, какой процесс выбрать первым и как не перепутать автоматизацию с красивой демонстрацией.</p><div class="decision-flow"><div><span>1</span><strong>Есть работа</strong><p>Повторяющийся процесс, где уже есть входящие данные и понятный результат.</p></div><div><span>2</span><strong>Есть граница</strong><p>Человек оставляет за собой публикации, деньги, доступы и необратимые решения.</p></div><div><span>3</span><strong>Есть артефакт</strong><p>Итог можно открыть, проверить, передать дальше или найти через месяц.</p></div></div><h2>С чего начать</h2><div class="guide-cards"><a href="../hermes-agent-installation/"><span>УСТАНОВКА</span><h3>Hermes на Mac, Windows и VPS</h3><p>Выберите Desktop или постоянный сервер, подключите Telegram и не потеряйте контроль над доступами.</p></a><a href="../hermes-agent-telegram-vps/"><span>24/7</span><h3>Telegram-агент на VPS</h3><p>Как устроить серверный контур, который не исчезает вместе с закрытым ноутбуком.</p></a><a href="../ai-agent-knowledge-storage/"><span>ПАМЯТЬ</span><h3>Агенту нужно куда складывать работу</h3><p>Зачем связать Hermes и Anytype, чтобы результат жил не только в переписке.</p></a><a href="../how-to-choose-an-ai-task/"><span>ВЫБОР</span><h3>Как выбрать первую задачу</h3><p>Проверить проблему, цену ошибки и способ человеческого контроля до покупки инструмента.</p></a><a href="../hermes-commands/"><span>СПРАВОЧНИК</span><h3>Команды Hermes в Telegram и консоли</h3><p>Полный список встроенных команд: новая сессия, фоновые задачи, доступы, gateway и терминал.</p></a></div><h2>Не начинайте с пустого чата</h2><p>Если уже знаете свою задачу, лучше взять готовый workflow и адаптировать его под себя. В <a href="../../skills/">Skill Hub</a> собраны навыки для аудиосаммари, работы руководителя и базы знаний. Если нужна практика и новые разборы, подписывайтесь на <a href="https://t.me/niimozgii" target="_blank" rel="noopener">НИИ «МОЗГИ» ↗</a>.</p><section class="agent-cta"><div><div class="eyebrow">Свой процесс</div><h2>Сначала разложите работу, потом автоматизируйте</h2><p>Не уверены, есть ли у процесса потенциал для агента? Начните с проблемы, входящих данных, критерия результата и цены ошибки.</p></div><div class="agent-cta__links"><a href="../how-to-choose-an-ai-task/">Выбрать задачу →</a><a href="../../contact/">Разобрать процесс →</a></div></section></article></section>'''
     output = ROOT / 'articles' / 'ai-agents' / 'index.html'; output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(page(title='Практика AI-агентов', description='Гайды по AI-агентам: Hermes, Telegram, VPS, память, Anytype, skills и безопасная автоматизация рабочих процессов.', url='https://nasuta.ru/articles/ai-agents/', image='https://nasuta.ru/assets/images/og-ai-agent-practice.jpg', image_alt='Карта пути AI-агента от компьютера и сервера к проверяемым рабочим материалам', headline='Практика AI-агентов', lead='Не витрина нейросетей, а рабочие маршруты: поставить агента, дать ему одну задачу, сохранить результат и не потерять контроль.', meta='ГАЙДЫ · AI-АГЕНТЫ · АВТОМАТИЗАЦИЯ', body=body, keywords=['AI-агенты', 'автоматизация', 'Hermes', 'Telegram', 'VPS', 'skills']), encoding='utf-8')
 
