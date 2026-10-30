@@ -10,6 +10,15 @@ from tools.build_skills import load_registry, public_items
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://nasuta.ru"
+PUBLISHED_SKILL_SLUGS = (
+    "book-summary",
+    "adaptive-support-dialogue",
+    "management-assistant",
+    "anytype-agent-skill",
+    "art-directing-visuals",
+    "telegram-channel-analytics",
+    "yandex-metrica-analytics-full",
+)
 
 
 class SkillHubQualityTests(unittest.TestCase):
@@ -75,6 +84,21 @@ class SkillHubQualityTests(unittest.TestCase):
                     self.assertEqual(image.format, "JPEG")
                 image_urls.append(og_image.group(1))
         self.assertEqual(len(image_urls), len(set(image_urls)))
+    def test_every_published_skill_uses_the_shared_rectangular_detail_system(self):
+        editorial_css = (ROOT / "assets/styles/skills-editorial.css").read_text(encoding="utf-8")
+        self.assertRegex(editorial_css, r"\.skill-visual\s*\{[^}]*border-radius:\s*0")
+        for slug in PUBLISHED_SKILL_SLUGS:
+            page = ROOT / "skills" / slug / "index.html"
+            with self.subTest(slug=slug):
+                self.assertTrue(page.is_file(), f"Published skill route is missing from source: {slug}")
+                html = page.read_text(encoding="utf-8")
+                self.assertIn("assets/styles/skills-editorial.css", html)
+                self.assertIn('class="hero-mark', html)
+                self.assertRegex(html, r'class="skill-visual"><img src="(?:\.\./)+assets/images/([^\"]+\.jpg)" alt="[^\"]+"')
+                image_name = re.search(r'class="skill-visual"><img src="(?:\.\./)+assets/images/([^\"]+\.jpg)"', html).group(1)
+                with Image.open(ROOT / "assets/images" / image_name) as image:
+                    self.assertEqual(image.size, (1200, 630))
+                    self.assertEqual(image.format, "JPEG")
 
 
 if __name__ == "__main__":

@@ -205,7 +205,6 @@ if __name__ == "__main__":
     adaptive_support()
     management_assistant()
     anytype_agent()
-    art_directing_visuals()
-    telegram_channel_analytics()
+    # Art-directed source assets are reviewed separately and must not be overwritten procedurally.
     skill_hub()
-    print("Generated 7 Skill Hub Open Graph images.")
+    print("Generated 5 procedural Skill Hub Open Graph images.")
