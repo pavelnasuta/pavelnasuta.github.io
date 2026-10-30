@@ -30,6 +30,7 @@ class YandexMetricaAnalyticsPageTests(unittest.TestCase):
         self.assertNotIn("YANDEX_METRICA_TOKEN", html)
         self.assertNotIn("/root/", html)
         self.assertIn('href="/skills/"', html)
+        self.assertIn('skills-metrica-details.css?v=2', html)
 
     def test_examples_are_explicitly_synthetic_and_have_three_visual_and_text_cards(self):
         html = PAGE.read_text(encoding="utf-8")
