@@ -6,7 +6,7 @@ from tools.apply_site_footer import update_page
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = sorted(ROOT.rglob("*.html"))
+PAGES = sorted(page for page in ROOT.rglob("*.html") if ".worktrees" not in page.parts)
 REQUIRED_LINKS = (
     'href="/articles/"',
     'href="/skills/"',

@@ -6,7 +6,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://nasuta.ru"
-PAGES = sorted(page for page in ROOT.rglob("*.html") if page.name != "404.html")
+PAGES = sorted(page for page in ROOT.rglob("*.html") if page.name != "404.html" and ".worktrees" not in page.parts)
 
 
 class SeoCoverageTests(unittest.TestCase):

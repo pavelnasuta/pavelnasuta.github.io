@@ -5,7 +5,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 COUNTER_ID = "27865374"
-HTML_PAGES = sorted(ROOT.rglob("*.html"))
+HTML_PAGES = sorted(page for page in ROOT.rglob("*.html") if ".worktrees" not in page.parts)
 
 
 class YandexMetrikaTests(unittest.TestCase):

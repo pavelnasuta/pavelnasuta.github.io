@@ -4,7 +4,7 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = sorted(ROOT.rglob("*.html"))
+PAGES = sorted(page for page in ROOT.rglob("*.html") if ".worktrees" not in page.parts)
 NAVIGATION_MARKER = '<nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">'
 REQUIRED_LABELS = (
     "Блог",
