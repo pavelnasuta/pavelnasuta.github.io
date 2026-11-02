@@ -7,7 +7,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 PAGE = ROOT / "articles" / "ai-agent-knowledge-storage" / "index.html"
 CSS = ROOT / "assets" / "styles" / "articles-ai-agent-knowledge-storage-index.css"
-HERO = ROOT / "assets" / "images" / "og-agent-knowledge-storage.jpg"
+HERO = ROOT / "assets" / "images" / "og-ai-agent-knowledge-storage.jpg"
 DIAGRAM = ROOT / "assets" / "images" / "agent-knowledge-storage-architecture.svg"
 COUNTER_ID = "27865374"
 
@@ -22,7 +22,7 @@ class AgentKnowledgeStorageArticleTests(unittest.TestCase):
 
         self.assertIn('<link rel="canonical" href="https://nasuta.ru/articles/ai-agent-knowledge-storage/">', html)
         self.assertIn('name="description"', html)
-        self.assertIn('property="og:image" content="https://nasuta.ru/assets/images/og-agent-knowledge-storage.jpg"', html)
+        self.assertIn('property="og:image" content="https://nasuta.ru/assets/images/og-ai-agent-knowledge-storage.jpg"', html)
         self.assertIn('"@type":"BlogPosting"', html)
         self.assertIn('"datePublished":"2026-10-22"', html)
         self.assertEqual(html.count("https://mc.yandex.ru/metrika/tag.js"), 1)
