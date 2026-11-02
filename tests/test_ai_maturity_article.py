@@ -9,7 +9,7 @@ PAGE = ROOT / "articles" / SLUG / "index.html"
 
 
 class AIMaturityArticleTests(unittest.TestCase):
-    def test_article_has_required_seo_editorial_and_source_contract(self):
+    def test_article_has_required_seo_editorial_contract_without_visible_sources(self):
         self.assertTrue(PAGE.is_file())
         html = PAGE.read_text(encoding="utf-8")
 
@@ -22,9 +22,12 @@ class AIMaturityArticleTests(unittest.TestCase):
         self.assertIn('"dateModified":"2026-11-02"', html)
         self.assertIn('Почему компанию нельзя «сделать AI-native» одним внедрением', html)
         self.assertIn('Это не сертификация и не попытка поставить компании оценку.', html)
-        self.assertIn('From adoption to impact: Three horizons of AI transformation', html)
-        self.assertIn('Superagency in the workplace', html)
-        self.assertIn('https://mckinsey.com', html.lower())
+        self.assertNotIn('<section class="sources">', html)
+        self.assertNotIn('id="source-', html)
+        self.assertNotIn('<sup><a href="#source-', html)
+        self.assertNotIn('From adoption to impact: Three horizons of AI transformation', html)
+        self.assertNotIn('Superagency in the workplace', html)
+        self.assertNotIn('https://mckinsey.com', html.lower())
         self.assertEqual(html.count("https://mc.yandex.ru/metrika/tag.js"), 1)
         self.assertEqual(html.count("ym(27865374, 'init'"), 1)
         self.assertIn('../../assets/styles/articles-editorial.css', html)
