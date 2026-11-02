@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import hashlib
 from pathlib import Path
 from typing import Literal
 
@@ -10,11 +11,15 @@ CoverVariant = Literal["overshirt-standing", "table-knit", "jacket-relaxed"]
 
 CANVAS_SIZE = (1200, 630)
 TITLE_BOX = (665, 96, 1120, 510)
+TITLE_LINE_HEIGHT_MULTIPLIER = 0.854
 BRAND_TEXT = "nasuta.ru"
 BACKGROUND_NAMES: dict[CoverVariant, str] = {
     "overshirt-standing": "overshirt-standing.jpg",
     "table-knit": "table-knit.jpg",
     "jacket-relaxed": "jacket-relaxed.jpg",
+}
+APPROVED_SOURCE_HASHES: dict[CoverVariant, str] = {
+    "overshirt-standing": "6874103bc8a732a401d7d461450ab712eda8994d47fcaee3c88e0bfb417d4250",
 }
 
 
@@ -54,13 +59,25 @@ def _wrap_title(draw: ImageDraw.ImageDraw, title: str, font: ImageFont.FreeTypeF
 
 
 def _title_font(draw: ImageDraw.ImageDraw, title: str, max_width: int, max_height: int) -> tuple[ImageFont.FreeTypeFont, list[str]]:
-    for size in range(52, 30, -1):
+    for size in range(52, 10, -1):
         font = ImageFont.truetype(_font_path(), size)
-        lines = _wrap_title(draw, title, font, max_width)
-        line_height = int(size * 1.22)
+        try:
+            lines = _wrap_title(draw, title, font, max_width)
+        except ValueError:
+            continue
+        line_height = int(size * TITLE_LINE_HEIGHT_MULTIPLIER)
         if len(lines) * line_height <= max_height:
             return font, lines
     raise ValueError("Title cannot fit in the protected title field")
+
+
+def validate_source(path: Path, variant: CoverVariant) -> None:
+    expected = APPROVED_SOURCE_HASHES.get(variant)
+    if expected is None:
+        raise ValueError(f"No approved source for template variant: {variant}")
+    actual = hashlib.sha256(path.read_bytes()).hexdigest()
+    if actual != expected:
+        raise ValueError(f"Template source does not match approved asset: {variant}")
 
 
 def validate_cover(path: Path) -> None:
@@ -75,6 +92,7 @@ def render_cover(request: CoverRequest, root: Path) -> Path:
     source = root / "assets" / "images" / "article-cover-sources" / BACKGROUND_NAMES[request.variant]
     if not source.is_file():
         raise FileNotFoundError(source)
+    validate_source(source, request.variant)
     image = Image.open(source).convert("RGB").resize(CANVAS_SIZE, Image.Resampling.LANCZOS)
     draw = ImageDraw.Draw(image)
     left, top, right, bottom = TITLE_BOX
@@ -86,7 +104,7 @@ def render_cover(request: CoverRequest, root: Path) -> Path:
     teal = "#0A7F8B"
     draw.text((left, 58), request.material_label, font=label_font, fill=teal)
     y = top
-    line_height = int(title_font.size * 1.22)
+    line_height = int(title_font.size * TITLE_LINE_HEIGHT_MULTIPLIER)
     for line in lines:
         draw.text((left, y), line, font=title_font, fill=navy)
         y += line_height

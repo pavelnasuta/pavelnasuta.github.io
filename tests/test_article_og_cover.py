@@ -1,8 +1,9 @@
 from pathlib import Path
+import tempfile
 import unittest
 from PIL import Image
 
-from tools.article_og_cover import CoverRequest, render_cover
+from tools.article_og_cover import APPROVED_SOURCE_HASHES, CoverRequest, TITLE_LINE_HEIGHT_MULTIPLIER, render_cover
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTICLE = ROOT / "articles" / "ai-agent-knowledge-storage" / "index.html"
@@ -24,6 +25,32 @@ class ArticleOgCoverTests(unittest.TestCase):
         with Image.open(output) as image:
             self.assertEqual(image.size, (1200, 630))
             self.assertEqual(image.format, "JPEG")
+
+    def test_renderer_reduces_long_single_words_and_uses_tighter_leading(self):
+        self.assertEqual(TITLE_LINE_HEIGHT_MULTIPLIER, 0.854)
+        title = "Переосмыслениевзаимодействиясинтеллектуальнымиассистентами"
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "cover.jpg"
+            render_cover(CoverRequest(
+                slug="long-title",
+                title=title,
+                variant="overshirt-standing",
+                output_path=output,
+            ), ROOT)
+            with Image.open(output) as image:
+                self.assertEqual(image.size, (1200, 630))
+                self.assertEqual(image.format, "JPEG")
+
+    def test_renderer_rejects_a_template_without_an_approved_source(self):
+        self.assertIn("overshirt-standing", APPROVED_SOURCE_HASHES)
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaisesRegex(ValueError, "approved"):
+                render_cover(CoverRequest(
+                    slug="unapproved-template",
+                    title="Тест",
+                    variant="jacket-relaxed",
+                    output_path=Path(directory) / "cover.jpg",
+                ), ROOT)
 
     def test_article_uses_cover_in_metadata_and_hero_after_explicit_approval(self):
         html = ARTICLE.read_text(encoding="utf-8")
