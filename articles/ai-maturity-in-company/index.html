@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ru">
+<head><link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Авторская рабочая шкала зрелости AI: как командам и компаниям перейти от личных проб к управляемым рабочим контурам без прыжка в дорогие демонстрации.">
+  <title>Почему компанию нельзя «сделать AI-native» одним внедрением · Павел Насута</title>
+  <link rel="stylesheet" href="../../assets/styles/articles-editorial.css">
+  <link rel="canonical" href="https://nasuta.ru/articles/ai-maturity-in-company/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Почему компанию нельзя «сделать AI-native» одним внедрением · Павел Насута">
+  <meta property="og:description" content="Рабочая шкала зрелости AI: от личных проб до операционной перестройки, без прыжка в дорогие демонстрации.">
+  <meta property="og:url" content="https://nasuta.ru/articles/ai-maturity-in-company/">
+  <meta property="og:image" content="https://nasuta.ru/assets/images/og-pavel-nasuta-agents.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Почему компанию нельзя «сделать AI-native» одним внедрением · Павел Насута">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Почему компанию нельзя «сделать AI-native» одним внедрением · Павел Насута">
+  <meta name="twitter:description" content="Рабочая шкала зрелости AI: от личных проб до операционной перестройки.">
+  <meta name="twitter:image" content="https://nasuta.ru/assets/images/og-pavel-nasuta-agents.jpg">
+  <meta name="twitter:image:alt" content="Почему компанию нельзя «сделать AI-native» одним внедрением · Павел Насута">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https://nasuta.ru/articles/ai-maturity-in-company/#article","headline":"Почему компанию нельзя «сделать AI-native» одним внедрением","description":"Авторская рабочая шкала зрелости AI для команд и компаний.","image":"https://nasuta.ru/assets/images/og-pavel-nasuta-agents.jpg","author":{"@type":"Person","@id":"https://nasuta.ru/#pavel-nasuta","name":"Павел Насута","url":"https://nasuta.ru/about/"},"datePublished":"2026-11-02","dateModified":"2026-11-02","inLanguage":"ru-RU","mainEntityOfPage":"https://nasuta.ru/articles/ai-maturity-in-company/","isPartOf":{"@id":"https://nasuta.ru/articles/#webpage"}}</script>
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+    ym(27865374, 'init', {clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<!-- /Yandex.Metrika counter -->
+  <link rel="stylesheet" href="/assets/styles/footer.css">
+  <link rel="stylesheet" href="/assets/styles/navigation.css?v=contacts-nav">
+  <script defer src="/assets/scripts/navigation.js"></script>
+  <link rel="stylesheet" href="/assets/styles/back-to-top.css?v=1">
+  <script defer src="/assets/scripts/back-to-top.js?v=1"></script>
+  <link rel="stylesheet" href="/assets/styles/cookie-notice.css">
+  <script defer src="/assets/scripts/cookie-notice.js"></script>
+</head>
+<body id="top">
+<!-- Yandex.Metrika counter (noscript) -->
+<noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter (noscript) -->
+  <nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">
+  <div class="site-navigation__inner">
+    <a class="site-navigation__brand" href="/">Павел Насута</a>
+    <button class="site-navigation__toggle" type="button" aria-controls="site-navigation-panel" aria-expanded="false">
+      <span class="site-navigation__toggle-label">Меню</span><span class="site-navigation__toggle-icon" aria-hidden="true"></span>
+    </button>
+    <div class="site-navigation__panel" id="site-navigation-panel">
+      <a href="/articles/">Блог</a>
+      <a href="/articles/hermes-agent-installation/">Установка Hermes</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Библиотека <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="/skills/" aria-label="Открыть каталог Skills для AI-агентов">Skills для AI-агентов</a>
+          <a href="/biases/">Когнитивные искажения</a>
+        </div>
+      </details>
+      <a href="/create/">C.R.E.A.T.E.</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Проекты <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a>
+          <a href="/pomokitty/">pomokitty</a>
+        </div>
+      </details>
+      <a href="/about/">Обо мне</a>
+      <details class="site-navigation__group site-navigation__group--contacts">
+        <summary class="site-navigation__submenu-toggle">Контакты <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="/contact/">Все контакты</a>
+          <a href="https://t.me/pavelnasuta" target="_blank" rel="noopener">Личный Telegram ↗</a>
+          <a href="https://t.me/niimozgii" target="_blank" rel="noopener">НИИ «МОЗГИ» ↗</a>
+          <a href="https://www.linkedin.com/in/nasuta" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="mailto:pavelnasuta@gmail.com">Email</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</nav>
+<div class="shell">
+<main>
+  <header class="hero"><div class="meta">Блог · 2 ноября 2026 · 12 минут</div><h1>Почему компанию нельзя «сделать AI-native» одним внедрением</h1><p class="lede">Авторская рабочая шкала зрелости AI: как перейти от личных проб к управляемым рабочим контурам и не перепутать внедрение с дорогой демонстрацией.</p></header>
+  <section class="article">
+    <aside class="toc"><div class="eyebrow">В статье</div><a href="#scale">Рабочая шкала</a><a href="#one">Личные пробы</a><a href="#two">Осмысленное применение</a><a href="#three">Рабочие контуры</a><a href="#four">Операционная перестройка</a><a href="#start">С чего начать</a></aside>
+    <article class="content">
+      <p>В разговоре об AI часто появляется знакомая просьба: «Нам бы кого-то, кто придёт, поставит агентов, подключит автоматизации, и всё заработает. Мы в детали вникать не хотим».</p>
+      <p>Понимаю, откуда она берётся. Владелец не обязан разбираться в архитектуре моделей, разнице между API и чатом или в том, как устроен агент. Но он не может передать наружу ответственность за то, какую работу компания меняет, какие решения остаются за людьми и как она заметит ошибку.</p>
+      <p><strong>AI-native не покупается как CRM или телефония.</strong> Это не сущность, которую можно поставить в компанию. Это способ работать, который постепенно появляется в людях, процессах, данных и управленческих решениях.</p>
+      <p>У McKinsey есть близкая логика, но не та, которую иногда пересказывают в соцсетях. В их свежей модели три горизонта: <i>enablement</i>, <i>automation</i> и <i>reinvention</i>. Сначала люди получают инструменты для своих задач, затем компания меняет сквозные процессы, а потом пересобирает работу, роли и операционную модель вокруг возможностей AI.<sup><a href="#source-1">[1]</a></sup></p>
+
+      <h2 id="scale">Моя рабочая шкала</h2>
+      <p>Ниже моя рабочая шкала из четырёх уровней. Это не сертификация и не попытка поставить компании оценку. Она нужна, чтобы не перепрыгивать через фундамент и понимать, какой следующий шаг действительно имеет смысл.</p>
+
+      <h2 id="one">Уровень 1. Личные пробы</h2>
+      <p>На этом уровне AI уже появился в компании, но компании как системы в этом пока нет.</p>
+      <p>Кто-то пишет с помощью ChatGPT письма. Кто-то делает конспекты встреч. Кто-то просит модель собрать таблицу или подготовить черновик презентации. У одних получается заметно быстрее, другие пару раз попробовали и решили, что «оно врёт».</p>
+      <p>Это нормальное начало. Не надо запрещать людям пробовать инструменты, пока не готова большая корпоративная программа. Именно в личном использовании часто всплывают первые полезные сценарии.</p>
+      <p>Проблема начинается, когда личную пробу называют внедрением. У каждого свой набор сервисов, свои способы давать контекст, свои представления о допустимых данных и качестве результата. Полезные находки не становятся общими. Ошибки тоже остаются личными.</p>
+      <h3>Как узнать этот уровень</h3>
+      <ul><li>AI используют отдельные люди, а не согласованные команды.</li><li>Польза измеряется ощущением «стало быстрее», а не изменением конкретного процесса.</li><li>Нет понятного правила, какие данные можно передавать инструменту.</li><li>Руководитель слышит про десяток интересных применений, но не видит, что из этого можно повторить.</li></ul>
+      <h3>Что делать дальше</h3>
+      <p>Не строить центр компетенций из презентаций. Найти три-пять повторяющихся рабочих задач с невысокой ценой ошибки. Например, первая разборка входящих обращений, подготовка структуры встречи, поиск противоречий в документе, группировка пользовательских цитат.</p>
+      <p>Для каждой задачи полезно зафиксировать четыре вещи: вход, ожидаемый результат, человека-проверяющего и место, где останется итог. Так личный опыт перестаёт растворяться в чатах и начинает превращаться в материал для общего процесса.</p>
+
+      <h2 id="two">Уровень 2. Осмысленное применение</h2>
+      <p>Здесь важнее всего не умение написать эффектный промпт. Важнее способность не принимать ответ AI за готовую истину.</p>
+      <p>Модель может звучать уверенно, когда не знает ответа. Может потерять важное ограничение в длинном документе. Может построить гладкое объяснение там, где в данных есть только совпадение. Если команда не умеет замечать эти вещи, она просто производит ошибки быстрее и с лучшей подачей.</p>
+      <p>Осмысленное применение начинается, когда человек умеет задать модели нормальную работу и нормально проверить результат.</p>
+      <p>Он различает исходные факты, предположения и вывод. Знает, какой источник должен быть первичным. Понимает, что в ответе нужно перепроверить вручную. Не пытается получить у модели окончательное решение там, где цена ошибки высока.</p>
+      <h3>Как узнать этот уровень</h3>
+      <ul><li>В команде спрашивают «на чём это основано?», а не только «как звучит?».</li><li>У важных материалов есть путь к источникам и правила проверки.</li><li>Люди умеют остановить работу AI фразой «данных недостаточно».</li><li>Встречаются не только хорошие промпты, но и критерии плохого результата.</li></ul>
+      <h3>Что делать дальше</h3>
+      <p>Договориться не о едином идеальном промпте, а о базовых привычках. Что нельзя отправлять в публичные модели. Какие решения нельзя отдавать на автомат. Кто проверяет результаты по клиентам, деньгам, доступам, персональным данным и репутационным рискам.</p>
+      <div class="checklist"><div class="eyebrow">Минимальный артефакт</div><p>Карточка качества из семи строк: сценарий, действие AI, результат для человека, критерии качества, риски, проверяющий и стоп-условие. Она скучнее демо, но именно из таких договорённостей вырастает доверие к системе.</p></div>
+
+      <h2 id="three">Уровень 3. Рабочие контуры</h2>
+      <p>На третьем уровне AI перестаёт быть индивидуальным ускорителем и входит в конкретный процесс команды.</p>
+      <p>Не в «отдел маркетинга вообще» и не в «продукт целиком». В конкретную цепочку с понятным началом и концом. Например: запись встречи превращается в проверяемые решения и черновики задач. Поток обращений клиентов сначала классифицируется, а сложные случаи уходят человеку. Исследовательские материалы собираются в карточки с источниками, статусом проверки и связью с продуктовой гипотезой.</p>
+      <p>Главный переход здесь происходит не в модели. Он происходит в работе.</p>
+      <p>Команда решает, что автоматизирует, а что оставляет человеку. Определяет входные данные, роли, права, формат результата, сценарий исправления и метрику. Встраивает новую цепочку в уже существующий путь, а не заставляет людей параллельно жить в ещё одном сервисе.</p>
+      <h3>Как узнать этот уровень</h3>
+      <ul><li>Есть владелец процесса, а не только энтузиаст AI.</li><li>Успех оценивается по изменению в работе: времени, качеству, числу исправлений, скорости решения или снижению риска.</li><li>Результаты можно открыть, проверить и передать дальше.</li><li>У процесса есть безопасный ручной режим, если автоматизация не справилась.</li><li>После запуска команда смотрит не только на первые удачные примеры, но и на повторяющиеся ошибки.</li></ul>
+      <h3>Что делать дальше</h3>
+      <p>Не масштабировать пилот только потому, что он понравился на встрече. Сначала повторить его на нескольких живых циклах, собрать исключения и проверить, что люди правда изменили привычный маршрут работы.</p>
+      <p>Если процесс стал устойчивым, его можно оформлять как рабочую процедуру: какие источники читать, какие поля обязательны, где создавать черновик, когда остановиться, как подтвердить завершение. Такой регламент для агента я называю skill. Он нужен не ради модного слова. Он не даёт каждому новому запуску начинать с нуля.</p>
+
+      <h2 id="four">Уровень 4. Операционная перестройка</h2>
+      <p>Только здесь можно всерьёз говорить об AI-native компании.</p>
+      <p>Это не офис, где в каждой вкладке открыт ассистент. И не набор из двадцати ботов, которые кто-то однажды подключил. AI становится частью того, как компания принимает решения, проектирует работу и учится.</p>
+      <p>Руководители понимают, где технология создаёт ценность, а где добавляет риск. Команды умеют пересобирать процессы, а не просто навешивать генерацию текста поверх старого порядка. Данные доступны там, где они нужны для решения, но права и границы доступа остаются ясными. У компании есть правила запуска, мониторинга и остановки автоматизаций.</p>
+      <p>McKinsey называет этот переход <i>reinvention</i>: организация перестаёт автоматизировать существующую работу и начинает переосмысливать роли, процессы и операционную модель вокруг AI.<sup><a href="#source-1">[1]</a></sup> Это самый сложный горизонт. Он требует не только технической команды, но и способности руководителей менять правила игры.</p>
+      <h3>Как узнать этот уровень</h3>
+      <ul><li>AI-инициативы связаны со стратегией и с владельцами бизнес-результатов.</li><li>У компании есть общий язык для ценности, риска, качества и ответственности.</li><li>Данные, инструменты, обучение и управление изменениями не существуют отдельными проектами.</li><li>Масштабирование не выглядит как повторение одного удачного пилота во всех отделах.</li><li>Люди могут объяснить, кто принимает решение, когда AI ошибается и как это решение оспорить.</li></ul>
+      <p>Даже на этом уровне не надо стремиться к автономности любой ценой. Публикация, платежи, доступы, юридически значимые действия и решения с необратимыми последствиями требуют отдельной человеческой ответственности. Хорошая система умеет не только действовать, но и вовремя останавливаться.</p>
+
+      <h2>Почему нельзя прыгнуть сразу на четвёртый уровень</h2>
+      <p>Потому что уровень четыре держится на договорённостях, которые нельзя купить внешним подрядчиком.</p>
+      <p>Внешняя команда может помочь разобрать процесс, собрать пилот, выбрать инструменты, провести обучение, настроить контур данных и контроля. Но она не может вместо компании решить, какие ошибки допустимы, кто владелец решения, какие действия можно отменить и как измерить пользу.</p>
+      <p>Если начать с большой платформы, агентов и интеграций, когда этих ответов нет, получится дорогой набор демонстраций. Он может выглядеть впечатляюще. Но после ухода внедренцев люди вернутся к перепискам, Excel и ручным договорённостям, потому что старый процесс никуда не делся.</p>
+      <p>В исследованиях McKinsey этот разрыв виден особенно ясно: почти все компании инвестируют в AI, но зрелыми на шкале внедрения себя называют только 1 процент руководителей.<sup><a href="#source-2">[2]</a></sup> Проблема не в том, что всем не хватает ещё одной модели. Проблема в том, что организационное изменение значительно труднее покупки технологии.</p>
+
+      <h2 id="start">С чего начать в ближайшие две недели</h2>
+      <ol><li><strong>Выберите один повторяющийся процесс.</strong> Не «внедрить AI в продажи», а «собрать и проверить первую версию ответа на входящий запрос».</li><li><strong>Назовите владельца решения и человека, который проверяет итог.</strong></li><li><strong>Опишите входные данные, допустимую ошибку и стоп-условие.</strong></li><li><strong>Пройдите процесс вручную несколько раз.</strong> Посмотрите, где на самом деле теряется время и контекст.</li><li><strong>Подключите AI только к одному узкому шагу,</strong> где результат можно сравнить с ручным.</li><li><strong>Сохраните итог там, где им воспользуется команда,</strong> а не в случайном чате.</li><li><strong>Через несколько циклов решите:</strong> продолжать, менять или остановить.</li></ol>
+      <p>Это медленнее, чем обещание «сделаем вас AI-native за месяц». Зато так появляются процессы, которые переживают не только эффектную демонстрацию, но и реальную работу.</p>
+
+      <section class="sources"><h2>Источники</h2><ol><li id="source-1">McKinsey. <a href="https://mckinsey.com/capabilities/people-and-organizational-performance/our-insights/from-adoption-to-impact-three-horizons-of-ai-transformation" target="_blank" rel="noopener">From adoption to impact: Three horizons of AI transformation</a>.</li><li id="source-2">McKinsey. <a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/superagency-in-the-workplace-empowering-people-to-unlock-ais-full-potential-at-work" target="_blank" rel="noopener">Superagency in the workplace: Empowering people to unlock AI’s full potential</a>.</li></ol></section>
+      <aside class="next"><div class="eyebrow">Дальше по теме</div><a href="../how-to-choose-an-ai-task/">Естественный интеллект — раньше искусственного →</a><a href="../how-to-verify-ai-automation/">Как проверять результат AI-автоматизации до запуска →</a></aside>
+    </article>
+  </section>
+</main>
+<footer class="site-footer" data-site-footer="global"><div class="site-footer__grid"><div class="site-footer__brand"><a class="site-footer__name" href="/">Павел Насута</a><p>Product builder · AI-агенты · автоматизация</p></div><nav class="site-footer__group" aria-label="Навигация в подвале"><h2>Разделы</h2><a href="/articles/">Блог</a><a href="/skills/">Skills для AI-агентов</a><a href="/create/">Framework C.R.E.A.T.E.</a><a href="/biases/">Когнитивные искажения</a><a href="/about/">Обо мне</a></nav><nav class="site-footer__group" aria-label="Проекты"><h2>Проекты</h2><a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a><a href="/pomokitty/">pomokitty</a><a href="/create/">C.R.E.A.T.E.</a></nav><nav class="site-footer__group" aria-label="Связь"><h2>Связь</h2><a href="/contact/">Все способы связи</a><a href="https://t.me/niimozgii" target="_blank" rel="noopener">Telegram ↗</a><a href="https://www.linkedin.com/in/nasuta" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/pavelnasuta" target="_blank" rel="noopener">GitHub ↗</a><a href="mailto:pavelnasuta@gmail.com">Email</a></nav></div><div class="site-footer__bottom"><span>© 2026 Павел Насута</span><a href="/cookies/">Cookie и Метрика</a><a href="/contact/">Написать</a></div></footer>
+<aside class="cookie-notice" data-cookie-notice aria-label="Уведомление об использовании cookie" role="status"><p>Использую файлы cookie и Яндекс.Метрику, чтобы понимать, какие материалы полезны. Подробнее — в <a href="/cookies/">политике</a>.</p><button class="cookie-notice__dismiss" type="button" data-cookie-notice-dismiss>Понятно</button></aside>
+</div><a class="back-to-top" href="#top" data-back-to-top aria-label="Наверх"><svg class="lucide lucide-arrow-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg><span>Наверх</span></a>
+</body>
+</html>
