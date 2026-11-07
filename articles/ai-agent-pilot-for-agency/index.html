@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Практический план безопасного пилота AI-агента в маркетинговом агентстве: выбрать процесс, проверить данные, задать границы и оценить результат.">
+  <title>Как внедрять AI-агента в агентство: пилот, данные и границы · Павел Насута</title>
+  <link rel="stylesheet" href="../../assets/styles/articles-editorial.css">
+  <link rel="canonical" href="https://nasuta.ru/articles/ai-agent-pilot-for-agency/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Павел Насута">
+  <meta property="og:title" content="Как внедрять AI-агента в агентство: пилот, данные и границы">
+  <meta property="og:description" content="Практический план безопасного пилота AI-агента в маркетинговом агентстве: выбрать процесс, проверить данные, задать границы и оценить результат.">
+  <meta property="og:url" content="https://nasuta.ru/articles/ai-agent-pilot-for-agency/">
+  <meta property="og:image" content="https://nasuta.ru/assets/images/og-ai-agent-pilot-for-agency.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Павел Насута. Обложка статьи «Как внедрять AI-агента в агентство: пилот, данные и границы»">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Как внедрять AI-агента в агентство: пилот, данные и границы">
+  <meta name="twitter:description" content="Практический план безопасного пилота AI-агента в маркетинговом агентстве: выбрать процесс, проверить данные, задать границы и оценить результат.">
+  <meta name="twitter:image" content="https://nasuta.ru/assets/images/og-ai-agent-pilot-for-agency.jpg">
+  <meta name="twitter:image:alt" content="Павел Насута. Обложка статьи «Как внедрять AI-агента в агентство: пилот, данные и границы»">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://nasuta.ru/articles/ai-agent-pilot-for-agency/#article",
+  "headline": "Как внедрять AI-агента в агентство: пилот, данные и границы",
+  "description": "Практический план безопасного пилота AI-агента в маркетинговом агентстве: выбрать процесс, проверить данные, задать границы и оценить результат.",
+  "image": "https://nasuta.ru/assets/images/og-ai-agent-pilot-for-agency.jpg",
+  "author": {
+    "@type": "Person",
+    "@id": "https://nasuta.ru/#pavel-nasuta",
+    "name": "Павел Насута",
+    "url": "https://nasuta.ru/about/"
+  },
+  "datePublished": "2026-11-07",
+  "dateModified": "2026-11-07",
+  "inLanguage": "ru-RU",
+  "mainEntityOfPage": "https://nasuta.ru/articles/ai-agent-pilot-for-agency/",
+  "isPartOf": {
+    "@id": "https://nasuta.ru/articles/#webpage"
+  },
+  "keywords": [
+    "AI-агенты",
+    "внедрение AI",
+    "маркетинговое агентство",
+    "пилот",
+    "автоматизация"
+  ]
+}</script>
+  <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');ym(27865374, 'init', {clickmap:true,referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});</script>
+  <link rel="stylesheet" href="/assets/styles/footer.css">
+  <link rel="stylesheet" href="/assets/styles/navigation.css?v=contacts-nav">
+  <script defer src="/assets/scripts/navigation.js"></script>
+  <link rel="stylesheet" href="/assets/styles/back-to-top.css?v=1">
+  <script defer src="/assets/scripts/back-to-top.js?v=1"></script>
+  <link rel="stylesheet" href="/assets/styles/cookie-notice.css">
+  <script defer src="/assets/scripts/cookie-notice.js"></script>
+</head>
+<body id="top">
+  <noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+<nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">
+  <div class="site-navigation__inner">
+    <a class="site-navigation__brand" href="/">Павел Насута</a>
+    <button class="site-navigation__toggle" type="button" aria-controls="site-navigation-panel" aria-expanded="false">
+      <span class="site-navigation__toggle-label">Меню</span><span class="site-navigation__toggle-icon" aria-hidden="true"></span>
+    </button>
+    <div class="site-navigation__panel" id="site-navigation-panel">
+      <a href="/articles/">Блог</a>
+      <a href="/articles/hermes-agent-installation/">Установка Hermes</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Библиотека <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="/skills/" aria-label="Открыть каталог Skills для AI-агентов">Skills для AI-агентов</a>
+          <a href="/biases/">Когнитивные искажения</a>
+        </div>
+      </details>
+      <a href="/create/">C.R.E.A.T.E.</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Проекты <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a>
+          <a href="/pomokitty/">pomokitty</a>
+        </div>
+      </details>
+      <a href="/about/">Обо мне</a>
+      <details class="site-navigation__group site-navigation__group--contacts">
+        <summary class="site-navigation__submenu-toggle">Контакты <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="/contact/">Все контакты</a>
+          <a href="https://t.me/pavelnasuta" target="_blank" rel="noopener">Личный Telegram ↗</a>
+          <a href="https://t.me/niimozgii" target="_blank" rel="noopener">НИИ «МОЗГИ» ↗</a>
+          <a href="https://www.linkedin.com/in/nasuta" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="mailto:pavelnasuta@gmail.com">Email</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</nav>
+  <div class="shell">
+    <main>
+      <header class="hero">
+        <div class="meta">СЕРИЯ: AI-АГЕНТЫ В АГЕНТСТВЕ · 7 НОЯБРЯ 2026 · 10 МИНУТ</div>
+        <h1>Как внедрять AI-агента в агентство: пилот, данные и границы</h1>
+        <p class="lede">Пилот начинается с одной повторяющейся цепочки, надёжных источников и правила: решения с последствиями остаются за человеком.</p>
+      </header>
+      <section class="article">
+        <aside class="toc"><div class="eyebrow">В статье</div><a href="#выбирайте-конкретную-цепочку">Выбирайте конкретную цепочку</a><a href="#диагностика-до-интеграций">Диагностика до интеграций</a><a href="#сначала-режим-чтения">Сначала режим чтения</a><a href="#карточка-пилота-которую-стоит-сделать-до-запуска">Карточка пилота, которую стоит сделать до запуска</a><a href="#реалистичный-ритм-первых-90-дней">Реалистичный ритм первых 90 дней</a><a href="#метрики-которые-не-дают-себя-обмануть">Метрики, которые не дают себя обмануть</a><a href="#самая-частая-ошибка-после-удачного-демо">Самая частая ошибка после удачного демо</a><a href="#продолжение-серии">Продолжение серии</a></aside>
+        <article class="content">
+          <p>У агентств есть опасный талант: они умеют делать работу для клиентов по брифу, но собственные процессы часто держат на договорённостях в чатах, памяти сильных менеджеров и нескольких таблицах, которые «лучше пока не трогать».</p>
+<p>Если в это место подключить AI, он начнёт действовать с той же исходной путаницей. Быстрее собирать неполные статусы. Увереннее пересказывать противоречивые данные. Рассылать больше уведомлений, на которые никто не реагирует.</p>
+<p>Первый этап внедрения начинается с вопроса: где именно в работе агентства возникает повторяющаяся потеря времени, денег или контекста?</p>
+<h2 id="выбирайте-конкретную-цепочку">Выбирайте конкретную цепочку</h2>
+<p>Формулировка «внедрить AI в клиентский сервис» слишком широка. В ней не видно начала, конца, владельца и критерия успеха.</p>
+<p>Рабочий сценарий выглядит конкретнее:</p>
+<ul><li>после созвона с клиентом собрать черновик брифа и список открытых вопросов;</li><li>раз в неделю показать проекты, где расходятся плановые и фактические часы;</li><li>подготовить follow-up по встрече с обязательствами и владельцами;</li><li>найти в базе прошлые решения по похожей задаче с источниками;</li><li>квалифицировать входящий лид и собрать черновик КП для менеджера.</li></ul>
+<p>У такого процесса можно назвать входные данные, ожидаемый результат, человека-проверяющего и место, где остаётся итог. Когда одного из элементов не хватает, сначала опишите процесс до запуска агента.</p>
+<h2 id="диагностика-до-интеграций">Диагностика до интеграций</h2>
+<p>В начале внедрения хочется подключить CRM, почту, файлы, календарь, аналитику и всё остальное. Доступ к системам быстро показывает, насколько данные расходятся между собой. Понимание процесса появляется после совместной проверки этого расхождения.</p>
+<p>Полезнее начать с короткой диагностики.</p>
+<p>Посмотрите на несколько живых проектов: успешный, проблемный, низкомаржинальный и типовой. Проследите путь от лида до оплаты. Где появляется бриф? Кто меняет объём? Где живёт согласование? Можно ли связать часы, смету, допработы и финальный результат? Кто узнаёт о риске первым?</p>
+<p>Для первого пилота хватит рабочей карты процесса. Определите источник, на который можно опереться, и места, где данные требуют ручной проверки.</p>
+<p>Одновременно зафиксируйте исходную точку. Сколько времени руководитель и проджекты тратят на подготовку статуса? Как часто работа выходит за согласованный объём? Сколько согласований зависает? Насколько прогноз маржи отличается от факта? Без исходного состояния «стало быстрее» останется приятным ощущением.</p>
+<h2 id="сначала-режим-чтения">Сначала режим чтения</h2>
+<p>На старте агент работает в режиме чтения: использует согласованные источники, собирает черновики и показывает места, где нужны решения. Записи в CRM, новые задачи и письма подключаются после проверки пилота.</p>
+<p>У этого режима есть два преимущества. Во-первых, команда видит, что агент понимает, а что пропускает. Во-вторых, ошибки можно разобрать без последствий для клиента и проекта.</p>
+<p>Например, агент собирает еженедельный обзор портфеля. Он показывает три проекта с признаками риска и рядом указывает основание: отклонение по часам, неотвеченный комментарий клиента, зависшее согласование или отсутствующий платёжный статус. Руководитель решает, полезен ли такой сигнал, а команда исправляет исходные данные и правила отбора.</p>
+<p>Когда обзор перестаёт быть шумом, можно дать агенту следующий шаг: подготовить черновик сообщения или задачи. Но отправка, назначение человека, изменение статуса и работа с деньгами остаются под явным подтверждением.</p>
+<h2 id="карточка-пилота-которую-стоит-сделать-до-запуска">Карточка пилота, которую стоит сделать до запуска</h2>
+<p>На каждый сценарий хватает одной страницы, если в ней есть несколько честных ответов.</p>
+<p><strong>Какой вход?</strong> Конкретные источники, поля и документы. Укажите список систем и минимально необходимую выборку вместо общей формулы «данные по проекту».</p>
+<p><strong>Какой результат?</strong> Черновик брифа, обзор рисков, таблица расхождений, follow-up после встречи. Его должен узнать человек, который будет этим пользоваться.</p>
+<p><strong>Кто владелец?</strong> Руководитель или команда, которые принимают решение по результату.</p>
+<p><strong>Как проверить качество?</strong> Какие ошибки допустимы, что считается пропуском, какой результат нельзя выпускать без человека.</p>
+<p><strong>Когда остановиться?</strong> Если источник ненадёжен, уведомления не меняют действия, доступа слишком много или эффект не подтверждается, пилот надо ограничить или закрыть. Зафиксируйте это условие заранее, а не переносите решение на следующую версию модели.</p>
+<p>Такой документ скучнее эффектного промпта. Зато на нём можно построить работу, которая переживёт смену инструмента и сотрудника.</p>
+<h2 id="реалистичный-ритм-первых-90-дней">Реалистичный ритм первых 90 дней</h2>
+<p>Первые две недели уходят на выбор процесса, интервью с владельцами и проверку данных. На этом этапе часто выясняется, что команде нужно договориться о проектной марже, допработах и завершённом согласовании. Это уже хороший результат диагностики.</p>
+<p>Следующие две-три недели собирается безопасный контур. Источники подключаются в режиме чтения. Команда утверждает словарь ролей, статусов и рисков. Агент проходит исторические проекты до выхода в текущую операционку. Руководители учатся проверять выводы, спорить с рекомендацией и требовать источник.</p>
+<p>Затем начинается живой пилот. Выберите два или три сценария: утренний операционный радар, контроль здоровья проекта, разбор брифа в production-пакет. Каждый должен пройти несколько реальных циклов. Нужен журнал ошибок: ложные срабатывания, пропуски, неясные формулировки, проблемы данных, бесполезные уведомления.</p>
+<p>К концу третьего месяца по каждому сценарию должно быть решение: масштабировать, переделать или остановить. Это нормальный результат. Остановленный пилот не означает провал, если он помог не потратить полгода на красивую, но бесполезную систему.</p>
+<h2 id="метрики-которые-не-дают-себя-обмануть">Метрики, которые не дают себя обмануть</h2>
+<p>Считать количество установленных навыков бессмысленно. Этот счётчик не показывает, стало ли агентство управляемее.</p>
+<p>Смотрите на время, которое уходит на сбор статусов и подготовку брифов. На число рисков, замеченных до срыва срока или перерасхода. На долю неучтённых допработ. На точность прогноза загрузки и маржи. На долю предупреждений, после которых кто-то действительно сделал следующий шаг.</p>
+<p>Есть ещё одна метрика, которую редко ставят в презентацию: доверие команды. Пользователь должен уметь ответить на три вопроса. Откуда агент взял этот вывод? Где он может ошибаться? Как исправить его работу? Если на любой из них нельзя ответить, система пока не готова к масштабу.</p>
+<h2 id="самая-частая-ошибка-после-удачного-демо">Самая частая ошибка после удачного демо</h2>
+<p>После первого хорошего результата хочется размножить агента на продажи, контент, финансы, рекрутинг и клиентский сервис одновременно. Так маленький пилот превращается в программу без владельца.</p>
+<p>Правильнее закрепить один сценарий. Описать источники, роли, границы действий, метрики и порядок исправлений. Обучить на нём новых участников. И только после этого брать следующий контур.</p>
+<p>Подключение модели к CRM открывает эксперимент. Изменения начинаются, когда полезный сценарий становится привычной работой команды и остаётся управляемым в плохой день.</p>
+<h2 id="продолжение-серии">Продолжение серии</h2>
+<p>В третьей статье разберём, как связать отдельные пилоты в AI Operating System агентства: продажи, производство, знания и проектную экономику без попытки поставить один бот над всем бизнесом.</p>
+          <aside class="next"><div class="eyebrow">Серия об агентной операционке</div><a href="../agent-in-marketing-agency/">← Агент в маркетинговом агентстве: как вернуть контекст в операционную работу</a><a href="../ai-operating-system-marketing-agency/">AI Operating System для маркетингового агентства: продажи, production, знания и экономика в одном контуре →</a></aside>
+          <aside class="next"><div class="eyebrow">Обсудить свой процесс</div><a href="/contact/">Написать Павлу о задаче в агентстве →</a><a href="https://t.me/niimozgii" target="_blank" rel="noopener">Читать НИИ «МОЗГИ» →</a></aside>
+        </article>
+      </section>
+    </main>
+    <footer class="site-footer" data-site-footer="global"><div class="site-footer__grid"><div class="site-footer__brand"><a class="site-footer__name" href="/">Павел Насута</a><p>Product builder · AI-агенты · автоматизация</p></div><nav class="site-footer__group" aria-label="Навигация в подвале"><h2>Разделы</h2><a href="/articles/">Блог</a><a href="/skills/">Skills для AI-агентов</a><a href="/create/">Framework C.R.E.A.T.E.</a><a href="/biases/">Когнитивные искажения</a><a href="/about/">Обо мне</a></nav><nav class="site-footer__group" aria-label="Проекты"><h2>Проекты</h2><a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a><a href="/pomokitty/">pomokitty</a><a href="/create/">C.R.E.A.T.E.</a></nav><nav class="site-footer__group" aria-label="Связь"><h2>Связь</h2><a href="/contact/">Все способы связи</a><a href="https://t.me/niimozgii" target="_blank" rel="noopener">Telegram ↗</a><a href="https://www.linkedin.com/in/nasuta" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/pavelnasuta" target="_blank" rel="noopener">GitHub ↗</a><a href="mailto:pavelnasuta@gmail.com">Email</a></nav></div><div class="site-footer__bottom"><span>© 2026 Павел Насута</span><a href="/cookies/">Cookie и Метрика</a><a href="/contact/">Написать</a></div></footer>
+    <aside class="cookie-notice" data-cookie-notice aria-label="Уведомление об использовании cookie" role="status"><p>Использую файлы cookie и Яндекс.Метрику, чтобы понимать, какие материалы полезны. Подробнее в <a href="/cookies/">политике</a>.</p><button class="cookie-notice__dismiss" type="button" data-cookie-notice-dismiss>Понятно</button></aside>
+  </div>
+  <a class="back-to-top" href="#top" data-back-to-top aria-label="Наверх"><svg class="lucide lucide-arrow-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg><span>Наверх</span></a>
+</body>
+</html>
