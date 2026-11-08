@@ -25,16 +25,14 @@ class AiAgentWhenTiredArticleTests(unittest.TestCase):
         self.assertNotIn('pubmed.ncbi.nlm.nih.gov', html)
         self.assertNotIn('src="../../assets/images/og-ai-agent-when-tired.jpg"', html)
 
-    def test_new_article_is_featured_first_with_its_cover(self):
+    def test_article_remains_in_archive_without_rendering_its_social_cover(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")
         archive = (ROOT / "articles" / "index.html").read_text(encoding="utf-8")
 
-        self.assertIn('/articles/ai-agent-when-tired/', home)
+        self.assertNotIn('/articles/ai-agent-when-tired/', home)
         self.assertIn('href="ai-agent-when-tired/index.html"', archive)
-        self.assertIn('/assets/images/og-ai-agent-when-tired.jpg', home)
-        self.assertIn('/assets/images/og-ai-agent-when-tired.jpg', archive)
-        self.assertLess(home.index('/articles/ai-agent-when-tired/'), home.index('/articles/ai-maturity-in-company/'))
-        self.assertLess(archive.index('href="ai-agent-when-tired/index.html"'), archive.index('href="ai-maturity-in-company/index.html"'))
+        self.assertNotIn('/assets/images/og-ai-agent-when-tired.jpg', home)
+        self.assertNotIn('/assets/images/og-ai-agent-when-tired.jpg', archive)
 
     def test_article_is_discoverable_and_cover_is_a_valid_jpeg(self):
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")

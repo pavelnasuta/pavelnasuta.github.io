@@ -32,15 +32,14 @@ class AIMaturityArticleTests(unittest.TestCase):
         self.assertEqual(html.count("ym(27865374, 'init'"), 1)
         self.assertIn('../../assets/styles/articles-editorial.css', html)
 
-    def test_article_is_first_on_home_blog_and_articles_index(self):
+    def test_article_remains_in_the_full_articles_index_only(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")
         blog = (ROOT / "articles" / "index.html").read_text(encoding="utf-8")
         home_route = "/articles/ai-maturity-in-company/"
         blog_route = 'href="ai-maturity-in-company/index.html"'
 
-        self.assertIn(home_route, home)
+        self.assertNotIn(home_route, home)
         self.assertIn(blog_route, blog)
-        self.assertLess(home.index(home_route), home.index('/articles/ai-agent-knowledge-storage/'))
         self.assertLess(blog.index(blog_route), blog.index('href="ai-agents/index.html"'))
 
     def test_article_is_listed_in_sitemap_and_llms(self):

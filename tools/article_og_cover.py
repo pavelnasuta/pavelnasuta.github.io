@@ -20,7 +20,20 @@ BACKGROUND_NAMES: dict[CoverVariant, str] = {
 }
 APPROVED_SOURCE_HASHES: dict[CoverVariant, str] = {
     "overshirt-standing": "6874103bc8a732a401d7d461450ab712eda8994d47fcaee3c88e0bfb417d4250",
+    "table-knit": "19563611b75737c3e6cf86db353104a5be188a0e5746fa489a16aab6c5f9de08",
+    "jacket-relaxed": "1eaa7c146eeceb647b19cf347a2ef3d59f7be4cf85734031ec549cb126b73b10",
 }
+COVER_VARIANT_CYCLE: tuple[CoverVariant, ...] = (
+    "overshirt-standing",
+    "table-knit",
+    "jacket-relaxed",
+)
+
+
+def variant_for_sequence(position: int) -> CoverVariant:
+    if position < 0:
+        raise ValueError("Cover sequence position must be non-negative")
+    return COVER_VARIANT_CYCLE[position % len(COVER_VARIANT_CYCLE)]
 
 
 @dataclass(frozen=True)

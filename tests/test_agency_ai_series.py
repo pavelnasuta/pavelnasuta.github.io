@@ -52,6 +52,17 @@ class AgencyAiSeriesTests(unittest.TestCase):
                 self.assertIn(route, sitemap)
                 self.assertIn(route, llms)
 
+    def test_series_endings_keep_reading_navigation_and_a_first_person_contact(self):
+        for slug, _ in SERIES:
+            with self.subTest(slug=slug):
+                html = (ROOT / "articles" / slug / "index.html").read_text(encoding="utf-8")
+                self.assertEqual(html.count('<section class="article-tail"'), 1)
+                self.assertIn('Дальше по серии', html)
+                self.assertIn('Если хотите сверить свой процесс с этой схемой, <a href="/contact/">напишите мне</a>.', html)
+                self.assertNotIn('Обсудить свой процесс', html)
+                self.assertNotIn('Написать Павлу', html)
+                self.assertNotIn('Читать НИИ «МОЗГИ»', html)
+
     def test_each_article_has_a_distinct_valid_social_cover(self):
         covers = []
         for slug, _ in SERIES:
