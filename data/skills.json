@@ -152,6 +152,37 @@
       "release_priority": 1
     },
     {
+      "slug": "hermes-repo-quarantine",
+      "name": "Hermes RepoQuarantine",
+      "summary": "Zero-trust workflow для AI-агентов: изоляция до чтения незнакомого репозитория и review до запуска кода.",
+      "category": "Agent Security",
+      "tags": [
+        "agent-security",
+        "prompt-injection",
+        "sandbox",
+        "supply-chain-security",
+        "zero-trust"
+      ],
+      "status": "released",
+      "visibility": "public",
+      "source_status": "published",
+      "compatibility": {
+        "hermes": "verified",
+        "claude-code": "verified",
+        "codex": "verified",
+        "opencode": "not-applicable",
+        "agents-md": "compatible"
+      },
+      "updated": "2026-11-13",
+      "version": "0.2.0",
+      "license": "MIT",
+      "repository_url": "https://github.com/pavelnasuta/hermes-repo-quarantine",
+      "page_url": "skills/hermes-repo-quarantine/index.html",
+      "privacy_review": "approved",
+      "release_notes": "Публичный workflow с единым контрактом для Hermes, Claude Code и Codex: whole-process isolation, read-only preflight и явные execution gates.",
+      "release_priority": 1
+    },
+    {
       "slug": "adaptive-english-tutor",
       "name": "Adaptive English Tutor",
       "summary": "Помогает вернуть английский через свободную переписку, короткие занятия и разбор голосовых с пользовательским контекстом обучения.",
