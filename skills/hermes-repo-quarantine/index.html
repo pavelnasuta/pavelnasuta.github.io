@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Hermes RepoQuarantine — open-source workflow для безопасной работы AI-агента с незнакомыми репозиториями: изоляция до чтения, проверка контура и review до запуска кода.">
+  <title>Hermes RepoQuarantine · Павел Насута</title>
+  <link rel="canonical" href="https://nasuta.ru/skills/hermes-repo-quarantine/">
+  <link rel="stylesheet" href="../../assets/styles/skills-editorial.css?v=3">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Павел Насута">
+  <meta property="og:title" content="Hermes RepoQuarantine · Павел Насута">
+  <meta property="og:description" content="Zero-trust workflow для незнакомого кода: изоляция до чтения, read-only review до запуска и явные границы исполнения.">
+  <meta property="og:url" content="https://nasuta.ru/skills/hermes-repo-quarantine/">
+  <meta property="og:image" content="https://nasuta.ru/assets/images/og-skill-hermes-repo-quarantine.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Репозиторий в изолированном прозрачном контуре: входящие сетевые линии останавливаются на границе карантина">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hermes RepoQuarantine · Павел Насута">
+  <meta name="twitter:description" content="Zero-trust workflow для незнакомого кода: изоляция до чтения, read-only review до запуска и явные границы исполнения.">
+  <meta name="twitter:image" content="https://nasuta.ru/assets/images/og-skill-hermes-repo-quarantine.jpg">
+  <meta name="twitter:image:alt" content="Репозиторий в изолированном прозрачном контуре: входящие сетевые линии останавливаются на границе карантина">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","@id":"https://nasuta.ru/skills/hermes-repo-quarantine/#software","name":"Hermes RepoQuarantine","description":"Open-source zero-trust workflow для безопасной работы AI-агентов с недоверенными репозиториями.","url":"https://nasuta.ru/skills/hermes-repo-quarantine/","codeRepository":"https://github.com/pavelnasuta/hermes-repo-quarantine","softwareVersion":"0.2.0","applicationCategory":"SecurityApplication","isAccessibleForFree":true,"license":"https://opensource.org/license/mit","inLanguage":"ru-RU","author":{"@type":"Person","@id":"https://nasuta.ru/#pavel-nasuta","name":"Павел Насута","url":"https://nasuta.ru/about/"},"isPartOf":{"@id":"https://nasuta.ru/#website"}}</script>
+  <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');ym(27865374, 'init',{clickmap:true,referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});</script>
+  <link rel="stylesheet" href="/assets/styles/footer.css">
+  <link rel="stylesheet" href="/assets/styles/navigation.css?v=contacts-nav">
+  <script defer src="/assets/scripts/navigation.js"></script>
+  <link rel="stylesheet" href="/assets/styles/back-to-top.css?v=1">
+  <script defer src="/assets/scripts/back-to-top.js?v=1"></script>
+  <link rel="stylesheet" href="/assets/styles/cookie-notice.css">
+  <script defer src="/assets/scripts/cookie-notice.js"></script>
+</head>
+<body id="top">
+  <noscript><div><img src="https://mc.yandex.ru/watch/27865374" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+  <nav class="site-navigation" data-site-navigation="global" aria-label="Основная навигация">
+  <div class="site-navigation__inner">
+    <a class="site-navigation__brand" href="/">Павел Насута</a>
+    <button class="site-navigation__toggle" type="button" aria-controls="site-navigation-panel" aria-expanded="false">
+      <span class="site-navigation__toggle-label">Меню</span><span class="site-navigation__toggle-icon" aria-hidden="true"></span>
+    </button>
+    <div class="site-navigation__panel" id="site-navigation-panel">
+      <a href="/articles/">Блог</a>
+      <a href="/articles/hermes-agent-installation/">Установка Hermes</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Библиотека <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="/skills/" aria-label="Открыть каталог Skills для AI-агентов">Skills для AI-агентов</a>
+          <a href="/biases/">Когнитивные искажения</a>
+        </div>
+      </details>
+      <a href="/create/">C.R.E.A.T.E.</a>
+      <details class="site-navigation__group">
+        <summary class="site-navigation__submenu-toggle">Проекты <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a>
+          <a href="/pomokitty/">pomokitty</a>
+        </div>
+      </details>
+      <a href="/about/">Обо мне</a>
+      <details class="site-navigation__group site-navigation__group--contacts">
+        <summary class="site-navigation__submenu-toggle">Контакты <span aria-hidden="true">⌄</span></summary>
+        <div class="site-navigation__submenu">
+          <a href="/contact/">Все контакты</a>
+          <a href="https://t.me/pavelnasuta" target="_blank" rel="noopener">Личный Telegram ↗</a>
+          <a href="https://t.me/niimozgii" target="_blank" rel="noopener">НИИ «МОЗГИ» ↗</a>
+          <a href="https://www.linkedin.com/in/nasuta" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="mailto:pavelnasuta@gmail.com">Email</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</nav>
+  <div class="shell">
+    <main>
+      <header class="hero">
+        <div class="meta">OPEN SOURCE SKILL · AGENT SECURITY</div>
+        <div class="hero-mark hero-mark--quarantine" aria-hidden="true"><svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v10H4z"></path><path d="M8 7V4h8v3"></path><path d="M9 12h6"></path><path d="M12 9v6"></path></svg></div>
+        <h1>Hermes<br><em>Repo<wbr>Quarantine</em></h1>
+        <p class="lede">Workflow для незнакомого кода: сначала отделить агента от хоста, затем читать, и только после отдельного решения — что-то запускать.</p>
+        <div class="hero-actions"><a class="button primary" href="https://github.com/pavelnasuta/hermes-repo-quarantine" target="_blank" rel="noopener">Открыть репозиторий ↗</a><a class="button secondary" href="#start">Как начать</a></div>
+        <figure class="skill-visual"><img src="../../assets/images/og-skill-hermes-repo-quarantine.jpg" alt="Репозиторий в изолированном прозрачном контуре: входящие сетевые линии останавливаются на границе карантина"></figure>
+      </header>
+      <section id="release" class="status"><b>Публичная версия 0.2.0</b><p>Поддерживает Hermes, Claude Code и Codex. Внутри — один общий контракт, тонкие адаптеры и проверка attestation перед первичным review.</p><p><b>Последнее существенное обновление:</b> 13 ноября 2026.</p></section>
+      <section class="layout">
+        <aside class="toc"><div>НА СТРАНИЦЕ</div><a href="#purpose">Что делает</a><a href="#start">Быстрый старт</a><a href="#workflow">Маршрут</a><a href="#agents">Агенты</a><a href="#limits">Границы</a></aside>
+        <article class="content">
+          <section id="purpose"><p class="eyebrow">ЧТО ДЕЛАЕТ</p><h2>Не пытается угадать вредоносный код. Меняет условия работы с ним.</h2><p>README, инструкции, CI, issues, plugins и MCP-конфигурация могут быть недоверенным вводом — даже если на вид это «просто документация». RepoQuarantine делает безопасный порядок действий явным: сначала целостный изолированный контур, потом read-only review, затем отдельные решения об исполнении.</p><div class="outcomes"><div><b>ДО ЧТЕНИЯ</b><span>Проверить non-root disposable-среду, отсутствие домашней директории хоста, Docker socket, SSH-agent, browser profile и облачных конфигураций.</span></div><div><b>ПЕРВЫЙ ПРОХОД</b><span>Искать манифесты, lifecycle hooks, scripts, CI, секреты, сетевые назначения, skills, plugins и MCP — без запуска кода.</span></div><div><b>ДАЛЬШЕ</b><span>Для install, build, tests, миграций, deploy и доступа к сети нужна отдельная причина, ограничение прав и явное решение человека.</span></div></div></section>
+          <section id="start"><p class="eyebrow">УСТАНОВКА HERMES</p><h2>Подключить репозиторий и начать с запрета на запуск.</h2><p>Установите переносимый Hermes bundle. Затем дайте агенту репозиторий и явно попросите не запускать его, пока не проверен контур изоляции.</p><pre><code>hermes skills tap add pavelnasuta/hermes-repo-quarantine
+hermes skills install pavelnasuta/hermes-repo-quarantine/skills/hermes-repo-quarantine</code></pre><p>Пример запроса: <code>Проверь этот незнакомый репозиторий. Не запускай его, пока не подтверждена изоляция.</code></p></section>
+          <section id="workflow"><p class="eyebrow">МАРШРУТ</p><h2>Read-only — это не «запускать осторожно».</h2><ol><li><b>Подтвердить границу.</b> Весь процесс агента, включая file tools, terminal, plugins, hooks и MCP, должен жить в одном disposable-контуре.</li><li><b>Пройти preflight.</b> Аттестация проверяет объявленные controls и даёт только <code>ALLOW_READ_ONLY</code> либо <code>BLOCKED</code>.</li><li><b>Прочитать до запуска.</b> Первый проход — поиск и чтение файлов. Без package manager, build, test, скриптов проекта, browser automation и установки расширений.</li><li><b>Остановиться на сигнале.</b> Неожиданное поведение — повод отключить egress, сохранить несекретные доказательства и уничтожить disposable-среду.</li></ol></section>
+          <section id="agents"><p class="eyebrow">ОДИН КОНТРАКТ, ТРИ АГЕНТА</p><h2>Поведение не расходится между хостами.</h2><div class="agent-grid"><div><h3>Hermes</h3><p>Self-contained skill bundle: он содержит собственные preflight, schema и синтетический пример, потому что tap-install не переносит корневые файлы репозитория.</p></div><div><h3>Claude Code</h3><p>Тонкий adapter подключается рядом с каноническим контрактом и запускает ту же проверку до review незнакомого репозитория.</p></div><div><h3>Codex</h3><p>AGENTS.md adapter ссылается на тот же контракт, а не пересказывает собственную версию security-политики.</p></div></div></section>
+          <section id="limits"><p class="eyebrow">ГРАНИЦЫ</p><h2>Это не sandbox и не антивирус.</h2><p>RepoQuarantine не создаёт изоляцию сам и не доказывает, что контейнер или VM настроены правильно. Attestation — проверка заявленных условий, а не замена OS-level boundary. Терминальная sandbox сама по себе тоже недостаточна, если Hermes, плагины или MCP остаются на доверенном хосте.</p><p>Workflow не устанавливает plugins, skills или MCP незаметно, не ротирует и не удаляет credentials без отдельного согласования и не превращает <code>ALLOW_READ_ONLY</code> в разрешение на install, build, test или deploy.</p></section>
+          <aside class="repository"><div>ИСХОДНИК И ДОКУМЕНТАЦИЯ</div><a href="https://github.com/pavelnasuta/hermes-repo-quarantine" target="_blank" rel="noopener">github.com/pavelnasuta/hermes-repo-quarantine ↗</a><p>MIT · Release <a href="https://github.com/pavelnasuta/hermes-repo-quarantine/releases/tag/v0.2.0" target="_blank" rel="noopener">v0.2.0</a></p></aside>
+        </article>
+      </section>
+    </main>
+    <footer class="site-footer" data-site-footer="global"><div class="site-footer__grid"><div class="site-footer__brand"><a class="site-footer__name" href="/">Павел Насута</a><p>Product builder · AI-агенты · автоматизация</p></div><nav class="site-footer__group" aria-label="Навигация в подвале"><h2>Разделы</h2><a href="/articles/">Блог</a><a href="/skills/">Skills для AI-агентов</a><a href="/create/">Framework C.R.E.A.T.E.</a><a href="/biases/">Когнитивные искажения</a><a href="/about/">Обо мне</a></nav><nav class="site-footer__group" aria-label="Проекты"><h2>Проекты</h2><a href="https://menhausen.com/" target="_blank" rel="noopener">Menhausen ↗</a><a href="/pomokitty/">pomokitty</a><a href="/create/">C.R.E.A.T.E.</a></nav><nav class="site-footer__group" aria-label="Связь"><h2>Связь</h2><a href="/contact/">Все способы связи</a><a href="https://t.me/niimozgii" target="_blank" rel="noopener">Telegram ↗</a><a href="https://www.linkedin.com/in/nasuta" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/pavelnasuta" target="_blank" rel="noopener">GitHub ↗</a><a href="mailto:pavelnasuta@gmail.com">Email</a></nav></div><div class="site-footer__bottom"><span>© 2026 Павел Насута</span><a href="/cookies/">Cookie и Метрика</a><a href="/contact/">Написать</a></div></footer>
+    <aside class="cookie-notice" data-cookie-notice aria-label="Уведомление об использовании cookie" role="status"><p>Использую файлы cookie и Яндекс.Метрику, чтобы понимать, какие материалы полезны. Подробнее — в <a href="/cookies/">политике</a>.</p><button class="cookie-notice__dismiss" type="button" data-cookie-notice-dismiss>Понятно</button></aside>
+  </div>
+  <a class="back-to-top" href="#top" data-back-to-top aria-label="Наверх"><svg class="lucide lucide-arrow-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg><span>Наверх</span></a>
+</body>
+</html>

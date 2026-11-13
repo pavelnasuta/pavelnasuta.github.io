@@ -27,9 +27,10 @@ class SkillHubTests(unittest.TestCase):
         self.assertIn("Ассистент руководителя", self.html)
         self.assertIn("Anytype Agent Skill", self.html)
         self.assertIn("Art-directing visuals", self.html)
+        self.assertIn("Hermes RepoQuarantine", self.html)
         self.assertIn("Telegram Channel Analytics", self.html)
         self.assertIn("Yandex Metrica Analytics Full", self.html)
-        self.assertEqual(self.html.count('class="skill-card"'), 8)
+        self.assertEqual(self.html.count('class="skill-card"'), 9)
 
     def test_hub_has_metadata_filters_and_real_local_links(self):
         self.assertIn('<link rel="canonical" href="https://nasuta.ru/skills/">', self.html)
@@ -40,6 +41,7 @@ class SkillHubTests(unittest.TestCase):
         self.assertIn('href="/skills/management-assistant/"', self.html)
         self.assertIn('href="/skills/anytype-agent-skill/"', self.html)
         self.assertIn('href="/skills/art-directing-visuals/"', self.html)
+        self.assertIn('href="/skills/hermes-repo-quarantine/"', self.html)
         self.assertIn('href="/skills/telegram-channel-analytics/"', self.html)
         self.assertIn('href="/skills/yandex-metrica-analytics-full/"', self.html)
         self.assertIn('assets/styles/skills-index.css', self.html)
